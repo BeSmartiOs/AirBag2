@@ -1,0 +1,6 @@
+framework module Pods_AirBagUITests {
+  umbrella header "Pods-AirBagUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

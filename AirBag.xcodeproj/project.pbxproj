@@ -7,13 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */; };
+		8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441829E565E497872B14807 /* Pods_AirBagUITests.framework */; };
+		93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */; };
+		93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */; };
+		93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE3D21256D3A0054BD7D /* GetCategories.swift */; };
+		93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE4121256DAB0054BD7D /* CategoryResp.swift */; };
+		93DBBE45212570A70054BD7D /* ChooseAddressCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE44212570A70054BD7D /* ChooseAddressCountriesViewController.swift */; };
+		93DBBE47212570B70054BD7D /* ChooseAddressCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE46212570B70054BD7D /* ChooseAddressCityViewController.swift */; };
+		93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE482125A5640054BD7D /* AbstractViewController.swift */; };
+		93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF672125629900E5DB84 /* NetworkConnection.swift */; };
+		93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */; };
+		93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF6F2125648200E5DB84 /* CountriesResp.swift */; };
 		93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEAE12124126500C16F1C /* AppDelegate.swift */; };
-		93FCEAE42124126500C16F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEAE32124126500C16F1C /* ViewController.swift */; };
 		93FCEAE72124126500C16F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93FCEAE52124126500C16F1C /* Main.storyboard */; };
 		93FCEAE92124126600C16F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FCEAE82124126600C16F1C /* Assets.xcassets */; };
 		93FCEAEC2124126700C16F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93FCEAEA2124126700C16F1C /* LaunchScreen.storyboard */; };
 		93FCEAF72124126700C16F1C /* AirBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEAF62124126700C16F1C /* AirBagTests.swift */; };
 		93FCEB022124126700C16F1C /* AirBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB012124126700C16F1C /* AirBagUITests.swift */; };
+		93FCEB15212414E300C16F1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB14212414E300C16F1C /* Constants.swift */; };
+		93FCEB18212415B500C16F1C /* RegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB17212415B500C16F1C /* RegisterationViewController.swift */; };
+		93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB1D21241CF700C16F1C /* LoginsViewController.swift */; };
+		93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB1F21241DFC00C16F1C /* ConstantStrings.swift */; };
+		93FCEB232124235700C16F1C /* UserTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB222124235700C16F1C /* UserTypes.swift */; };
+		93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB242124381000C16F1C /* ChooseCountriesViewController.swift */; };
+		93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB272124398E00C16F1C /* ChooseCtitesTableViewCell.swift */; };
+		93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEB2B212475DD00C16F1C /* ChooseCityViewController.swift */; };
+		C18B22750F43953D7F181A61 /* Pods_AirBagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7BC64E036A97862E86BE47 /* Pods_AirBagTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +54,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F7BC64E036A97862E86BE47 /* Pods_AirBagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirBagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.debug.xcconfig"; sourceTree = "<group>"; };
+		8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationCountryViewController.swift; sourceTree = "<group>"; };
+		93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationCityViewController.swift; sourceTree = "<group>"; };
+		93DBBE3D21256D3A0054BD7D /* GetCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategories.swift; sourceTree = "<group>"; };
+		93DBBE4121256DAB0054BD7D /* CategoryResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResp.swift; sourceTree = "<group>"; };
+		93DBBE44212570A70054BD7D /* ChooseAddressCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAddressCountriesViewController.swift; sourceTree = "<group>"; };
+		93DBBE46212570B70054BD7D /* ChooseAddressCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAddressCityViewController.swift; sourceTree = "<group>"; };
+		93DBBE482125A5640054BD7D /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
+		93F8FF672125629900E5DB84 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesCities.swift; sourceTree = "<group>"; };
+		93F8FF6F2125648200E5DB84 /* CountriesResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResp.swift; sourceTree = "<group>"; };
 		93FCEADE2124126500C16F1C /* AirBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FCEAE12124126500C16F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93FCEAE32124126500C16F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93FCEAE62124126500C16F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93FCEAE82124126600C16F1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93FCEAEB2124126700C16F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +80,19 @@
 		93FCEAFD2124126700C16F1C /* AirBagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirBagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FCEB012124126700C16F1C /* AirBagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirBagUITests.swift; sourceTree = "<group>"; };
 		93FCEB032124126700C16F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93FCEB14212414E300C16F1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		93FCEB17212415B500C16F1C /* RegisterationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationViewController.swift; sourceTree = "<group>"; };
+		93FCEB1D21241CF700C16F1C /* LoginsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginsViewController.swift; sourceTree = "<group>"; };
+		93FCEB1F21241DFC00C16F1C /* ConstantStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantStrings.swift; sourceTree = "<group>"; };
+		93FCEB222124235700C16F1C /* UserTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypes.swift; sourceTree = "<group>"; };
+		93FCEB242124381000C16F1C /* ChooseCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCountriesViewController.swift; sourceTree = "<group>"; };
+		93FCEB272124398E00C16F1C /* ChooseCtitesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCtitesTableViewCell.swift; sourceTree = "<group>"; };
+		93FCEB2B212475DD00C16F1C /* ChooseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
+		B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirBag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC02893092051ECDD60EA11 /* Pods-AirBagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C441829E565E497872B14807 /* Pods_AirBagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirBagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE04BCC432D77D3566BF5E93 /* Pods-AirBag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.release.xcconfig"; sourceTree = "<group>"; };
+		E074642854A8713D2E267FEF /* Pods-AirBagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18B22750F43953D7F181A61 /* Pods_AirBagTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +116,128 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		761D3BBF0AC2EC09E489202F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */,
+				CE04BCC432D77D3566BF5E93 /* Pods-AirBag.release.xcconfig */,
+				3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */,
+				E074642854A8713D2E267FEF /* Pods-AirBagTests.release.xcconfig */,
+				BEC02893092051ECDD60EA11 /* Pods-AirBagUITests.debug.xcconfig */,
+				8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		93DBBE35212568140054BD7D /* AbstractViewController */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE482125A5640054BD7D /* AbstractViewController.swift */,
+			);
+			path = AbstractViewController;
+			sourceTree = "<group>";
+		};
+		93DBBE362125685A0054BD7D /* Departure */ = {
+			isa = PBXGroup;
+			children = (
+				93FCEB242124381000C16F1C /* ChooseCountriesViewController.swift */,
+				93FCEB2B212475DD00C16F1C /* ChooseCityViewController.swift */,
+			);
+			path = Departure;
+			sourceTree = "<group>";
+		};
+		93DBBE37212568690054BD7D /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */,
+				93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */,
+			);
+			path = Destination;
+			sourceTree = "<group>";
+		};
+		93DBBE3C21256D250054BD7D /* GetCategories */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE3D21256D3A0054BD7D /* GetCategories.swift */,
+			);
+			path = GetCategories;
+			sourceTree = "<group>";
+		};
+		93DBBE3F21256D780054BD7D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE4121256DAB0054BD7D /* CategoryResp.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		93DBBE4021256D890054BD7D /* LoginAndRegisteration */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE3F21256D780054BD7D /* Categories */,
+				93F8FF6D2125644B00E5DB84 /* Countries */,
+				93FCEB222124235700C16F1C /* UserTypes.swift */,
+			);
+			path = LoginAndRegisteration;
+			sourceTree = "<group>";
+		};
+		93DBBE43212570890054BD7D /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE44212570A70054BD7D /* ChooseAddressCountriesViewController.swift */,
+				93DBBE46212570B70054BD7D /* ChooseAddressCityViewController.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		93F8FF652125625800E5DB84 /* ServiceHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE3C21256D250054BD7D /* GetCategories */,
+				93F8FF69212562A900E5DB84 /* GetCountriesCities */,
+			);
+			path = ServiceHandlers;
+			sourceTree = "<group>";
+		};
+		93F8FF662125626500E5DB84 /* NetworkConnection */ = {
+			isa = PBXGroup;
+			children = (
+				93F8FF672125629900E5DB84 /* NetworkConnection.swift */,
+			);
+			path = NetworkConnection;
+			sourceTree = "<group>";
+		};
+		93F8FF69212562A900E5DB84 /* GetCountriesCities */ = {
+			isa = PBXGroup;
+			children = (
+				93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */,
+			);
+			path = GetCountriesCities;
+			sourceTree = "<group>";
+		};
+		93F8FF6D2125644B00E5DB84 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				93F8FF6E2125646300E5DB84 /* Cities */,
+				93F8FF6F2125648200E5DB84 /* CountriesResp.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		93F8FF6E2125646300E5DB84 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
 		93FCEAD52124126500C16F1C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +245,8 @@
 				93FCEAF52124126700C16F1C /* AirBagTests */,
 				93FCEB002124126700C16F1C /* AirBagUITests */,
 				93FCEADF2124126500C16F1C /* Products */,
+				761D3BBF0AC2EC09E489202F /* Pods */,
+				C4E55BD8449100B300801D9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +263,15 @@
 		93FCEAE02124126500C16F1C /* AirBag */ = {
 			isa = PBXGroup;
 			children = (
-				93FCEAE12124126500C16F1C /* AppDelegate.swift */,
-				93FCEAE32124126500C16F1C /* ViewController.swift */,
-				93FCEAE52124126500C16F1C /* Main.storyboard */,
-				93FCEAE82124126600C16F1C /* Assets.xcassets */,
-				93FCEAEA2124126700C16F1C /* LaunchScreen.storyboard */,
+				93F8FF662125626500E5DB84 /* NetworkConnection */,
+				93F8FF652125625800E5DB84 /* ServiceHandlers */,
+				93FCEB192124172B00C16F1C /* Assets */,
+				93FCEB13212414D100C16F1C /* Constants */,
+				93FCEB12212414B800C16F1C /* Storyboards */,
+				93FCEB102124149E00C16F1C /* Helpers */,
+				93FCEB0F2124149100C16F1C /* Controllers */,
+				93FCEB11212414A800C16F1C /* AppDelegate */,
+				93FCEB212124233B00C16F1C /* Models */,
 				93FCEAED2124126700C16F1C /* Info.plist */,
 			);
 			path = AirBag;
@@ -125,6 +295,95 @@
 			path = AirBagUITests;
 			sourceTree = "<group>";
 		};
+		93FCEB0F2124149100C16F1C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE35212568140054BD7D /* AbstractViewController */,
+				93FCEB162124158C00C16F1C /* LoginRegs */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		93FCEB102124149E00C16F1C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		93FCEB11212414A800C16F1C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				93FCEAE12124126500C16F1C /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		93FCEB12212414B800C16F1C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				93FCEAE52124126500C16F1C /* Main.storyboard */,
+				93FCEAEA2124126700C16F1C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		93FCEB13212414D100C16F1C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				93FCEB14212414E300C16F1C /* Constants.swift */,
+				93FCEB1F21241DFC00C16F1C /* ConstantStrings.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		93FCEB162124158C00C16F1C /* LoginRegs */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE43212570890054BD7D /* Address */,
+				93DBBE37212568690054BD7D /* Destination */,
+				93DBBE362125685A0054BD7D /* Departure */,
+				93FCEB262124396D00C16F1C /* CustomCells */,
+				93FCEB17212415B500C16F1C /* RegisterationViewController.swift */,
+				93FCEB1D21241CF700C16F1C /* LoginsViewController.swift */,
+			);
+			path = LoginRegs;
+			sourceTree = "<group>";
+		};
+		93FCEB192124172B00C16F1C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				93FCEAE82124126600C16F1C /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		93FCEB212124233B00C16F1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93DBBE4021256D890054BD7D /* LoginAndRegisteration */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		93FCEB262124396D00C16F1C /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				93FCEB272124398E00C16F1C /* ChooseCtitesTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		C4E55BD8449100B300801D9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */,
+				2F7BC64E036A97862E86BE47 /* Pods_AirBagTests.framework */,
+				C441829E565E497872B14807 /* Pods_AirBagUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +391,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93FCEB062124126700C16F1C /* Build configuration list for PBXNativeTarget "AirBag" */;
 			buildPhases = (
+				25383EFF4623D40478708662 /* [CP] Check Pods Manifest.lock */,
 				93FCEADA2124126500C16F1C /* Sources */,
 				93FCEADB2124126500C16F1C /* Frameworks */,
 				93FCEADC2124126500C16F1C /* Resources */,
+				081D93885089E2CF2E38DFD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +410,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93FCEB092124126700C16F1C /* Build configuration list for PBXNativeTarget "AirBagTests" */;
 			buildPhases = (
+				C2216244355D7B511840CCF2 /* [CP] Check Pods Manifest.lock */,
 				93FCEAEE2124126700C16F1C /* Sources */,
 				93FCEAEF2124126700C16F1C /* Frameworks */,
 				93FCEAF02124126700C16F1C /* Resources */,
@@ -167,6 +429,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93FCEB0C2124126700C16F1C /* Build configuration list for PBXNativeTarget "AirBagUITests" */;
 			buildPhases = (
+				2E9AB7E8BC37151E38F63B2C /* [CP] Check Pods Manifest.lock */,
 				93FCEAF92124126700C16F1C /* Sources */,
 				93FCEAFA2124126700C16F1C /* Frameworks */,
 				93FCEAFB2124126700C16F1C /* Resources */,
@@ -251,13 +514,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		081D93885089E2CF2E38DFD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirBag/Pods-AirBag-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirBag/Pods-AirBag-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25383EFF4623D40478708662 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirBag-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E9AB7E8BC37151E38F63B2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirBagUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2216244355D7B511840CCF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirBagTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93FCEADA2124126500C16F1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93FCEAE42124126500C16F1C /* ViewController.swift in Sources */,
+				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
+				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
+				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
+				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
+				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
+				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
+				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
+				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
+				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
+				93FCEB232124235700C16F1C /* UserTypes.swift in Sources */,
+				93FCEB18212415B500C16F1C /* RegisterationViewController.swift in Sources */,
+				93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */,
+				93DBBE47212570B70054BD7D /* ChooseAddressCityViewController.swift in Sources */,
+				93DBBE45212570A70054BD7D /* ChooseAddressCountriesViewController.swift in Sources */,
+				93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */,
+				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
+				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
+				93FCEB15212414E300C16F1C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +787,7 @@
 		};
 		93FCEB072124126700C16F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +805,7 @@
 		};
 		93FCEB082124126700C16F1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE04BCC432D77D3566BF5E93 /* Pods-AirBag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,6 +823,7 @@
 		};
 		93FCEB0A2124126700C16F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -482,6 +844,7 @@
 		};
 		93FCEB0B2124126700C16F1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E074642854A8713D2E267FEF /* Pods-AirBagTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +865,7 @@
 		};
 		93FCEB0D2124126700C16F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC02893092051ECDD60EA11 /* Pods-AirBagUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +885,7 @@
 		};
 		93FCEB0E2124126700C16F1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
