@@ -295,7 +295,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         if(choosenDepartureFinalCity != ""){
             print(choosenDepartureFinalCity)
             print(choosenDestinationFinalCityId)
-            self.departureCountryCity.text = choosenDepartureFinalCountry + ", " + choosenDepartureFinalCity
+            self.departureCountryCity.text = choosenDepartureFinalCountry + ", " + choosenDepartureFinalCity ////
         }
         
         
