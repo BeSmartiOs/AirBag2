@@ -262,6 +262,15 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
          self.addressLabel.text = ConstantStrings.chooseAddress
         self.addressTextFeild.placeholder = ConstantStrings.typeAddress
         self.mobileTextFeild.placeholder = ConstantStrings.typePhone
+         self.firstName.placeholder = ConstantStrings.firstName
+         self.lastName.placeholder = ConstantStrings.lastName
+         self.email.placeholder = ConstantStrings.emailLabelPlace
+         self.password.placeholder = ConstantStrings.passwordLabel
+         self.confirmPassword.placeholder = ConstantStrings.confirmPAss
+         self.creditCard.placeholder = ConstantStrings.creditCard
+         self.numberOfTravel.placeholder = ConstantStrings.numberOfTravels
+     
+        
     }
     
     func getCountries(){
@@ -289,7 +298,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     func ChoosePhoneCode(_ phoneCode: String?) {
         self.phoneCode = phoneCode!
     }
-    func updateViews(){
+    func updateViews(){ //
         self.passwordExampe.text = ConstantStrings.passwordPlaceHolder
         self.showPassword.setTitle(ConstantStrings.showPassword, for: .normal)
         if(choosenDepartureFinalCity != ""){
