@@ -10,6 +10,8 @@ target 'AirBag' do
 	pod 'Alamofire'
         pod 'ObjectMapper'
 	pod 'JGProgressHUD'
+	pod 'Firebase/Core'
+	pod 'Firebase/Messaging'
 
   target 'AirBagTests' do
     inherit! :search_paths

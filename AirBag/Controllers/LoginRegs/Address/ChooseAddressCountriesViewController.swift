@@ -64,6 +64,7 @@ class ChooseAddressCountriesViewController: UIViewController,UITableViewDataSour
         return 110
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
         self.choosenCountry = (self.countriesRes?[indexPath.row].name)!
        self.choosenCountryId = (self.countriesRes?[indexPath.row].id)!
          self.delegatePhone?.ChoosePhoneCode(self.countriesRes?[indexPath.row].phoneCode)

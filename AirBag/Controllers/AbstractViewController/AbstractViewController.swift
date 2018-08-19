@@ -40,13 +40,22 @@ class AbstractViewController: UIViewController {
     
     //Minimum 8 and Maximum 10 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character: [!$@#%])
     class func isValidPasword(testStr: String) -> Bool {
-        let password = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*&#^])[A-Za-z\\d$@$!%*&#^]{8,}"
+        let password = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%&#^])[A-Za-z\\d$@$!%&#^]{8,}"
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", password)
         return passwordTest.evaluate(with: testStr)
     }
     
-    class func validateFeildsRegister(firstName: String,lastName: String, password : String,confirmPassword : String,email: String, phone : String) -> Bool{
-        if(firstName.isEmpty == true || password.isEmpty == true || email.isEmpty == true || firstName == "" ||  password == ""  || email == "" || lastName.isEmpty == true || lastName == "" ||  confirmPassword == ""  || confirmPassword.isEmpty == true ||  phone == ""  || phone .isEmpty == true){
+    class func validateFeildsRegister(firstName: String,lastName: String, password : String,confirmPassword : String,email: String, phone : String, address : String) -> Bool{
+        if(firstName.isEmpty == true || password.isEmpty == true || email.isEmpty == true || firstName == "" ||  password == ""  || email == "" || lastName.isEmpty == true || lastName == "" ||  confirmPassword == ""  || confirmPassword.isEmpty == true ||  phone == ""  || phone .isEmpty == true || address.isEmpty == true ||  address == ""){
+            return false
+        }else{
+            return true
+        }
+        
+    }
+    
+    class func validateLogin(userType: Int,email: String, password : String) -> Bool{
+        if( password == ""  || email == ""  || password.isEmpty == true || email.isEmpty == true || userType == 0){
             return false
         }else{
             return true

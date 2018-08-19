@@ -62,6 +62,7 @@ class ChooseCountriesViewController: UIViewController,UITableViewDataSource,UITa
         return 110
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
         self.choosenCountry = (self.countriesRes?[indexPath.row].name)!
         self.departureCountryId = (self.countriesRes?[indexPath.row].id)!
        performSegue(withIdentifier: "goToCities", sender: self)
@@ -97,7 +98,7 @@ class ChooseCountriesViewController: UIViewController,UITableViewDataSource,UITa
             }else{
              choosenDepartureFinalCity =  self.choosenCity
             choosenDepartureFinalCountry = self.choosenCountry
-            choosenDestinationFinalCityId = self.departureCityId!
+            choosenDepartureFinalCityId = self.departureCityId!
             }
             self.dismiss(animated: false, completion: nil)
         }

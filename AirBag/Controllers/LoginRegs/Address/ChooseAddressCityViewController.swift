@@ -60,6 +60,7 @@ class ChooseAddressCityViewController: UIViewController,UITableViewDataSource,UI
         return 110
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.delegate?.ChooseAddressCity(self.cityResp?[indexPath.row].name, self.cityResp?[indexPath.row].id)
        
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     
@@ -28,8 +28,12 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var isTableVisible = false
     var types = [UserTypes]()
     var userType = 0
+    var loginResp : LoginResponse?
+    let hud = JGProgressHUD(style: .light)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        hud.textLabel.text = ConstantStrings.pleaseWait
         self.navigationController?.navigationBar.isHidden = true
         types = [UserTypes(typeString: ConstantStrings.carrier, typeInt: Constants.UserType.carrier),UserTypes(typeString: ConstantStrings.sender, typeInt: Constants.UserType.sender),UserTypes(typeString: ConstantStrings.reciever, typeInt: Constants.UserType.reciever)]
         tableViewHeight.constant = 0
@@ -65,6 +69,18 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func login(_ sender: Any) {
+        if(AbstractViewController.validateLogin(userType: self.userType, email: self.emaiTextFeild.text!, password: self.passwordTextFeild.text!)){
+            
+            if(AbstractViewController.isValidEmail(testStr: self.emaiTextFeild.text!)){
+                self.login(email: self.emaiTextFeild.text!, password: self.passwordTextFeild.text!, userType: self.userType)
+                
+            }else{
+                 self.creatAlert(tite: ConstantStrings.emailVAid)
+            }
+            
+        }else{
+            self.creatAlert(tite: ConstantStrings.pleaseFillRequired)
+        }
     }
     
     
@@ -123,5 +139,28 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.signUpBtn.setTitle(ConstantStrings.register, for: .normal)
         self.dontHaveAccount.text = ConstantStrings.dontHaveAccout
     }
+    func creatAlert(tite : String){
+        // create the alert
+        let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
     
+    func login(email : String, password : String, userType : Int){
+        self.hud.show(in: self.view)
+        LoginApi.LoginApi(email: email, currentTypeId: userType, password: password) { (logResp, error) in
+            if(error == ""){
+                self.hud.dismiss()
+                self.loginResp = logResp
+                let userDefaults = UserDefaults.standard
+                let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.loginResp)
+                userDefaults.set(encodedData, forKey: "logResp")
+                userDefaults.synchronize()
+            }else{
+                self.hud.dismiss()
+            }
+        }
+    }
 }

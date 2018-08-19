@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */; };
 		8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441829E565E497872B14807 /* Pods_AirBagUITests.framework */; };
+		93D7FE5D21295CD300D377EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D7FE5C21295CD300D377EF /* GoogleService-Info.plist */; };
+		93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE5F212971E500D377EF /* RegisterApi.swift */; };
+		93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE622129755700D377EF /* SuccessResponse.swift */; };
+		93D7FE652129954200D377EF /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE642129954200D377EF /* LoginApi.swift */; };
+		93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE66212996D200D377EF /* LoginResponse.swift */; };
+		93D7FE6921299E6A00D377EF /* Sender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D7FE6821299E6900D377EF /* Sender.storyboard */; };
+		93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE6B21299F0900D377EF /* SenderViewController.swift */; };
 		93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */; };
 		93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */; };
 		93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE3D21256D3A0054BD7D /* GetCategories.swift */; };
@@ -58,6 +65,13 @@
 		3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.debug.xcconfig"; sourceTree = "<group>"; };
 		8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93D7FE5C21295CD300D377EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93D7FE5F212971E500D377EF /* RegisterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApi.swift; sourceTree = "<group>"; };
+		93D7FE622129755700D377EF /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		93D7FE642129954200D377EF /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		93D7FE66212996D200D377EF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		93D7FE6821299E6900D377EF /* Sender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sender.storyboard; sourceTree = "<group>"; };
+		93D7FE6B21299F0900D377EF /* SenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderViewController.swift; sourceTree = "<group>"; };
 		93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationCountryViewController.swift; sourceTree = "<group>"; };
 		93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationCityViewController.swift; sourceTree = "<group>"; };
 		93DBBE3D21256D3A0054BD7D /* GetCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategories.swift; sourceTree = "<group>"; };
@@ -136,6 +150,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		93D7FE5E212971D300D377EF /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE5F212971E500D377EF /* RegisterApi.swift */,
+				93D7FE642129954200D377EF /* LoginApi.swift */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		93D7FE612129754400D377EF /* SuccessResponse */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE622129755700D377EF /* SuccessResponse.swift */,
+				93D7FE66212996D200D377EF /* LoginResponse.swift */,
+			);
+			path = SuccessResponse;
+			sourceTree = "<group>";
+		};
+		93D7FE6A21299EE300D377EF /* Sender */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE6B21299F0900D377EF /* SenderViewController.swift */,
+			);
+			path = Sender;
+			sourceTree = "<group>";
+		};
 		93DBBE35212568140054BD7D /* AbstractViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +240,7 @@
 		93F8FF652125625800E5DB84 /* ServiceHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				93D7FE5E212971D300D377EF /* LoginAndRegister */,
 				93DBBE3C21256D250054BD7D /* GetCategories */,
 				93F8FF69212562A900E5DB84 /* GetCountriesCities */,
 			);
@@ -263,6 +304,7 @@
 		93FCEAE02124126500C16F1C /* AirBag */ = {
 			isa = PBXGroup;
 			children = (
+				93D7FE5C21295CD300D377EF /* GoogleService-Info.plist */,
 				93F8FF662125626500E5DB84 /* NetworkConnection */,
 				93F8FF652125625800E5DB84 /* ServiceHandlers */,
 				93FCEB192124172B00C16F1C /* Assets */,
@@ -298,6 +340,7 @@
 		93FCEB0F2124149100C16F1C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				93D7FE6A21299EE300D377EF /* Sender */,
 				93DBBE35212568140054BD7D /* AbstractViewController */,
 				93FCEB162124158C00C16F1C /* LoginRegs */,
 			);
@@ -324,6 +367,7 @@
 			children = (
 				93FCEAE52124126500C16F1C /* Main.storyboard */,
 				93FCEAEA2124126700C16F1C /* LaunchScreen.storyboard */,
+				93D7FE6821299E6900D377EF /* Sender.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -361,6 +405,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93D7FE612129754400D377EF /* SuccessResponse */,
 				93DBBE4021256D890054BD7D /* LoginAndRegisteration */,
 			);
 			path = Models;
@@ -493,8 +538,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FCEAEC2124126700C16F1C /* LaunchScreen.storyboard in Resources */,
+				93D7FE5D21295CD300D377EF /* GoogleService-Info.plist in Resources */,
 				93FCEAE92124126600C16F1C /* Assets.xcassets in Resources */,
 				93FCEAE72124126500C16F1C /* Main.storyboard in Resources */,
+				93D7FE6921299E6A00D377EF /* Sender.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,14 +570,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AirBag/Pods-AirBag-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -599,14 +652,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
+				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
+				93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */,
 				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
 				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
 				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
 				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
+				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
+				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
+				93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */,
 				93FCEB232124235700C16F1C /* UserTypes.swift in Sources */,
 				93FCEB18212415B500C16F1C /* RegisterationViewController.swift in Sources */,
 				93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */,

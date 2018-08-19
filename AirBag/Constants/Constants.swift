@@ -18,9 +18,11 @@ struct Constants{
     
     struct WebService{
         static let baseUrl = "http://206.189.17.20"
-         static let getCountries = "/countries"
+        static let getCountries = "/countries"
         static let getCategories = "/categories"
-         static let getCities = "/cities/"
+        static let getCities = "/cities/"
+        static let register = "/register"
+        static let login = "/login"
         
     }
     

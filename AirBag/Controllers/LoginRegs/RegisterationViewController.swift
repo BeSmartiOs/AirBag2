@@ -8,7 +8,7 @@
 
 import UIKit
 import JGProgressHUD
-
+//MARK:- Global
 var choosenDepartureFinalCity = ""
 var choosenDepartureFinalCountry = ""
 var choosenDepartureFinalCityId = 0
@@ -23,7 +23,7 @@ var choosenAddressFinalCityId = 0
 
 
 class RegisterationViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,classPhoneCode{
-    
+    //MARK:- OUTETS
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -57,6 +57,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     @IBOutlet weak var addressTextFeild: UITextField!
     @IBOutlet weak var registerBtn: UIButton!
     
+    //MARK:- VARIABLES
     var isTableVisible = false
     let hud = JGProgressHUD(style: .light)
     var countriesRes : [CountriesResp]?
@@ -66,6 +67,16 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     var isHidden = false
     var chooseCats = [Int]()
     var chooseCatsString = [String]()
+    
+    var frequent_travel_number :Int?
+    var  favouriteDeparture_id:Int?
+    var  favouriteDestination_id :Int?
+    var  addressCity : Int?
+    var  address = ""
+    var  creditCardInt = ""
+    var  regtoken = ""
+    var categpryids = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hud.textLabel.text = ConstantStrings.pleaseWait
@@ -75,6 +86,8 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         self.categoryTableView.allowsMultipleSelection = true
         getCategries()
         getCountries()
+        regtoken = getRegisterationToken()
+        print(regtoken)
         // Do any additional setup after loading the view.
     }
 
@@ -85,7 +98,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
      updateViews()
     }
-
+    //MARK:- IBACTIONS
     @IBAction func favoriteDepartureCountry(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseCountriesViewController") as! ChooseCountriesViewController
         popOverVC.countriesRes = self.countriesRes
@@ -122,7 +135,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     
   
     @IBAction func registerBtnAction(_ sender: Any) {
-        if(AbstractViewController.validateFeildsRegister(firstName: firstName.text!, lastName: lastName.text!, password: password.text!, confirmPassword: confirmPassword.text!, email: email.text!,phone: self.mobileTextFeild.text!)){
+        if(AbstractViewController.validateFeildsRegister(firstName: firstName.text!, lastName: lastName.text!, password: password.text!, confirmPassword: confirmPassword.text!, email: email.text!,phone: self.mobileTextFeild.text!, address: addressTextFeild.text!)){
             
             if(AbstractViewController.isValidPasword(testStr: self.password.text!)){ //valid pass
                 
@@ -133,24 +146,43 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
                         if(AbstractViewController.validateNum(number: mobileTextFeild.text!)){
                             print("num yes ")
                             self.errorPass.text = ""
-                           // if()
+                           // if(chooseCats)
+                            
+                        
+                                if(self.favouriteDeparture_id != nil || self.favouriteDestination_id != nil){
+                                    if(self.addressCity != nil){
+                                       //   self.creatAlert(tite: "DONE")
+                                        
+                                        self.registerAccount(firstName: self.firstName.text!, lastName: self.lastName.text!, password: self.password.text!, confirmPass: self.confirmPassword.text!, email: self.email.text!, favDepartureCity: self.favouriteDeparture_id!, favDestinationCity: self.favouriteDestination_id! , addressCityID: self.addressCity!, mobile: self.mobileTextFeild.text!, address: self.addressTextFeild.text!, categories: chooseCats, creditCard: self.creditCard.text!, numOfTravels: self.numberOfTravel.text!, registerationToken: self.regtoken)
+                                        
+                                        
+                                        
+                                        
+                                    }else{
+                                              self.creatAlert(tite: ConstantStrings.fillRequiredAddress)
+                                    }
+                                   
+                                }else{
+                                    self.creatAlert(tite: ConstantStrings.fillRequiredAddress)
+                                }
+                           
                             /*if()frequent_travel_number (int),
-                             favourite_departure_id(int)(city_id) ,
-                             favourite_destination_id (int)(city_id),
-                             credit_card(string) ,address,address city id,regtoken,categpryids*/
+                        
+                             */
                             
                              print("woohoo")
                         }else{
                              print("not nums ")
+                              self.creatAlert(tite: ConstantStrings.wrongNum)
                         }
-                        
-                        
                         
                     }else{
                         print("email wrong ")
+                          self.creatAlert(tite: ConstantStrings.emailVAid)
                     }
                 }else{
                      print("pass doesnt match")
+                     self.creatAlert(tite: ConstantStrings.psddwordDoesntMAtch)
                     self.errorPass.text = ConstantStrings.psddwordDoesntMAtch
                    //pass doesnt match
                 }
@@ -158,11 +190,12 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
             }else{
                  print("wromg pass")
                   self.errorPass.text = ConstantStrings.passwordWrong
+                  self.creatAlert(tite: ConstantStrings.passwordWrong)
                 //wromg pass
             }
             
         }else{
-            
+            self.creatAlert(tite: ConstantStrings.pleaseFillRequired)
         }
     }
     
@@ -177,7 +210,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
              isHidden  = false
         }
     }
-    
+    //MARK:- TABLEVIEW
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(self.categoriesResp != nil){
             return (self.categoriesResp?.count)!
@@ -250,7 +283,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         
     }
     
-    
+        //MARK:- CALLBACK Func
     func setUpViews(){
         self.errorPass.text = ""
         self.errorEmail.text = ""
@@ -269,7 +302,11 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
          self.confirmPassword.placeholder = ConstantStrings.confirmPAss
          self.creditCard.placeholder = ConstantStrings.creditCard
          self.numberOfTravel.placeholder = ConstantStrings.numberOfTravels
-     
+        self.registerBtn.setTitle(ConstantStrings.register, for: .normal)
+        self.departureCountryCity.text = ""
+         self.destinationCountryCity.text = ""
+         self.choosenAddress.text = ""
+        self.mobileCode.text = ConstantStrings.countryCode
         
     }
     
@@ -303,25 +340,91 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         self.showPassword.setTitle(ConstantStrings.showPassword, for: .normal)
         if(choosenDepartureFinalCity != ""){
             print(choosenDepartureFinalCity)
-            print(choosenDestinationFinalCityId)
+            print(choosenDepartureFinalCityId)
+            print(choosenDepartureFinalCountry)
             self.departureCountryCity.text = choosenDepartureFinalCountry + ", " + choosenDepartureFinalCity ////
+            self.favouriteDeparture_id = choosenDepartureFinalCityId
         }
         
         
         if(choosenDestinationFinalCity != ""){
+
+            print(choosenDestinationFinalCountry)
             print(choosenDestinationFinalCity)
             print(choosenDestinationFinalCityId)
+            
+            
             self.destinationCountryCity.text = choosenDestinationFinalCountry + ", " + choosenDestinationFinalCity
+            self.favouriteDestination_id = choosenDestinationFinalCityId
         }
         
         if(choosenAddressFinalCity != ""){
             print(choosenAddressFinalCity)
             print(choosenAddressFinalCityId)
             self.choosenAddress.text = choosenAddressFinalCountry + ", " + choosenAddressFinalCity
+            self.addressCity = choosenAddressFinalCityId
         }
         
         if(self.phoneCode != ""){
             self.mobileCode.text = self.phoneCode
         }
     }
+    
+    func creatAlert(tite : String){
+        // create the alert
+        let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func creatAlertSucess(tite : String){
+        // create the alert
+        let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler:{ action in
+            
+          self.navigationController?.popViewController(animated: true)
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func getRegisterationToken() -> String{
+       let token =  UserDefaults.standard.string(forKey: "fireBaseTokenUserDefaults")
+        if(token != "")
+        {
+            return token!
+        }else{
+            return ""
+        }
+    
+    }
+    func registerAccount(firstName : String,lastName : String,password : String,confirmPass : String,email : String,favDepartureCity : Int,favDestinationCity : Int,addressCityID : Int,mobile : String,address : String,categories : [Int],creditCard : String,numOfTravels : String,registerationToken : String){
+        var travel = 0
+        var internalCreditCard = creditCard
+        var categoriesInt = categories
+        if(AbstractViewController.validateNum(number: numberOfTravel.text!)){
+            travel = Int(numOfTravels)!
+            }else{
+               travel = 0
+            }
+        if(internalCreditCard == ""){
+            internalCreditCard = ""
+        }
+        if(categoriesInt.count == 0){
+            categoriesInt = []
+        }
+        hud.show(in: self.view)
+        RegisterApi.RegisterApi(fcmToken: registerationToken, firstName: firstName, lastName: lastName, email: email, mobile: mobile, addressCityId: addressCityID, address: address, password: password, passwordConfirmation: confirmPass, frequentTravelNumber: travel, favouriteDepartureId: favDepartureCity, favouriteDestinationId: favDestinationCity, creditCard: internalCreditCard, preferredCategories: categoriesInt) { (succss, error) in
+            if(error == ""){
+                    self.hud.dismiss()
+                self.creatAlertSucess(tite:  ConstantStrings.successfulyReg)
+            }
+        }
+        
+        
+    }
+    
 }

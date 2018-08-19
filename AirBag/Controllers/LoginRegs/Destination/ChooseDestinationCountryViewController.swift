@@ -62,6 +62,7 @@ class ChooseDestinationCountryViewController: UIViewController,UITableViewDataSo
         return 110
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
         self.choosenDestinationCountry = (self.countriesRes?[indexPath.row].name)!
         self.choosenDestinationCountryId = (self.countriesRes?[indexPath.row].id)!
         performSegue(withIdentifier: "goToDestinationCities", sender: self)
