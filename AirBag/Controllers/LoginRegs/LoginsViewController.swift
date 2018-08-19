@@ -30,7 +30,8 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var userType = 0
     var loginResp : LoginResponse?
     let hud = JGProgressHUD(style: .light)
-    
+    var navController: UINavigationController?
+    var tabController: SenderViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         hud.textLabel.text = ConstantStrings.pleaseWait
@@ -158,6 +159,11 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.loginResp)
                 userDefaults.set(encodedData, forKey: "logResp")
                 userDefaults.synchronize()
+                let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = self.tabController
+                appDelegate.window?.makeKeyAndVisible()
             }else{
                 self.hud.dismiss()
             }

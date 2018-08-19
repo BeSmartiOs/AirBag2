@@ -16,7 +16,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
-
+    var navController: UINavigationController?
+    var tabController: SenderViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -44,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         application.registerForRemoteNotifications()
         NotificationCenter.default.addObserver(forName: NSNotification.Name.InstanceIDTokenRefresh, object: nil, queue: nil, using: tokenRefreshNotification(_:))
+        checkLogin()
+       
         return true
     }
 
@@ -104,7 +107,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    //MARK:- Callback Funcs
+    func setUpNavigationController(){
+        //Image Background Navigation Bar
+        let navBackgroundImage:UIImage! = UIImage(named: "them_header.png")
+        UINavigationBar.appearance().setBackgroundImage(navBackgroundImage, for: .default)
+    }
+    func checkLogin(){
+        if let favorites = UserDefaults.standard.data(forKey: "logResp") {
+            if favorites.count == 0 {
+                
+                
+            } else {
+                print("you're logged in")
+                let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = self.tabController
+                appDelegate.window?.makeKeyAndVisible()
+            }
+        }
+        
+    }
 
 }
 

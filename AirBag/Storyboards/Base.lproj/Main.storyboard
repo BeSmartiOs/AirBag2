@@ -290,7 +290,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Choose Category">
-                                                            <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.15686274509803921" green="0.2196078431372549" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="chooseCategory:" destination="yUO-M4-4Wd" eventType="touchUpInside" id="7cT-16-4kE"/>

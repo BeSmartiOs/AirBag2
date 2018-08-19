@@ -16,6 +16,10 @@
 		93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE66212996D200D377EF /* LoginResponse.swift */; };
 		93D7FE6921299E6A00D377EF /* Sender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D7FE6821299E6900D377EF /* Sender.storyboard */; };
 		93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE6B21299F0900D377EF /* SenderViewController.swift */; };
+		93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE6D2129BBA500D377EF /* ColorsHepers.swift */; };
+		93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE702129C1AC00D377EF /* MainSenderViewController.swift */; };
+		93D7FE732129C43500D377EF /* NAvImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE722129C43500D377EF /* NAvImage.swift */; };
+		93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE772129C7B200D377EF /* MenuViewController.swift */; };
 		93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */; };
 		93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */; };
 		93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DBBE3D21256D3A0054BD7D /* GetCategories.swift */; };
@@ -72,6 +76,10 @@
 		93D7FE66212996D200D377EF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		93D7FE6821299E6900D377EF /* Sender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sender.storyboard; sourceTree = "<group>"; };
 		93D7FE6B21299F0900D377EF /* SenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderViewController.swift; sourceTree = "<group>"; };
+		93D7FE6D2129BBA500D377EF /* ColorsHepers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHepers.swift; sourceTree = "<group>"; };
+		93D7FE702129C1AC00D377EF /* MainSenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSenderViewController.swift; sourceTree = "<group>"; };
+		93D7FE722129C43500D377EF /* NAvImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAvImage.swift; sourceTree = "<group>"; };
+		93D7FE772129C7B200D377EF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		93DBBE38212568920054BD7D /* ChooseDestinationCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationCountryViewController.swift; sourceTree = "<group>"; };
 		93DBBE3A2125689B0054BD7D /* ChooseDestinationCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationCityViewController.swift; sourceTree = "<group>"; };
 		93DBBE3D21256D3A0054BD7D /* GetCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategories.swift; sourceTree = "<group>"; };
@@ -171,9 +179,43 @@
 		93D7FE6A21299EE300D377EF /* Sender */ = {
 			isa = PBXGroup;
 			children = (
+				93D7FE6F2129C18900D377EF /* MainSenderViews */,
 				93D7FE6B21299F0900D377EF /* SenderViewController.swift */,
 			);
 			path = Sender;
+			sourceTree = "<group>";
+		};
+		93D7FE6F2129C18900D377EF /* MainSenderViews */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE762129C7A500D377EF /* Menu */,
+				93D7FE752129C79D00D377EF /* Reservations */,
+				93D7FE742129C78E00D377EF /* SearchAndMain */,
+			);
+			path = MainSenderViews;
+			sourceTree = "<group>";
+		};
+		93D7FE742129C78E00D377EF /* SearchAndMain */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE702129C1AC00D377EF /* MainSenderViewController.swift */,
+			);
+			path = SearchAndMain;
+			sourceTree = "<group>";
+		};
+		93D7FE752129C79D00D377EF /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reservations;
+			sourceTree = "<group>";
+		};
+		93D7FE762129C7A500D377EF /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE772129C7B200D377EF /* MenuViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		93DBBE35212568140054BD7D /* AbstractViewController */ = {
@@ -350,6 +392,8 @@
 		93FCEB102124149E00C16F1C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				93D7FE6D2129BBA500D377EF /* ColorsHepers.swift */,
+				93D7FE722129C43500D377EF /* NAvImage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -651,9 +695,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
+				93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */,
 				93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */,
+				93D7FE732129C43500D377EF /* NAvImage.swift in Sources */,
 				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
 				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
@@ -674,6 +721,7 @@
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
+				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
 				93FCEB15212414E300C16F1C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

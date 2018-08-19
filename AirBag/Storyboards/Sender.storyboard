@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1052" y="162.3688155922039"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Sender View Controller-->
         <scene sceneID="kzv-9d-a4B">
             <objects>
-                <viewController id="jBc-VZ-lZ0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainSenderViewController" id="jBc-VZ-lZ0" customClass="MainSenderViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7hh-QN-qqF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,9 +50,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <outlet property="tabBar" destination="DSl-s2-yiS" id="LkR-eN-AWo"/>
+                        <outlet property="mainTabBar" destination="DSl-s2-yiS" id="Q3l-EP-9Or"/>
                         <segue destination="2C3-cv-l7c" kind="relationship" relationship="viewControllers" id="UfF-S7-m0V"/>
                         <segue destination="l2N-7i-cxX" kind="relationship" relationship="viewControllers" id="mB0-qS-R0M"/>
                         <segue destination="i7Q-SX-uT7" kind="relationship" relationship="viewControllers" id="FrY-Ue-LjK"/>
@@ -62,11 +63,11 @@
             </objects>
             <point key="canvasLocation" x="-838" y="-170"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="A0m-ON-45G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2C3-cv-l7c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="EbR-2m-uge"/>
+                    <tabBarItem key="tabBarItem" id="EbR-2m-uge"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FdW-72-se9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -81,11 +82,11 @@
             </objects>
             <point key="canvasLocation" x="256.80000000000001" y="-586.05697151424295"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="2eA-AC-ofM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l2N-7i-cxX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="een-U1-OdE"/>
+                    <tabBarItem key="tabBarItem" title="" id="een-U1-OdE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bZd-hD-7Pa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -100,27 +101,112 @@
             </objects>
             <point key="canvasLocation" x="112.8" y="162.3688155922039"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="Cdz-oz-14n">
             <objects>
-                <viewController id="0AC-hh-wTS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="0AC-hh-wTS" customClass="MenuViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d3r-ac-vcL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tJ-wc-i0C">
+                                <rect key="frame" x="0.0" y="64" width="375" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUz-ZC-bs8">
+                                        <rect key="frame" x="8" y="10" width="359" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="beSenderAction:" destination="0AC-hh-wTS" eventType="touchUpInside" id="nNL-bE-R5w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-0u-vnM">
+                                        <rect key="frame" x="8" y="80" width="359" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="beCarrierAction:" destination="0AC-hh-wTS" eventType="touchUpInside" id="qcB-6K-N8h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ML-dc-5XD">
+                                        <rect key="frame" x="8" y="150" width="359" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="beRecieverAction:" destination="0AC-hh-wTS" eventType="touchUpInside" id="oh6-m1-6PP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="u9a-0u-vnM" firstAttribute="top" secondItem="IUz-ZC-bs8" secondAttribute="bottom" constant="40" id="4Nt-BC-AP4"/>
+                                    <constraint firstAttribute="height" constant="190" id="6Fr-Vd-ha0"/>
+                                    <constraint firstItem="u9a-0u-vnM" firstAttribute="trailing" secondItem="IUz-ZC-bs8" secondAttribute="trailing" id="Coq-em-Jfi"/>
+                                    <constraint firstItem="IUz-ZC-bs8" firstAttribute="leading" secondItem="3tJ-wc-i0C" secondAttribute="leading" constant="8" id="Ebi-2v-6W5"/>
+                                    <constraint firstItem="0ML-dc-5XD" firstAttribute="trailing" secondItem="u9a-0u-vnM" secondAttribute="trailing" id="HC5-L1-y9N"/>
+                                    <constraint firstAttribute="trailing" secondItem="IUz-ZC-bs8" secondAttribute="trailing" constant="8" id="MFX-TO-fcv"/>
+                                    <constraint firstItem="IUz-ZC-bs8" firstAttribute="top" secondItem="3tJ-wc-i0C" secondAttribute="top" constant="10" id="Tv5-Nd-N0d"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ML-dc-5XD" secondAttribute="bottom" constant="10" id="XVf-dZ-NIJ"/>
+                                    <constraint firstItem="u9a-0u-vnM" firstAttribute="leading" secondItem="IUz-ZC-bs8" secondAttribute="leading" id="nNR-Az-kkB"/>
+                                    <constraint firstItem="0ML-dc-5XD" firstAttribute="leading" secondItem="u9a-0u-vnM" secondAttribute="leading" id="zo3-A5-olW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQh-3n-BVN">
+                                <rect key="frame" x="0.0" y="304" width="375" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtG-2g-AKU">
+                                        <rect key="frame" x="8" y="30" width="359" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="notificationBtn:" destination="0AC-hh-wTS" eventType="touchUpInside" id="8cn-Av-kdD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQi-Q0-JbR">
+                                        <rect key="frame" x="8" y="130" width="359" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="logOutBtn:" destination="0AC-hh-wTS" eventType="touchUpInside" id="2VD-lU-geK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="0ZM-NH-BGh"/>
+                                    <constraint firstItem="dtG-2g-AKU" firstAttribute="leading" secondItem="MQh-3n-BVN" secondAttribute="leading" constant="8" id="6g4-ja-3F7"/>
+                                    <constraint firstItem="dtG-2g-AKU" firstAttribute="top" secondItem="MQh-3n-BVN" secondAttribute="top" constant="30" id="Nrq-zI-c3j"/>
+                                    <constraint firstAttribute="trailing" secondItem="dtG-2g-AKU" secondAttribute="trailing" constant="8" id="Pa9-oX-NaY"/>
+                                    <constraint firstAttribute="bottom" secondItem="fQi-Q0-JbR" secondAttribute="bottom" constant="30" id="ahB-ej-aXP"/>
+                                    <constraint firstItem="fQi-Q0-JbR" firstAttribute="trailing" secondItem="dtG-2g-AKU" secondAttribute="trailing" id="hhS-FB-6AS"/>
+                                    <constraint firstItem="fQi-Q0-JbR" firstAttribute="leading" secondItem="dtG-2g-AKU" secondAttribute="leading" id="m5O-pN-osK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3tJ-wc-i0C" firstAttribute="top" secondItem="fCe-4h-bPY" secondAttribute="top" id="C19-R1-5ee"/>
+                            <constraint firstItem="MQh-3n-BVN" firstAttribute="trailing" secondItem="fCe-4h-bPY" secondAttribute="trailing" id="DWw-dC-NTp"/>
+                            <constraint firstItem="3tJ-wc-i0C" firstAttribute="trailing" secondItem="fCe-4h-bPY" secondAttribute="trailing" id="Hcz-jQ-J7a"/>
+                            <constraint firstItem="MQh-3n-BVN" firstAttribute="top" secondItem="3tJ-wc-i0C" secondAttribute="bottom" constant="50" id="eBx-7t-bA7"/>
+                            <constraint firstItem="MQh-3n-BVN" firstAttribute="leading" secondItem="fCe-4h-bPY" secondAttribute="leading" id="fBd-2O-S7c"/>
+                            <constraint firstItem="3tJ-wc-i0C" firstAttribute="leading" secondItem="fCe-4h-bPY" secondAttribute="leading" id="lJW-Jg-b9M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fCe-4h-bPY"/>
                     </view>
                     <navigationItem key="navigationItem" id="cuA-dj-1GV"/>
+                    <connections>
+                        <outlet property="beCarrier" destination="u9a-0u-vnM" id="2H1-Pg-86d"/>
+                        <outlet property="beReciever" destination="0ML-dc-5XD" id="ymV-I4-hrU"/>
+                        <outlet property="beSender" destination="IUz-ZC-bs8" id="6I6-mR-jir"/>
+                        <outlet property="logOut" destination="fQi-Q0-JbR" id="sVf-7H-8zc"/>
+                        <outlet property="notifications" destination="dtG-2g-AKU" id="OIx-ov-1aU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyN-7H-9Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="1007.9460269865068"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="h7a-95-zNA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i7Q-SX-uT7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rpD-Gt-B0H"/>
+                    <tabBarItem key="tabBarItem" id="rpD-Gt-B0H"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KIf-cX-wLF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

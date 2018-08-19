@@ -6,7 +6,7 @@ class GetCategories: NSObject{
     class func GetCategories( completionHandler:@escaping([CategoryResp]?,String)->()){
         let url = Constants.WebService.baseUrl + Constants.WebService.getCategories
         
-        NetWorkConnection.fetchDataArray(url: url, httpmethod: .get, parameters: [:], completionHandler: {responseObject, error in
+        NetWorkConnection.fetchDataArray(url: url, httpmethod: .post, parameters: [:], completionHandler: {responseObject, error in
             
             if(error==nil)
             {
