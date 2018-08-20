@@ -14,7 +14,7 @@ class SuccessRepsonses : NSObject, NSCoding, Mappable{
 	var content : Content?
 	var errorMsgs : ErrorMsg?
 	var msg : String?
-
+///
 
 	class func newInstance(map: Map) -> Mappable?{
 		return SuccessRepsonses()
