@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     var navController: UINavigationController?
     var tabController: SenderViewController?
-
+    let userDefaults = UserDefaults.standard
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -123,6 +124,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("you're logged in")
                 let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
                 self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                let decoded  = userDefaults.object(forKey: "logResp") as! Data
+                let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+                print("access token ---> \(decodedUser.token)")
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = self.tabController
                 appDelegate.window?.makeKeyAndVisible()

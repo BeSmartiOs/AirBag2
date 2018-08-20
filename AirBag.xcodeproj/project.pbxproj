@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */; };
 		8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441829E565E497872B14807 /* Pods_AirBagUITests.framework */; };
+		93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */; };
+		93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */; };
+		93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A4212ABA1E0011BFD7 /* Content.swift */; };
+		93CE54A8212ABA1F0011BFD7 /* SuccessRepsonses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A5212ABA1E0011BFD7 /* SuccessRepsonses.swift */; };
 		93D7FE5D21295CD300D377EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D7FE5C21295CD300D377EF /* GoogleService-Info.plist */; };
 		93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE5F212971E500D377EF /* RegisterApi.swift */; };
 		93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D7FE622129755700D377EF /* SuccessResponse.swift */; };
@@ -69,6 +73,10 @@
 		3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.debug.xcconfig"; sourceTree = "<group>"; };
 		8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSenderTableViewCell.swift; sourceTree = "<group>"; };
+		93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMsg.swift; sourceTree = "<group>"; };
+		93CE54A4212ABA1E0011BFD7 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		93CE54A5212ABA1E0011BFD7 /* SuccessRepsonses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessRepsonses.swift; sourceTree = "<group>"; };
 		93D7FE5C21295CD300D377EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93D7FE5F212971E500D377EF /* RegisterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApi.swift; sourceTree = "<group>"; };
 		93D7FE622129755700D377EF /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
@@ -158,6 +166,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		93CE54A0212AA9020011BFD7 /* customCells */ = {
+			isa = PBXGroup;
+			children = (
+				93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */,
+			);
+			path = customCells;
+			sourceTree = "<group>";
+		};
 		93D7FE5E212971D300D377EF /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +186,9 @@
 		93D7FE612129754400D377EF /* SuccessResponse */ = {
 			isa = PBXGroup;
 			children = (
+				93CE54A4212ABA1E0011BFD7 /* Content.swift */,
+				93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */,
+				93CE54A5212ABA1E0011BFD7 /* SuccessRepsonses.swift */,
 				93D7FE622129755700D377EF /* SuccessResponse.swift */,
 				93D7FE66212996D200D377EF /* LoginResponse.swift */,
 			);
@@ -198,6 +217,7 @@
 		93D7FE742129C78E00D377EF /* SearchAndMain */ = {
 			isa = PBXGroup;
 			children = (
+				93CE54A0212AA9020011BFD7 /* customCells */,
 				93D7FE702129C1AC00D377EF /* MainSenderViewController.swift */,
 			);
 			path = SearchAndMain;
@@ -699,7 +719,9 @@
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
 				93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */,
+				93CE54A8212ABA1F0011BFD7 /* SuccessRepsonses.swift in Sources */,
 				93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */,
+				93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */,
 				93D7FE732129C43500D377EF /* NAvImage.swift in Sources */,
 				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
@@ -711,7 +733,9 @@
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
+				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */,
+				93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */,
 				93FCEB232124235700C16F1C /* UserTypes.swift in Sources */,
 				93FCEB18212415B500C16F1C /* RegisterationViewController.swift in Sources */,
 				93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */,

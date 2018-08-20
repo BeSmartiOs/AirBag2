@@ -22,9 +22,7 @@ class SenderViewController: UITabBarController {
         self.mainTabBar.items?[1].image = #imageLiteral(resourceName: "online-booking")
         self.mainTabBar.items?[2].title =   ConstantStrings.menu
         self.mainTabBar.items?[2].image = #imageLiteral(resourceName: "menu")
-
        print(self.view.frame.width)
-        
         // Do any additional setup after loading the view.
     }
 
@@ -54,11 +52,5 @@ class SenderViewController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
-    func customeCenterImage(){
-        let image : UIImage = UIImage(named: "footer.png")!
-        let imageView = UIImageView(frame: CGRect(x: 30, y:30, width: self.view.frame.width, height: 49))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = image
-        self.mainTabBar.backgroundImage = imageView.image
-    }
+   
 }

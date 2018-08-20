@@ -8,8 +8,15 @@
 
 import UIKit
 
-class MainSenderViewController: UIViewController {
+class MainSenderViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    
 
+    @IBOutlet weak var senderTableView: UITableView!
+    
+    @IBOutlet weak var filterBtn: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
@@ -33,13 +40,15 @@ class MainSenderViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func customeCenterImage(){
-        let image : UIImage = UIImage(named: "them_header.png")!
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 64))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = image
-        self.navigationItem.titleView = imageView
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.appBlue
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "senderCell", for: indexPath) as! MainSenderTableViewCell
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 190
     }
 }

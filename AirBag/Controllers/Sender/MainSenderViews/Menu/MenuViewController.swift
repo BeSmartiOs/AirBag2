@@ -58,13 +58,5 @@ class MenuViewController: UIViewController {
     
     @IBAction func notificationBtn(_ sender: Any) {
     }
-    func customeCenterImage(){
-        let image : UIImage = UIImage(named: "them_header.png")!
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 64))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = image
-        self.navigationItem.titleView = imageView
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.appBlue
-    }
+   
 }
