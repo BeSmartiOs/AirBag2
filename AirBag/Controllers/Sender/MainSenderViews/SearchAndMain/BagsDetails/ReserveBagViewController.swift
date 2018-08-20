@@ -18,8 +18,8 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
-        let rightBarButton = UIBarButtonItem(title: "Add Items", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addItems))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        setUpViews()
+      
         
         // Do any additional setup after loading the view.
     }
@@ -54,6 +54,8 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
         self.navigationController?.popToRootViewController(animated: true)
     }
     func setUpViews(){
+        let rightBarButton = UIBarButtonItem(title: "Add Items", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addItems))
+        self.navigationItem.rightBarButtonItem = rightBarButton
         self.reserveBag.setTitle(ConstantStrings.reserveBag, for: .normal)
         
     }
@@ -63,7 +65,7 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
         // Pass the selected object to the new view controller.
         
         if(segue.identifier == "goToAddItems"){
-            let destination = segue.destination as! ReserveBagViewController
+            let destination = segue.destination as! AddItemsInBagViewController
             
         }
     }
