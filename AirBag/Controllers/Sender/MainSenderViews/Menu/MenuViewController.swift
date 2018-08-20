@@ -21,6 +21,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
+        setUpsViews()
         // Do any additional setup after loading the view.
     }
 
@@ -53,10 +54,46 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func logOutBtn(_ sender: Any) {
+        self.createAlertLogout(title: ConstantStrings.confirmLogout)
     }
     
     
     @IBAction func notificationBtn(_ sender: Any) {
+    }
+    
+    func setUpsViews(){
+      self.beSender.setTitle(ConstantStrings.beSender, for: .normal)
+        self.beCarrier.setTitle(ConstantStrings.beCarrier, for: .normal)
+        self.beReciever.setTitle(ConstantStrings.beReciever, for: .normal)
+        
+        
+        self.notifications.setTitle(ConstantStrings.notifications, for: .normal)
+        self.logOut.setTitle(ConstantStrings.logOut, for: .normal)
+        
+    }
+    
+    func logOutFromApp(){
+        let idForUserDefaults = "logResp"
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: idForUserDefaults)
+        userDefaults.synchronize()
+        print(userDefaults.data(forKey: "logResp")?.count ?? 0)
+        
+                let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+                let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = mainViewController
+    }
+    
+    func createAlertLogout(title : String){
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+            self.logOutFromApp()
+        }))
+        alert.addAction(UIAlertAction(title:ConstantStrings.no , style: UIAlertActionStyle.destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
    
 }

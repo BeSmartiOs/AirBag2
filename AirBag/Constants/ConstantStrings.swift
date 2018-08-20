@@ -20,7 +20,7 @@ struct  ConstantStrings{
     static let numberOfTravels = "Optional(Number of traves)"
     static let chooseUser = "Choose User Type"
     static let login = "Login"
-    static let register = "Rgister"
+    static let register = "Register"
     static let dontHaveAccout = "Don't have account!"
     static let carrier = "Carrier"
     static let sender = "Sender"
@@ -28,6 +28,8 @@ struct  ConstantStrings{
     static let beCarrier = "Be a Carrier"
     static let beSender = "Be a Sender"
     static let beReciever = "Reciever"
+    static let logOut = "Logout"
+    static let notifications = "Notifications"
     static let registerationTitle = "Register new account"
     static let countries = "Choose Country"
     static let pleaseWait = "Please wait.."
@@ -52,4 +54,26 @@ struct  ConstantStrings{
     static let main = "Main"
     static let menu = "Menu"
     static let reservation = "Reservations"
+    
+    
+    static let departureText = "Departure"
+    static let DestinationText = "Destination"
+    static let dateText = "Departure Date"
+    static let timeText = "Time"
+    static let availableWeightText = "Available Weight"
+    static let pricePerKg = "Price Per Kg"
+    static let pricePerM3 = "Price Per M3"
+    static let flightNumber = "Flight Number"
+    static let airLine = "Air Line"
+    static let departureMob = "Departure Mobile"
+    static let restrictedCategories = "Restricted Categories"
+    static let bookBag = "Book Bag"
+     static let yes = "Yes"
+     static let no = "No"
+     static let confirmLogout = "Are you sure you want to logout?"
+    static let confirm = "Confirm"
+    static let reserveBag = "Reserve Bag"
+    
+    
+    
 }
