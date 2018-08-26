@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */; };
 		8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441829E565E497872B14807 /* Pods_AirBagUITests.framework */; };
+		930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */; };
+		930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930574FE21328F1000B6923F /* ChooseItemViewController.swift */; };
+		9305750321329DA500B6923F /* AvailableNormalBags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750221329DA500B6923F /* AvailableNormalBags.swift */; };
+		9305750521329DB600B6923F /* AvailableFeaturedBags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750421329DB600B6923F /* AvailableFeaturedBags.swift */; };
+		9305750721329DC200B6923F /* BagsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750621329DC200B6923F /* BagsResponse.swift */; };
+		9305750B21329E1D00B6923F /* GetAvailableBags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750A21329E1D00B6923F /* GetAvailableBags.swift */; };
+		9305750D2132A9F500B6923F /* BagsArr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750C2132A9F500B6923F /* BagsArr.swift */; };
+		930575102132B6A900B6923F /* BagInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750F2132B6A900B6923F /* BagInfo.swift */; };
+		930575122132B6B500B6923F /* BagRestriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575112132B6B500B6923F /* BagRestriction.swift */; };
+		930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575132132B6C500B6923F /* BagDetialsResp.swift */; };
+		930575162132B72E00B6923F /* BagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575152132B72E00B6923F /* BagDetails.swift */; };
 		93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C10212ABF8E0080E2B1 /* DottedView.swift */; };
 		93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */; };
 		93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */; };
@@ -77,6 +88,17 @@
 		3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.debug.xcconfig"; sourceTree = "<group>"; };
 		8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
+		930574FE21328F1000B6923F /* ChooseItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseItemViewController.swift; sourceTree = "<group>"; };
+		9305750221329DA500B6923F /* AvailableNormalBags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNormalBags.swift; sourceTree = "<group>"; };
+		9305750421329DB600B6923F /* AvailableFeaturedBags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableFeaturedBags.swift; sourceTree = "<group>"; };
+		9305750621329DC200B6923F /* BagsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagsResponse.swift; sourceTree = "<group>"; };
+		9305750A21329E1D00B6923F /* GetAvailableBags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAvailableBags.swift; sourceTree = "<group>"; };
+		9305750C2132A9F500B6923F /* BagsArr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagsArr.swift; sourceTree = "<group>"; };
+		9305750F2132B6A900B6923F /* BagInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagInfo.swift; sourceTree = "<group>"; };
+		930575112132B6B500B6923F /* BagRestriction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagRestriction.swift; sourceTree = "<group>"; };
+		930575132132B6C500B6923F /* BagDetialsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetialsResp.swift; sourceTree = "<group>"; };
+		930575152132B72E00B6923F /* BagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetails.swift; sourceTree = "<group>"; };
 		93653C10212ABF8E0080E2B1 /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetailsViewController.swift; sourceTree = "<group>"; };
 		93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBagViewController.swift; sourceTree = "<group>"; };
@@ -174,12 +196,61 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9305750021329D8700B6923F /* Bags */ = {
+			isa = PBXGroup;
+			children = (
+				9305750E2132B69500B6923F /* BagDetails */,
+				9305750121329D8F00B6923F /* SenderBags */,
+			);
+			path = Bags;
+			sourceTree = "<group>";
+		};
+		9305750121329D8F00B6923F /* SenderBags */ = {
+			isa = PBXGroup;
+			children = (
+				9305750221329DA500B6923F /* AvailableNormalBags.swift */,
+				9305750421329DB600B6923F /* AvailableFeaturedBags.swift */,
+				9305750621329DC200B6923F /* BagsResponse.swift */,
+				9305750C2132A9F500B6923F /* BagsArr.swift */,
+			);
+			path = SenderBags;
+			sourceTree = "<group>";
+		};
+		9305750821329E0300B6923F /* Sender */ = {
+			isa = PBXGroup;
+			children = (
+				9305750921329E0A00B6923F /* AvailableBags */,
+			);
+			path = Sender;
+			sourceTree = "<group>";
+		};
+		9305750921329E0A00B6923F /* AvailableBags */ = {
+			isa = PBXGroup;
+			children = (
+				9305750A21329E1D00B6923F /* GetAvailableBags.swift */,
+				930575152132B72E00B6923F /* BagDetails.swift */,
+			);
+			path = AvailableBags;
+			sourceTree = "<group>";
+		};
+		9305750E2132B69500B6923F /* BagDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9305750F2132B6A900B6923F /* BagInfo.swift */,
+				930575112132B6B500B6923F /* BagRestriction.swift */,
+				930575132132B6C500B6923F /* BagDetialsResp.swift */,
+			);
+			path = BagDetails;
+			sourceTree = "<group>";
+		};
 		93653C12212ABFFB0080E2B1 /* BagsDetails */ = {
 			isa = PBXGroup;
 			children = (
 				93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */,
 				93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */,
 				93EE800F212AFAD700F782E9 /* AddItemsInBagViewController.swift */,
+				930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */,
+				930574FE21328F1000B6923F /* ChooseItemViewController.swift */,
 			);
 			path = BagsDetails;
 			sourceTree = "<group>";
@@ -321,6 +392,7 @@
 		93F8FF652125625800E5DB84 /* ServiceHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				9305750821329E0300B6923F /* Sender */,
 				93D7FE5E212971D300D377EF /* LoginAndRegister */,
 				93DBBE3C21256D250054BD7D /* GetCategories */,
 				93F8FF69212562A900E5DB84 /* GetCountriesCities */,
@@ -489,6 +561,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9305750021329D8700B6923F /* Bags */,
 				93D7FE612129754400D377EF /* SuccessResponse */,
 				93DBBE4021256D890054BD7D /* LoginAndRegisteration */,
 			);
@@ -741,14 +814,18 @@
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
 				93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */,
 				93CE54A8212ABA1F0011BFD7 /* SuccessRepsonses.swift in Sources */,
+				930575102132B6A900B6923F /* BagInfo.swift in Sources */,
 				93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */,
 				93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */,
+				930575122132B6B500B6923F /* BagRestriction.swift in Sources */,
 				93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */,
 				93EE8010212AFAD700F782E9 /* AddItemsInBagViewController.swift in Sources */,
 				93D7FE732129C43500D377EF /* NAvImage.swift in Sources */,
 				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
+				930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */,
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
 				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
+				9305750B21329E1D00B6923F /* GetAvailableBags.swift in Sources */,
 				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
 				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
@@ -757,11 +834,16 @@
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
+				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
 				93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */,
+				930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */,
+				9305750D2132A9F500B6923F /* BagsArr.swift in Sources */,
 				93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */,
+				9305750321329DA500B6923F /* AvailableNormalBags.swift in Sources */,
 				93FCEB232124235700C16F1C /* UserTypes.swift in Sources */,
 				93FCEB18212415B500C16F1C /* RegisterationViewController.swift in Sources */,
 				93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */,
+				9305750721329DC200B6923F /* BagsResponse.swift in Sources */,
 				93DBBE47212570B70054BD7D /* ChooseAddressCityViewController.swift in Sources */,
 				93DBBE45212570A70054BD7D /* ChooseAddressCountriesViewController.swift in Sources */,
 				93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */,
@@ -769,6 +851,8 @@
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
+				9305750521329DB600B6923F /* AvailableFeaturedBags.swift in Sources */,
+				930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */,
 				93FCEB15212414E300C16F1C /* Constants.swift in Sources */,
 				93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */,
 			);

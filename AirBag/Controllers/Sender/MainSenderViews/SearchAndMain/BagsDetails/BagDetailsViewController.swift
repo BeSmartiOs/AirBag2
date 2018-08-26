@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class BagDetailsViewController: UIViewController {
 
@@ -56,12 +57,15 @@ class BagDetailsViewController: UIViewController {
     
     @IBOutlet weak var bookBage: UIButton!
     
+     var bagId = 0
+    let hud = JGProgressHUD(style: .light)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
+          hud.textLabel.text = ConstantStrings.pleaseWait
         setUpViews()
-      
+      self.getBagDetails(bagId:  self.bagId)
         // Do any additional setup after loading the view.
     }
 
@@ -106,6 +110,55 @@ class BagDetailsViewController: UIViewController {
             
         }
      }
-    
+    func getBagDetails(bagId : Int){
+        hud.show(in: self.view)
+        BagDetails.GetBagDetails(bagId: bagId) { (bagDetailsResp, error) in
+            self.hud.dismiss()
+            if(bagDetailsResp?.bagInfo?.count != 0){
+                for bagInfo in (bagDetailsResp?.bagInfo)!{
+                    let view = bagInfo.views
+                    let viewFinal = String(describing: view!)
+                    self.numberOfSeens.text = viewFinal + " seen"
+                    self.departureLabel.text = bagInfo.departureName
+                     self.destinationLabel.text = bagInfo.destinationName
+                    let dateTime = bagInfo.departureDatetime?.components(separatedBy: " ")
+                    
+                    self.dateLabel.text   = dateTime?[0]
+                    self.timeLabel.text   = dateTime?[1]
+                
+                    
+                    let price = bagInfo.kgPrice
+                    let priceFinal = String(describing: price!)
+                    self.priceKGLabel.text = "$" + priceFinal
+                    
+                    
+                    let priceM3 = bagInfo.kgPrice
+                    let priceFinalM3 = String(describing: priceM3!)
+                    self.priceM3Label.text = "$" + priceFinalM3
+                    
+                    let weight = bagInfo.availableWeight
+                    let weightFinal = String(describing: weight!)
+                    self.weightLabel.text = weightFinal
+                    
+                    
+                    
+                    self.flightNumLabel.text = bagInfo.flightNumber
+      
+                    self.airLineKGLabel.text = bagInfo.airlineName
+                    
+                     self.departureMobLabel.text = bagInfo.departureMobile
+                }
+                
+                var arr = [String]()
+                for bagDetailss in (bagDetailsResp?.bagRestrictions)!{
+                    arr.append(bagDetailss.name!)
+                    
+                }
+                let categoryRest  = arr.joined(separator: ",")
+                self.restirectedCategories.text = categoryRest
+            }
+            
+        }
+    }
     
 }

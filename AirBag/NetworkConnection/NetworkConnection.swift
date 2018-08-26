@@ -63,4 +63,46 @@ class NetWorkConnection: NSObject {
             }
         }
     }
+    
+    static func dataWithHeader( url:String,httpmethod:HTTPMethod,aceessToken : String, parameters:NSDictionary,completionHandler: @escaping (NSDictionary?, String?) -> ()){
+        
+        let authorization = ["Authorization" : "Bearer \(aceessToken)"]
+        
+        Alamofire.request(url, method: httpmethod, parameters: parameters as? Parameters, encoding: JSONEncoding.default ,headers: authorization ).responseJSON { response in
+            print("Request  \(String(describing: response.request))")
+            print("RESPONSE \(String(describing: response.result.value))")
+            print("RESPONSE \(response.result)")
+            print("RESPONSE \(response)")
+            switch response.result {
+            case .success:
+                completionHandler(response.result.value as! NSDictionary?,nil)
+                break
+            case .failure:
+                completionHandler([:],"no_internet")
+                break
+            }
+        }
+    }
+
+    static func dataGetWithHeader( url:String,httpmethod:HTTPMethod,aceessToken : String,completionHandler: @escaping (NSDictionary?, String?) -> ()){
+        
+        let authorization = ["Authorization" : "Bearer \(aceessToken)"]
+        
+        Alamofire.request(url, method: httpmethod, parameters: nil, encoding: JSONEncoding.default ,headers: authorization ).responseJSON { response in
+            print("Request  \(String(describing: response.request))")
+            print("RESPONSE \(String(describing: response.result.value))")
+            print("RESPONSE \(response.result)")
+            print("RESPONSE \(response)")
+            switch response.result {
+            case .success:
+                completionHandler(response.result.value as! NSDictionary?,nil)
+                break
+            case .failure:
+                completionHandler([:],"no_internet")
+                break
+            }
+        }
+    }
+
+    
 }

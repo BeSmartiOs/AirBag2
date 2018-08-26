@@ -23,6 +23,8 @@ struct Constants{
         static let getCities = "/cities/"
         static let register = "/register"
         static let login = "/login"
+         static let availableBags = "/availableBags"
+        static let bagInfo = "/bagInfo"
         
     }
     
