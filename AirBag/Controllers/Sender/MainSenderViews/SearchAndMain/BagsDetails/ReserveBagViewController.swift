@@ -8,15 +8,18 @@
 
 import UIKit
 
+var items = [BagItems]()
+
 class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
 
     @IBOutlet weak var reservedTableView: UITableView!
     @IBOutlet weak var reserveBag: UIButton!
     
-    
+    var bagId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
         customeCenterImage()
         setUpViews()
       
@@ -30,16 +33,23 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
     @objc func addItems(){
         performSegue(withIdentifier: "goToAddItems", sender: self)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+//        if(items.count == 0){
+            return 0
+//        }else{
+//            return items.count
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "senderCell", for: indexPath) as! MainSenderTableViewCell
+      //  cell.fromLabel.text = items[indexPath.row].descripItem
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,7 +76,7 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
         
         if(segue.identifier == "goToAddItems"){
             let destination = segue.destination as! AddItemsInBagViewController
-            
+               destination.bagId = self.bagId
         }
     }
 }

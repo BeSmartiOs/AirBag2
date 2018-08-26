@@ -107,7 +107,7 @@ class BagDetailsViewController: UIViewController {
         
         if(segue.identifier == "goToReserveBag"){
             let destination = segue.destination as! ReserveBagViewController
-            
+            destination.bagId = self.bagId
         }
      }
     func getBagDetails(bagId : Int){

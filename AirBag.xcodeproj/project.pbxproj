@@ -20,6 +20,7 @@
 		930575122132B6B500B6923F /* BagRestriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575112132B6B500B6923F /* BagRestriction.swift */; };
 		930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575132132B6C500B6923F /* BagDetialsResp.swift */; };
 		930575162132B72E00B6923F /* BagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575152132B72E00B6923F /* BagDetails.swift */; };
+		930575192132C89800B6923F /* BagItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575182132C89800B6923F /* BagItems.swift */; };
 		93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C10212ABF8E0080E2B1 /* DottedView.swift */; };
 		93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */; };
 		93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */; };
@@ -99,6 +100,7 @@
 		930575112132B6B500B6923F /* BagRestriction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagRestriction.swift; sourceTree = "<group>"; };
 		930575132132B6C500B6923F /* BagDetialsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetialsResp.swift; sourceTree = "<group>"; };
 		930575152132B72E00B6923F /* BagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetails.swift; sourceTree = "<group>"; };
+		930575182132C89800B6923F /* BagItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagItems.swift; sourceTree = "<group>"; };
 		93653C10212ABF8E0080E2B1 /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetailsViewController.swift; sourceTree = "<group>"; };
 		93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBagViewController.swift; sourceTree = "<group>"; };
@@ -236,11 +238,20 @@
 		9305750E2132B69500B6923F /* BagDetails */ = {
 			isa = PBXGroup;
 			children = (
+				930575172132C88300B6923F /* BagItems */,
 				9305750F2132B6A900B6923F /* BagInfo.swift */,
 				930575112132B6B500B6923F /* BagRestriction.swift */,
 				930575132132B6C500B6923F /* BagDetialsResp.swift */,
 			);
 			path = BagDetails;
+			sourceTree = "<group>";
+		};
+		930575172132C88300B6923F /* BagItems */ = {
+			isa = PBXGroup;
+			children = (
+				930575182132C89800B6923F /* BagItems.swift */,
+			);
+			path = BagItems;
 			sourceTree = "<group>";
 		};
 		93653C12212ABFFB0080E2B1 /* BagsDetails */ = {
@@ -829,6 +840,7 @@
 				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
 				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
+				930575192132C89800B6923F /* BagItems.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,

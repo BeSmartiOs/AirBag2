@@ -43,6 +43,8 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
     let hud = JGProgressHUD(style: .light)
     var isTableVisible = false
      var isImageVisible = false
+    var itemsToAdd : BagItems?
+     var bagId = 0
     //var categoriesResp : [CountriesResp]?
     
     
@@ -101,6 +103,49 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
     
     @IBAction func addItemsAction(_ sender: Any) {
         print("Add")
+        if let favorites = UserDefaults.standard.array(forKey: "myCart") {
+            if favorites.count == 0 {
+                
+                
+            } else {
+//                var cart: [[String: Any]] = []
+//                cart.append(["name": "A", "price": 19.99, "qty": 1])
+//
+//
+//                UserDefaults.standard.removeObject(forKey: "myCart")
+//                UserDefaults.standard.set(cart, forKey: "myCart")
+//
+//                if let loadedCart = UserDefaults.standard.array(forKey: "myCart") as? [[String: Any]] {
+//                    print(loadedCart)  // [[price: 19.99, qty: 1, name: A], [price: 4.99, qty: 2, name: B]]"
+//                    for item in loadedCart {
+//                        print(item["name"]  as! String)    // A, B
+//                        print(item["price"] as! Double)    // 19.99, 4.99
+//                        print(item["qty"]   as! Int)       // 1, 2
+//                    }
+//                }
+                 let userDefaults = UserDefaults.standard
+                var loadedCart = userDefaults.array(forKey: "myCart") as? [[String: Any]]
+                loadedCart?.append(["name": widthText.text!, "price": 19.99, "qty": 1])
+                                userDefaults.removeObject(forKey: "myCart")
+                                userDefaults.set(loadedCart, forKey: "myCart")
+               userDefaults.synchronize()
+                for item in loadedCart! {
+                                            print(item["name"]  as! String)    // A, B
+                                            print(item["price"] as! Double)    // 19.99, 4.99
+                                            print(item["qty"]   as! Int)       // 1, 2
+                                        }
+            }
+        }else{
+            var cart: [[String: Any]] = []
+            cart.append(["name": "A", "price": 19.99, "qty": 1])
+            
+            
+            
+            UserDefaults.standard.set(cart, forKey: "myCart")
+        }
+       
+        //self.navigationController?.popViewController(animated: true)
+        
     }
     @IBAction func uploadImg(_ sender: Any) {
         UIView.animate(withDuration: 0.5) {
@@ -113,9 +158,30 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.view.layoutIfNeeded()
         }
+        
+//
+//        let jsonText = "{\"first_name\": [\"Sergey\" , \"Sergey\"] , \"first_name\":\"Sergey\"}"
+//        var dictonary:[[String:AnyObject]]?
+//
+//        if let data = jsonText.data(using: String.Encoding.utf8) {
+//
+//            do {
+//                dictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [[String:AnyObject]]
+//
+//                if let myDictionary = dictonary
+//                {
+//                    print(myDictionary.count)
+//                }
+//            } catch let error as NSError {
+//                print(error)
+//            }
+//        }
     }
     
     @IBAction func chooseCategory(_ sender: Any) {
+//        let arrayOfDictionaries: [[String:AnyObject]] = [["abc":123 as AnyObject, "def": "ggg" as AnyObject, "xyz": true as AnyObject],["abc":456 as AnyObject, "def": "hhh" as AnyObject, "xyz": false as AnyObject]]
+//
+//        print(arrayOfDictionaries.toJSONString())
     }
     @IBAction func chooseRecievers(_ sender: Any) {
         
@@ -143,3 +209,15 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         
     }
 }
+//extension Collection where Iterator.Element == [String:AnyObject] {
+//    func toJSONString(options: JSONSerialization.WritingOptions = .prettyPrinted) -> String {
+//        if let arr = self as? [[String:AnyObject]],
+//            let dat = try? JSONSerialization.data(withJSONObject: arr, options: options),
+//            let str = String(data: dat, encoding: String.Encoding.utf8) {
+//            return str
+//        }
+//        return "[]"
+//    }
+//}
+
+
