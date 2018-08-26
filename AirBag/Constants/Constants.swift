@@ -25,6 +25,8 @@ struct Constants{
         static let login = "/login"
          static let availableBags = "/availableBags"
         static let bagInfo = "/bagInfo"
+         static let getTransactions = "/currentTransactions"
+        
         
     }
     

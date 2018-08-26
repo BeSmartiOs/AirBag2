@@ -103,7 +103,7 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
     
     @IBAction func addItemsAction(_ sender: Any) {
         print("Add")
-        if let favorites = UserDefaults.standard.array(forKey: "myCart") {
+        if let favorites = UserDefaults.standard.array(forKey: "\(self.bagId)") {
             if favorites.count == 0 {
                 
                 
@@ -124,10 +124,10 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
 //                    }
 //                }
                  let userDefaults = UserDefaults.standard
-                var loadedCart = userDefaults.array(forKey: "myCart") as? [[String: Any]]
+                var loadedCart = userDefaults.array(forKey: "\(self.bagId)") as? [[String: Any]]
                 loadedCart?.append(["name": widthText.text!, "price": 19.99, "qty": 1])
-                                userDefaults.removeObject(forKey: "myCart")
-                                userDefaults.set(loadedCart, forKey: "myCart")
+                    userDefaults.removeObject(forKey: "\(self.bagId)")
+                    userDefaults.set(loadedCart, forKey: "\(self.bagId)")
                userDefaults.synchronize()
                 for item in loadedCart! {
                                             print(item["name"]  as! String)    // A, B
@@ -141,7 +141,7 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
             
             
             
-            UserDefaults.standard.set(cart, forKey: "myCart")
+            UserDefaults.standard.set(cart, forKey: "\(self.bagId)")
         }
        
         //self.navigationController?.popViewController(animated: true)

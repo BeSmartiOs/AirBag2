@@ -24,6 +24,14 @@
 		93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C10212ABF8E0080E2B1 /* DottedView.swift */; };
 		93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */; };
 		93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */; };
+		938955CD2132F220001725E9 /* ReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955CC2132F220001725E9 /* ReservationsViewController.swift */; };
+		938955D02132F2EC001725E9 /* GetReservations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955CF2132F2EC001725E9 /* GetReservations.swift */; };
+		938955D32132F37C001725E9 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D22132F37C001725E9 /* Transactions.swift */; };
+		938955D52132F385001725E9 /* TransactionsRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D42132F385001725E9 /* TransactionsRes.swift */; };
+		938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D62132F8EC001725E9 /* TransactionDetailsViewController.swift */; };
+		938955D92132FEA1001725E9 /* TransactionItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D82132FEA1001725E9 /* TransactionItemsTableViewController.swift */; };
+		938955DC2133017E001725E9 /* TransactionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955DB2133017E001725E9 /* TransactionDetails.swift */; };
+		938955DE21330189001725E9 /* TransactionDetailsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955DD21330189001725E9 /* TransactionDetailsResp.swift */; };
 		93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */; };
 		93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */; };
 		93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A4212ABA1E0011BFD7 /* Content.swift */; };
@@ -104,6 +112,14 @@
 		93653C10212ABF8E0080E2B1 /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetailsViewController.swift; sourceTree = "<group>"; };
 		93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBagViewController.swift; sourceTree = "<group>"; };
+		938955CC2132F220001725E9 /* ReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewController.swift; sourceTree = "<group>"; };
+		938955CF2132F2EC001725E9 /* GetReservations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReservations.swift; sourceTree = "<group>"; };
+		938955D22132F37C001725E9 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		938955D42132F385001725E9 /* TransactionsRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRes.swift; sourceTree = "<group>"; };
+		938955D62132F8EC001725E9 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		938955D82132FEA1001725E9 /* TransactionItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemsTableViewController.swift; sourceTree = "<group>"; };
+		938955DB2133017E001725E9 /* TransactionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetails.swift; sourceTree = "<group>"; };
+		938955DD21330189001725E9 /* TransactionDetailsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsResp.swift; sourceTree = "<group>"; };
 		93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSenderTableViewCell.swift; sourceTree = "<group>"; };
 		93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMsg.swift; sourceTree = "<group>"; };
 		93CE54A4212ABA1E0011BFD7 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
@@ -221,6 +237,7 @@
 		9305750821329E0300B6923F /* Sender */ = {
 			isa = PBXGroup;
 			children = (
+				938955CE2132F2DB001725E9 /* Reservations */,
 				9305750921329E0A00B6923F /* AvailableBags */,
 			);
 			path = Sender;
@@ -264,6 +281,33 @@
 				930574FE21328F1000B6923F /* ChooseItemViewController.swift */,
 			);
 			path = BagsDetails;
+			sourceTree = "<group>";
+		};
+		938955CE2132F2DB001725E9 /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+				938955CF2132F2EC001725E9 /* GetReservations.swift */,
+			);
+			path = Reservations;
+			sourceTree = "<group>";
+		};
+		938955D12132F369001725E9 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				938955DA21330163001725E9 /* Details */,
+				938955D22132F37C001725E9 /* Transactions.swift */,
+				938955D42132F385001725E9 /* TransactionsRes.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		938955DA21330163001725E9 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				938955DB2133017E001725E9 /* TransactionDetails.swift */,
+				938955DD21330189001725E9 /* TransactionDetailsResp.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		93CE54A0212AA9020011BFD7 /* customCells */ = {
@@ -327,6 +371,9 @@
 		93D7FE752129C79D00D377EF /* Reservations */ = {
 			isa = PBXGroup;
 			children = (
+				938955CC2132F220001725E9 /* ReservationsViewController.swift */,
+				938955D62132F8EC001725E9 /* TransactionDetailsViewController.swift */,
+				938955D82132FEA1001725E9 /* TransactionItemsTableViewController.swift */,
 			);
 			path = Reservations;
 			sourceTree = "<group>";
@@ -572,6 +619,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				938955D12132F369001725E9 /* Transactions */,
 				9305750021329D8700B6923F /* Bags */,
 				93D7FE612129754400D377EF /* SuccessResponse */,
 				93DBBE4021256D890054BD7D /* LoginAndRegisteration */,
@@ -821,6 +869,7 @@
 			files = (
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
+				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
 				93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */,
@@ -828,6 +877,7 @@
 				930575102132B6A900B6923F /* BagInfo.swift in Sources */,
 				93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */,
 				93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */,
+				938955CD2132F220001725E9 /* ReservationsViewController.swift in Sources */,
 				930575122132B6B500B6923F /* BagRestriction.swift in Sources */,
 				93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */,
 				93EE8010212AFAD700F782E9 /* AddItemsInBagViewController.swift in Sources */,
@@ -842,13 +892,17 @@
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
 				930575192132C89800B6923F /* BagItems.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
+				938955D92132FEA1001725E9 /* TransactionItemsTableViewController.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
+				938955D32132F37C001725E9 /* Transactions.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
 				93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */,
 				930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */,
+				938955DC2133017E001725E9 /* TransactionDetails.swift in Sources */,
+				938955D02132F2EC001725E9 /* GetReservations.swift in Sources */,
 				9305750D2132A9F500B6923F /* BagsArr.swift in Sources */,
 				93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */,
 				9305750321329DA500B6923F /* AvailableNormalBags.swift in Sources */,
@@ -858,7 +912,9 @@
 				9305750721329DC200B6923F /* BagsResponse.swift in Sources */,
 				93DBBE47212570B70054BD7D /* ChooseAddressCityViewController.swift in Sources */,
 				93DBBE45212570A70054BD7D /* ChooseAddressCountriesViewController.swift in Sources */,
+				938955DE21330189001725E9 /* TransactionDetailsResp.swift in Sources */,
 				93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */,
+				938955D52132F385001725E9 /* TransactionsRes.swift in Sources */,
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
