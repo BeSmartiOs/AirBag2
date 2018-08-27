@@ -12,10 +12,10 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
     
     
 
-    @IBOutlet weak var senderName: UILabel!
-    @IBOutlet weak var senderMob: UILabel!
+    @IBOutlet weak var carrierName: UILabel!
     @IBOutlet weak var recieverName: UILabel!
-    @IBOutlet weak var recieverMob: UILabel!
+    @IBOutlet weak var dateTime: UILabel!
+    @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var departure: UILabel!
     @IBOutlet weak var destination: UILabel!
     @IBOutlet weak var transactionPrice: UILabel!
@@ -45,6 +45,9 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemTransactions", for: indexPath) as! TransactionItemsTableViewCell
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
     /*
     // MARK: - Navigation
 
@@ -61,12 +64,21 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
             if(error == ""){
                 self.transactionsDetails = transactions
                 for details in (transactions?.transaction)!{
-                    self.senderName.text = details.carrierName
+                    self.carrierName.text = details.carrierName
                     self.recieverName.text = details.receiverName
                     self.departure.text = details.departure
                     self.destination.text = details.destination
-//                    self.transactionPrice.text = details.transactionPrice
-//                    self.senderName.text = details.reservedWeight
+                    
+                    let price = details.transactionPrice
+                    let priceFinal = String(describing: price!)
+                    self.transactionPrice.text = "$" + priceFinal
+                    
+                    let weight = details.reservedWeight
+                    let weightFinal = String(describing: weight!)
+                    self.weight.text = weightFinal
+
+                   
+                    self.dateTime.text = details.departureDatetime
              
                 }
             

@@ -21,14 +21,16 @@ class ChooseItemViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet weak var chooseItemTableView: UITableView!
     weak var delegate: ChooseItemClass?
     var choosenItemName = ""
-    var choosenItemId = 0  
+    var choosenItemId = 0
+       var choosenCatId = 0
+    var itemsResponses : [ItemsInCategResp]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-      //  self.getCities(id: self.departureCountryId!)
+        self.getItems(id: self.choosenCatId)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,13 +40,17 @@ class ChooseItemViewController: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
-            return 1
+        if(self.itemsResponses != nil ){
+            return (self.itemsResponses?.count)!
+        }else{
+            return 0
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCitiesCell", for: indexPath) as! ChooseCtitesTableViewCell
-       
+        cell.countryCity.text = self.itemsResponses?[indexPath.row].name
         return cell
     }
     
@@ -53,7 +59,7 @@ class ChooseItemViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        self.delegate?.chooseDepartureCity(self.cityResp?[indexPath.row].name, self.cityResp?[indexPath.row].id)
+        self.delegate?.ChooseItem(self.itemsResponses?[indexPath.row].name, self.itemsResponses?[indexPath.row].id)
     }
     
     
@@ -62,11 +68,12 @@ class ChooseItemViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     
     
-    func getCities(id :Int){
-        GetCountriesCities.GetCities(id: id) { (cities, error) in
+    func getItems(id :Int){
+        GetCategories.GetCategoriesItems(catId: id) { (items, error) in
             if(error == ""){
-                self.chooseItemTableView.reloadData()
                 
+                self.itemsResponses = items
+                self.chooseItemTableView.reloadData()
             }
         }
         

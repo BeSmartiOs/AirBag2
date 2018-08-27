@@ -57,9 +57,9 @@ class BagDetailsViewController: UIViewController {
     
     @IBOutlet weak var bookBage: UIButton!
     
-     var bagId = 0
+    var bagId = 0
     let hud = JGProgressHUD(style: .light)
-    
+    var currentBag : BagDetialsResp?
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
@@ -108,6 +108,7 @@ class BagDetailsViewController: UIViewController {
         if(segue.identifier == "goToReserveBag"){
             let destination = segue.destination as! ReserveBagViewController
             destination.bagId = self.bagId
+            destination.currentBag  = self.currentBag
         }
      }
     func getBagDetails(bagId : Int){
@@ -115,6 +116,7 @@ class BagDetailsViewController: UIViewController {
         BagDetails.GetBagDetails(bagId: bagId) { (bagDetailsResp, error) in
             self.hud.dismiss()
             if(bagDetailsResp?.bagInfo?.count != 0){
+                self.currentBag = bagDetailsResp
                 for bagInfo in (bagDetailsResp?.bagInfo)!{
                     let view = bagInfo.views
                     let viewFinal = String(describing: view!)

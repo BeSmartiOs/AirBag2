@@ -10,16 +10,17 @@ import UIKit
 import JGProgressHUD
 
 //MARK:- Global
-var choosenCategoryName = ""
+var choosenCategoryNameGlobal = ""
 var choosenCategoryId = 0
-var choosenItemName = ""
-var choosenItemId = 0
+var choosenItemNameGlobal = ""
+var choosenItemIdGlobal = 0
 
 
-class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
   
     
 
+    @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var weightText: UITextField!
     @IBOutlet weak var weightLabel : UILabel!
     @IBOutlet weak var heightText: UITextField!
@@ -39,22 +40,32 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var addItems: UIButton!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var itemCatName: UILabel!
     
     let hud = JGProgressHUD(style: .light)
     var isTableVisible = false
-     var isImageVisible = false
+    var isImageVisible = false
     var itemsToAdd : BagItems?
-     var bagId = 0
-    //var categoriesResp : [CountriesResp]?
-    
-    
-    
+    var bagId = 0
+    var weight : Double?
+    var height : Double?
+    var width : Double?
+    var length : Double?
+    var imageString : String?
+    var descriptionString : String?
+    var recieverId = 0
+    var recieverName = ""
+    var itemId = 0
+    var categoryName : String?
+    var itemNameString : String?
+    var recieversUsers : [UsersResp]?
+    var currentBag : BagDetialsResp?
     override func viewDidLoad() {
         super.viewDidLoad()
         hud.textLabel.text = ConstantStrings.pleaseWait
         tableViewHeight.constant = 0
-        imageHeight.constant = 0
         recievers.backgroundColor = UIColor.clear
+        getRecievers()
         // Do any additional setup after loading the view.
     }
 
@@ -62,20 +73,18 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        if(choosenItemIdGlobal != 0){
+         self.itemCatName.text = choosenCategoryNameGlobal + " , " + choosenItemNameGlobal
+        }
     }
-    */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if(self.recieversUsers != nil ){
+            return (self.recieversUsers?.count)!
+        }else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,104 +93,139 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
             cell = UITableViewCell(style: .default, reuseIdentifier: "userType")
         }
         cell?.backgroundColor = UIColor.clear
-        cell?.textLabel?.text = "ii"
+        cell?.textLabel?.text = self.recieversUsers?[indexPath.row].nickname
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        self.userType = types[indexPath.row].typeInt!
-//        chooseUsersBtn.setTitle("User Selected: \(types[indexPath.row].typeString!)", for: .normal)
+        self.recieverId = (self.recieversUsers?[indexPath.row].id)!
+        self.recieverName = (self.recieversUsers?[indexPath.row].nickname)!
+        choosenReciever.setTitle("User Selected: \(self.recieverName)", for: .normal)
         UIView.animate(withDuration: 0.5) {
             self.tableViewHeight.constant = 0
             self.isTableVisible = false
             self.view.layoutIfNeeded()
         }
-//        print(self.userType)
+        print( self.recieverId)
         
     }
     
     
     @IBAction func addItemsAction(_ sender: Any) {
         print("Add")
-        if let favorites = UserDefaults.standard.array(forKey: "\(self.bagId)") {
-            if favorites.count == 0 {
-                
-                
-            } else {
-//                var cart: [[String: Any]] = []
-//                cart.append(["name": "A", "price": 19.99, "qty": 1])
-//
-//
-//                UserDefaults.standard.removeObject(forKey: "myCart")
-//                UserDefaults.standard.set(cart, forKey: "myCart")
-//
-//                if let loadedCart = UserDefaults.standard.array(forKey: "myCart") as? [[String: Any]] {
-//                    print(loadedCart)  // [[price: 19.99, qty: 1, name: A], [price: 4.99, qty: 2, name: B]]"
-//                    for item in loadedCart {
-//                        print(item["name"]  as! String)    // A, B
-//                        print(item["price"] as! Double)    // 19.99, 4.99
-//                        print(item["qty"]   as! Int)       // 1, 2
-//                    }
-//                }
-                 let userDefaults = UserDefaults.standard
-                var loadedCart = userDefaults.array(forKey: "\(self.bagId)") as? [[String: Any]]
-                loadedCart?.append(["name": widthText.text!, "price": 19.99, "qty": 1])
-                    userDefaults.removeObject(forKey: "\(self.bagId)")
-                    userDefaults.set(loadedCart, forKey: "\(self.bagId)")
-               userDefaults.synchronize()
-                for item in loadedCart! {
-                                            print(item["name"]  as! String)    // A, B
-                                            print(item["price"] as! Double)    // 19.99, 4.99
-                                            print(item["qty"]   as! Int)       // 1, 2
-                                        }
-            }
+        
+        if(self.recieverId == 0 || self.widthText.text == "" || self.heightText.text == "" || self.weightText.text == "" || self.lengthText.text == "" || self.itemId == 0 || self.itemName.text == "" ){
+            self.creatAlert(tite: ConstantStrings.pleaseFillRequired)
         }else{
-            var cart: [[String: Any]] = []
-            cart.append(["name": "A", "price": 19.99, "qty": 1])
-            
-            
-            
-            UserDefaults.standard.set(cart, forKey: "\(self.bagId)")
-        }
-       
-        //self.navigationController?.popViewController(animated: true)
-        
-    }
-    @IBAction func uploadImg(_ sender: Any) {
-        UIView.animate(withDuration: 0.5) {
-            if self.isImageVisible == false {
-                self.isImageVisible = true
-                self.imageHeight.constant = 44.0 * 3.0
-            } else {
-                self.imageHeight.constant = 0
-                self.isImageVisible = false
+           
+            if(AbstractViewController.validateNum(number: self.heightText.text!)){
+                print("num yes ")
+                self.itemNameString = self.itemName.text
+                self.height = Double(self.heightText.text ?? "") ?? 0.0
+                self.weight = Double(self.weightText.text ?? "") ?? 0.0
+                self.width = Double(self.widthText.text ?? "") ?? 0.0
+                self.length = Double(self.lengthText.text ?? "") ?? 0.0
+                    if(self.uploadedImg.image != nil ){
+                        let imageData = UIImageJPEGRepresentation(self.uploadedImg.image!, 0.4)
+                    
+                        let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
+                        self.imageString = base64String!
+                        print(base64String ?? "")
+                    }else{
+                        self.imageString = ""
+                    }
+                    if(self.addDescriptionTextView.text == "" ){
+                    self.descriptionString = self.addDescriptionTextView.text
+                    }else{
+                        self.descriptionString = ""
+                }
+                
+                self.addToDefaults(width: self.width!, height: self.height!, weight: self.weight!, length: self.length!, recId: self.recieverId, itemId: self.itemId, image: self.imageString!, descrip: self.descriptionString!, itemName: self.itemNameString!, recName: self.recieverName)
+                
+                
+            }else{
+                self.creatAlert(tite: "Please enter valid Weight/Height/Width/Length")
             }
-            self.view.layoutIfNeeded()
+           
+            
+           
+            
+            
         }
+    
+    }
+    func addToDefaults(width: Double , height: Double,weight: Double,length: Double,recId: Int,itemId : Int, image: String,descrip: String,itemName : String, recName : String){
+        print(self.bagId)
         
-//
-//        let jsonText = "{\"first_name\": [\"Sergey\" , \"Sergey\"] , \"first_name\":\"Sergey\"}"
-//        var dictonary:[[String:AnyObject]]?
-//
-//        if let data = jsonText.data(using: String.Encoding.utf8) {
-//
-//            do {
-//                dictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [[String:AnyObject]]
-//
-//                if let myDictionary = dictonary
-//                {
-//                    print(myDictionary.count)
-//                }
-//            } catch let error as NSError {
-//                print(error)
-//            }
-//        }
+                if let favorites = UserDefaults.standard.array(forKey: "\(self.bagId)") {
+                    if favorites.count == 0 {
+        
+        
+                    } else {
+
+                         let userDefaults = UserDefaults.standard
+                        var loadedCart = userDefaults.array(forKey: "\(self.bagId)") as? [[String: Any]]
+                        loadedCart?.append(["width": width, "height": height, "weight": weight, "length" : length, "recieverId" : recId, "itemId" : choosenItemIdGlobal, "image" : image , "description" : descrip, "itemName" : itemName, "recieverName" : recName])
+                            userDefaults.removeObject(forKey: "\(self.bagId)")
+                            userDefaults.set(loadedCart, forKey: "\(self.bagId)")
+                       userDefaults.synchronize()
+                        for item in loadedCart! {
+                            print(item["width"]  as! Double)    // A, B
+                            print(item["height"] as! Double)    // 19.99, 4.99
+                            print(item["weight"]  as! Double)    // A, B
+                            print(item["length"] as! Double)       // 1, 2
+                             print(item["itemName"] as! String)
+                                                }
+                    }
+                }else{
+                    var cart: [[String: Any]] = []
+                    cart.append(["width": width, "height": height, "weight": weight, "length" : length, "recieverId" : recId, "itemId" : choosenItemIdGlobal, "image" : image , "description" : descrip, "itemName" : itemName, "recieverName" : recName])
+        
+        
+        
+                    UserDefaults.standard.set(cart, forKey: "\(self.bagId)")
+                }
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func uploadImg(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        image.allowsEditing = false
+        
+        self.present(image, animated: true)
+        {
+            //After it is complete
+        }
+        
+        
+
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            uploadedImg.image = image
+          
+        }
+        else
+        {
+            //Error message
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func chooseCategory(_ sender: Any) {
-//        let arrayOfDictionaries: [[String:AnyObject]] = [["abc":123 as AnyObject, "def": "ggg" as AnyObject, "xyz": true as AnyObject],["abc":456 as AnyObject, "def": "hhh" as AnyObject, "xyz": false as AnyObject]]
-//
-//        print(arrayOfDictionaries.toJSONString())
+        let popOverVC = UIStoryboard(name: "Sender", bundle: nil).instantiateViewController(withIdentifier: "ChooseCategoryViewController") as! ChooseCategoryViewController
+        popOverVC.bagId = self.bagId
+        self.navigationController?.present(popOverVC, animated: true, completion: nil)
+
     }
     @IBAction func chooseRecievers(_ sender: Any) {
         
@@ -197,27 +241,38 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         }
     }
     
-    func getCountries(){
-        hud.show(in: self.view)
-        GetCountriesCities.GetCountriesCities { (countries, error) in
-            self.hud.dismiss()
+    func getRecievers(){
+        GetRecievers.GetRecievers { ( users, error) in
             if(error == ""){
-              //  self.countriesRes = countries
                 
+                self.recieversUsers = users
+                self.recievers.reloadData()
             }
         }
         
     }
+    func creatAlert(tite : String){
+        // create the alert
+        let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
 }
-//extension Collection where Iterator.Element == [String:AnyObject] {
-//    func toJSONString(options: JSONSerialization.WritingOptions = .prettyPrinted) -> String {
-//        if let arr = self as? [[String:AnyObject]],
-//            let dat = try? JSONSerialization.data(withJSONObject: arr, options: options),
-//            let str = String(data: dat, encoding: String.Encoding.utf8) {
-//            return str
-//        }
-//        return "[]"
-//    }
-//}
-
+//                var cart: [[String: Any]] = []
+//                cart.append(["name": "A", "price": 19.99, "qty": 1])
+//
+//
+//                UserDefaults.standard.removeObject(forKey: "myCart")
+//                UserDefaults.standard.set(cart, forKey: "myCart")
+//
+//                if let loadedCart = UserDefaults.standard.array(forKey: "myCart") as? [[String: Any]] {
+//                    print(loadedCart)  // [[price: 19.99, qty: 1, name: A], [price: 4.99, qty: 2, name: B]]"
+//                    for item in loadedCart {
+//                        print(item["name"]  as! String)    // A, B
+//                        print(item["price"] as! Double)    // 19.99, 4.99
+//                        print(item["qty"]   as! Int)       // 1, 2
+//                    }
+//                }
 

@@ -74,5 +74,15 @@ class AbstractViewController: UIViewController {
              return false
         }
     }
-
+    class func validateNumDouble(number: String) -> Bool{
+        
+        let numbersTest = number
+        if let number = Double(numbersTest){
+            print(number)//contains onlyy number
+            return true
+        }else{
+            print("notnumber")//Not number
+            return false
+        }
+    }
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */; };
 		8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441829E565E497872B14807 /* Pods_AirBagUITests.framework */; };
+		9304DEE22133E1BF004E8A0E /* GetRecievers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE12133E1BF004E8A0E /* GetRecievers.swift */; };
+		9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE42133E316004E8A0E /* UsersResp.swift */; };
+		9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */; };
+		9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE8213400F0004E8A0E /* ItemsInCategResp.swift */; };
 		930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */; };
 		930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930574FE21328F1000B6923F /* ChooseItemViewController.swift */; };
 		9305750321329DA500B6923F /* AvailableNormalBags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750221329DA500B6923F /* AvailableNormalBags.swift */; };
@@ -29,7 +33,7 @@
 		938955D32132F37C001725E9 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D22132F37C001725E9 /* Transactions.swift */; };
 		938955D52132F385001725E9 /* TransactionsRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D42132F385001725E9 /* TransactionsRes.swift */; };
 		938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D62132F8EC001725E9 /* TransactionDetailsViewController.swift */; };
-		938955D92132FEA1001725E9 /* TransactionItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D82132FEA1001725E9 /* TransactionItemsTableViewController.swift */; };
+		938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D82132FEA1001725E9 /* TransactionItemsTableViewCell.swift */; };
 		938955DC2133017E001725E9 /* TransactionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955DB2133017E001725E9 /* TransactionDetails.swift */; };
 		938955DE21330189001725E9 /* TransactionDetailsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955DD21330189001725E9 /* TransactionDetailsResp.swift */; };
 		93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */; };
@@ -97,6 +101,10 @@
 		3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.debug.xcconfig"; sourceTree = "<group>"; };
 		8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9304DEE12133E1BF004E8A0E /* GetRecievers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecievers.swift; sourceTree = "<group>"; };
+		9304DEE42133E316004E8A0E /* UsersResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResp.swift; sourceTree = "<group>"; };
+		9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
+		9304DEE8213400F0004E8A0E /* ItemsInCategResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInCategResp.swift; sourceTree = "<group>"; };
 		930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		930574FE21328F1000B6923F /* ChooseItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseItemViewController.swift; sourceTree = "<group>"; };
 		9305750221329DA500B6923F /* AvailableNormalBags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNormalBags.swift; sourceTree = "<group>"; };
@@ -117,7 +125,7 @@
 		938955D22132F37C001725E9 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		938955D42132F385001725E9 /* TransactionsRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRes.swift; sourceTree = "<group>"; };
 		938955D62132F8EC001725E9 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
-		938955D82132FEA1001725E9 /* TransactionItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemsTableViewController.swift; sourceTree = "<group>"; };
+		938955D82132FEA1001725E9 /* TransactionItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemsTableViewCell.swift; sourceTree = "<group>"; };
 		938955DB2133017E001725E9 /* TransactionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetails.swift; sourceTree = "<group>"; };
 		938955DD21330189001725E9 /* TransactionDetailsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsResp.swift; sourceTree = "<group>"; };
 		93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSenderTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +222,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9304DEE02133E1AF004E8A0E /* GetRecievers */ = {
+			isa = PBXGroup;
+			children = (
+				9304DEE12133E1BF004E8A0E /* GetRecievers.swift */,
+			);
+			path = GetRecievers;
+			sourceTree = "<group>";
+		};
+		9304DEE32133E2FA004E8A0E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				9304DEE42133E316004E8A0E /* UsersResp.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		9305750021329D8700B6923F /* Bags */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +261,7 @@
 		9305750821329E0300B6923F /* Sender */ = {
 			isa = PBXGroup;
 			children = (
+				9304DEE02133E1AF004E8A0E /* GetRecievers */,
 				938955CE2132F2DB001725E9 /* Reservations */,
 				9305750921329E0A00B6923F /* AvailableBags */,
 			);
@@ -279,6 +304,7 @@
 				93EE800F212AFAD700F782E9 /* AddItemsInBagViewController.swift */,
 				930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */,
 				930574FE21328F1000B6923F /* ChooseItemViewController.swift */,
+				9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */,
 			);
 			path = BagsDetails;
 			sourceTree = "<group>";
@@ -373,7 +399,7 @@
 			children = (
 				938955CC2132F220001725E9 /* ReservationsViewController.swift */,
 				938955D62132F8EC001725E9 /* TransactionDetailsViewController.swift */,
-				938955D82132FEA1001725E9 /* TransactionItemsTableViewController.swift */,
+				938955D82132FEA1001725E9 /* TransactionItemsTableViewCell.swift */,
 			);
 			path = Reservations;
 			sourceTree = "<group>";
@@ -424,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				93DBBE4121256DAB0054BD7D /* CategoryResp.swift */,
+				9304DEE8213400F0004E8A0E /* ItemsInCategResp.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -619,6 +646,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9304DEE32133E2FA004E8A0E /* DataModels */,
 				938955D12132F369001725E9 /* Transactions */,
 				9305750021329D8700B6923F /* Bags */,
 				93D7FE612129754400D377EF /* SuccessResponse */,
@@ -867,10 +895,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */,
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
 				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
+				9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */,
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
 				93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */,
 				93CE54A8212ABA1F0011BFD7 /* SuccessRepsonses.swift in Sources */,
@@ -892,7 +922,7 @@
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
 				930575192132C89800B6923F /* BagItems.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
-				938955D92132FEA1001725E9 /* TransactionItemsTableViewController.swift in Sources */,
+				938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
@@ -917,6 +947,8 @@
 				938955D52132F385001725E9 /* TransactionsRes.swift in Sources */,
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
+				9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */,
+				9304DEE22133E1BF004E8A0E /* GetRecievers.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
 				9305750521329DB600B6923F /* AvailableFeaturedBags.swift in Sources */,

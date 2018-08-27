@@ -17,9 +17,15 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var chooseCategory: UITableView!
     @IBOutlet weak var myNavBarItem: UINavigationItem!
     var cityClass = ChooseItemViewController()
+    var bagId = 0
+    var categryResponses : [CategoryResp]?
+    var choosenCatId = 0
+    var choosenCatName = ""
+    var choosenItemName = ""
+    var choosenItemId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       getCategories()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -34,11 +40,16 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 1
+        if(self.categryResponses != nil ){
+            return (self.categryResponses?.count)!
+        }else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCitiesCell", for: indexPath) as! ChooseCtitesTableViewCell
+        cell.countryCity.text = self.categryResponses![indexPath.row].name
         return cell
     }
     
@@ -47,6 +58,8 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.choosenCatName = self.categryResponses![indexPath.row].name!
+        self.choosenCatId = self.categryResponses![indexPath.row].id!
         performSegue(withIdentifier: "chooseItemFromCategoty", sender: self)
     }
     
@@ -55,8 +68,7 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "chooseItemFromCategoty"){
             let des = segue.destination as! ChooseItemViewController
-//            des.departureCountryId = self.departureCountryId
-//            des.currentCountry  =  self.choosenCountry
+            des.choosenCatId = self.choosenCatId
            des.delegate = self
             
             
@@ -64,19 +76,28 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
     }
     
     @IBAction func dismissView(_ sender: UIBarButtonItem) {
-//        if(self.departureCityId == nil){
-//
-//        }else{
-//            choosenDepartureFinalCity =  self.choosenCity
-//            choosenDepartureFinalCountry = self.choosenCountry
-//            choosenDepartureFinalCityId = self.departureCityId!
-        //}
+        if(self.choosenItemId == 0){
+
+        }else{
+            choosenItemNameGlobal = self.choosenItemName
+            choosenItemIdGlobal = self.choosenItemId
+            choosenCategoryNameGlobal = self.choosenCatName
+        }
         self.dismiss(animated: false, completion: nil)
     }
     func ChooseItem(_ item: String?, _ id: Int?) {
-//        self.choosenCity = city!
-//        self.departureCityId = id
+        self.choosenItemName = item!
+        self.choosenItemId = id!
     }
-    
+    func getCategories(){
+        GetCategories.GetCategoriesParams(bagId: self.bagId) { (catRes, error) in
+            if(error == ""){
+                
+                self.categryResponses = catRes
+                self.chooseCategory.reloadData()
+            }
+
+        }
+    }
 }
 
