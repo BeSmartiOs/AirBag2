@@ -17,6 +17,7 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var chooseCategory: UITableView!
     @IBOutlet weak var myNavBarItem: UINavigationItem!
     var cityClass = ChooseItemViewController()
+    var itemsClass = AddItemsInBagViewController()
     var bagId = 0
     var categryResponses : [CategoryResp]?
     var choosenCatId = 0
@@ -29,6 +30,7 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
         myNavBarItem.title = ConstantStrings.countries
     }
     
@@ -83,7 +85,7 @@ class ChooseCategoryViewController: UIViewController,UITableViewDataSource,UITab
             choosenItemIdGlobal = self.choosenItemId
             choosenCategoryNameGlobal = self.choosenCatName
         }
-        self.dismiss(animated: false, completion: nil)
+         self.navigationController?.popViewController(animated: true)
     }
     func ChooseItem(_ item: String?, _ id: Int?) {
         self.choosenItemName = item!

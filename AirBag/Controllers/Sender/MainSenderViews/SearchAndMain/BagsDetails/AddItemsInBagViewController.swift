@@ -17,8 +17,6 @@ var choosenItemIdGlobal = 0
 
 
 class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
-  
-    
 
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var weightText: UITextField!
@@ -74,11 +72,21 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
+          self.navigationController?.navigationBar.isHidden = false
+       update()
+    }
+    func update(){
+        self.itemCatName.text = ""
         if(choosenItemIdGlobal != 0){
-         self.itemCatName.text = choosenCategoryNameGlobal + " , " + choosenItemNameGlobal
+            self.itemCatName.text = choosenCategoryNameGlobal + " , " + choosenItemNameGlobal
+            self.itemId = choosenItemIdGlobal
+            print(choosenCategoryNameGlobal)
+            print(choosenItemNameGlobal)
+        }else{
+            
+               self.itemCatName.text = ""
         }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(self.recieversUsers != nil ){
             return (self.recieversUsers?.count)!
@@ -127,7 +135,6 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
                 self.length = Double(self.lengthText.text ?? "") ?? 0.0
                     if(self.uploadedImg.image != nil ){
                         let imageData = UIImageJPEGRepresentation(self.uploadedImg.image!, 0.4)
-                    
                         let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
                         self.imageString = base64String!
                         print(base64String ?? "")
@@ -135,9 +142,10 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
                         self.imageString = ""
                     }
                     if(self.addDescriptionTextView.text == "" ){
-                    self.descriptionString = self.addDescriptionTextView.text
+                   self.descriptionString = ""
                     }else{
-                        self.descriptionString = ""
+                         self.descriptionString = self.addDescriptionTextView.text
+                        
                 }
                 
                 self.addToDefaults(width: self.width!, height: self.height!, weight: self.weight!, length: self.length!, recId: self.recieverId, itemId: self.itemId, image: self.imageString!, descrip: self.descriptionString!, itemName: self.itemNameString!, recName: self.recieverName)
@@ -168,7 +176,7 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
                         loadedCart?.append(["width": width, "height": height, "weight": weight, "length" : length, "recieverId" : recId, "itemId" : choosenItemIdGlobal, "image" : image , "description" : descrip, "itemName" : itemName, "recieverName" : recName])
                             userDefaults.removeObject(forKey: "\(self.bagId)")
                             userDefaults.set(loadedCart, forKey: "\(self.bagId)")
-                       userDefaults.synchronize()
+                            userDefaults.synchronize()
                         for item in loadedCart! {
                             print(item["width"]  as! Double)    // A, B
                             print(item["height"] as! Double)    // 19.99, 4.99
@@ -222,11 +230,19 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
     
     
     @IBAction func chooseCategory(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Sender", bundle: nil).instantiateViewController(withIdentifier: "ChooseCategoryViewController") as! ChooseCategoryViewController
-        popOverVC.bagId = self.bagId
-        self.navigationController?.present(popOverVC, animated: true, completion: nil)
-
+     performSegue(withIdentifier: "goToCats", sender: self)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToCats"){
+            let des = segue.destination as! ChooseCategoryViewController
+            des.bagId = self.bagId
+            
+        }
+    }
+    
+    
     @IBAction func chooseRecievers(_ sender: Any) {
         
         UIView.animate(withDuration: 0.5) {

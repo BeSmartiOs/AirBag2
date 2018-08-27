@@ -30,6 +30,7 @@ class ChooseItemViewController: UIViewController,UITableViewDataSource,UITableVi
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+          self.navigationController?.navigationBar.isHidden = true
         self.getItems(id: self.choosenCatId)
     }
     override func didReceiveMemoryWarning() {
@@ -64,7 +65,7 @@ class ChooseItemViewController: UIViewController,UITableViewDataSource,UITableVi
     
     
     @IBAction func dismissView(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: false, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

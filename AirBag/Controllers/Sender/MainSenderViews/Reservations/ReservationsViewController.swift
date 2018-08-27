@@ -60,7 +60,7 @@ class ReservationsViewController: UIViewController,UITableViewDelegate,UITableVi
             let carrier = self.transactions?.transactions![indexPath.row].carrierName
             let carrierFinal = String(describing: carrier!)
             cell.seenLabel.text = carrierFinal
-            
+        
     
  
         return cell
