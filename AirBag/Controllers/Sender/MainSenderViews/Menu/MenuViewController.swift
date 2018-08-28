@@ -31,15 +31,19 @@ class MenuViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "goToNotifications"){
+            let destination = segue.destination as! NotificationsViewController
+            
+        }
     }
-    */
+   
     @IBAction func beSenderAction(_ sender: Any) {
     }
     
@@ -59,6 +63,7 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func notificationBtn(_ sender: Any) {
+        performSegue(withIdentifier: "goToNotifications", sender: self)
     }
     
     func setUpsViews(){

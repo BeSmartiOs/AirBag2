@@ -64,6 +64,23 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         tableViewHeight.constant = 0
         recievers.backgroundColor = UIColor.clear
         getRecievers()
+        if let favorites = UserDefaults.standard.array(forKey: "\(self.bagId)") {
+            if favorites.count == 0 {
+                self.choosenReciever.isEnabled = true
+                
+            } else {
+                self.choosenReciever.isEnabled = false
+                let userDefaults = UserDefaults.standard
+                let loadedCart = userDefaults.array(forKey: "\(self.bagId)") as? [[String: Any]]
+                for items in loadedCart!{
+                    self.recieverId = items["recieverId"] as! Int
+                    self.recieverName = items["recieverName"] as! String
+                }
+                
+            }
+        }else{
+            self.choosenReciever.isEnabled = true
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -72,8 +89,8 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
-          self.navigationController?.navigationBar.isHidden = false
-       update()
+    self.navigationController?.navigationBar.isHidden = false
+    update()
     }
     func update(){
         self.itemCatName.text = ""
@@ -153,12 +170,7 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
                 
             }else{
                 self.creatAlert(tite: "Please enter valid Weight/Height/Width/Length")
-            }
-           
-            
-           
-            
-            
+            }  
         }
     
     }
@@ -193,7 +205,10 @@ class AddItemsInBagViewController: UIViewController,UITableViewDelegate,UITableV
         
                     UserDefaults.standard.set(cart, forKey: "\(self.bagId)")
                 }
-        
+         choosenCategoryNameGlobal = ""
+         choosenCategoryId = 0
+         choosenItemNameGlobal = ""
+         choosenItemIdGlobal = 0
         self.navigationController?.popViewController(animated: true)
     }
     

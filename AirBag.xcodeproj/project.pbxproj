@@ -13,6 +13,12 @@
 		9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE42133E316004E8A0E /* UsersResp.swift */; };
 		9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */; };
 		9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE8213400F0004E8A0E /* ItemsInCategResp.swift */; };
+		930561C02135378B00E204F6 /* ReserveBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930561BF2135378B00E204F6 /* ReserveBag.swift */; };
+		930561C321353AAF00E204F6 /* ReserveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930561C221353AAF00E204F6 /* ReserveResult.swift */; };
+		930561C521353AB900E204F6 /* ReserveResultResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930561C421353AB900E204F6 /* ReserveResultResp.swift */; };
+		930561C721354F7900E204F6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930561C621354F7900E204F6 /* NotificationTableViewCell.swift */; };
+		930561C921354FEC00E204F6 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930561C821354FEC00E204F6 /* NotificationsViewController.swift */; };
+		930561CB21355B5000E204F6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930561CA21355B5000E204F6 /* FilterViewController.swift */; };
 		930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */; };
 		930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930574FE21328F1000B6923F /* ChooseItemViewController.swift */; };
 		9305750321329DA500B6923F /* AvailableNormalBags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305750221329DA500B6923F /* AvailableNormalBags.swift */; };
@@ -105,6 +111,12 @@
 		9304DEE42133E316004E8A0E /* UsersResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResp.swift; sourceTree = "<group>"; };
 		9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
 		9304DEE8213400F0004E8A0E /* ItemsInCategResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInCategResp.swift; sourceTree = "<group>"; };
+		930561BF2135378B00E204F6 /* ReserveBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBag.swift; sourceTree = "<group>"; };
+		930561C221353AAF00E204F6 /* ReserveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveResult.swift; sourceTree = "<group>"; };
+		930561C421353AB900E204F6 /* ReserveResultResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveResultResp.swift; sourceTree = "<group>"; };
+		930561C621354F7900E204F6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		930561C821354FEC00E204F6 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		930561CA21355B5000E204F6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		930574FC21328EFF00B6923F /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		930574FE21328F1000B6923F /* ChooseItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseItemViewController.swift; sourceTree = "<group>"; };
 		9305750221329DA500B6923F /* AvailableNormalBags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNormalBags.swift; sourceTree = "<group>"; };
@@ -238,9 +250,27 @@
 			path = DataModels;
 			sourceTree = "<group>";
 		};
+		930561BE2135377200E204F6 /* Reserve Bag */ = {
+			isa = PBXGroup;
+			children = (
+				930561BF2135378B00E204F6 /* ReserveBag.swift */,
+			);
+			path = "Reserve Bag";
+			sourceTree = "<group>";
+		};
+		930561C121353A9400E204F6 /* ReserveBag */ = {
+			isa = PBXGroup;
+			children = (
+				930561C221353AAF00E204F6 /* ReserveResult.swift */,
+				930561C421353AB900E204F6 /* ReserveResultResp.swift */,
+			);
+			path = ReserveBag;
+			sourceTree = "<group>";
+		};
 		9305750021329D8700B6923F /* Bags */ = {
 			isa = PBXGroup;
 			children = (
+				930561C121353A9400E204F6 /* ReserveBag */,
 				9305750E2132B69500B6923F /* BagDetails */,
 				9305750121329D8F00B6923F /* SenderBags */,
 			);
@@ -261,6 +291,7 @@
 		9305750821329E0300B6923F /* Sender */ = {
 			isa = PBXGroup;
 			children = (
+				930561BE2135377200E204F6 /* Reserve Bag */,
 				9304DEE02133E1AF004E8A0E /* GetRecievers */,
 				938955CE2132F2DB001725E9 /* Reservations */,
 				9305750921329E0A00B6923F /* AvailableBags */,
@@ -390,6 +421,7 @@
 				93653C12212ABFFB0080E2B1 /* BagsDetails */,
 				93CE54A0212AA9020011BFD7 /* customCells */,
 				93D7FE702129C1AC00D377EF /* MainSenderViewController.swift */,
+				930561CA21355B5000E204F6 /* FilterViewController.swift */,
 			);
 			path = SearchAndMain;
 			sourceTree = "<group>";
@@ -408,6 +440,8 @@
 			isa = PBXGroup;
 			children = (
 				93D7FE772129C7B200D377EF /* MenuViewController.swift */,
+				930561C621354F7900E204F6 /* NotificationTableViewCell.swift */,
+				930561C821354FEC00E204F6 /* NotificationsViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -898,6 +932,7 @@
 				9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */,
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
+				930561C02135378B00E204F6 /* ReserveBag.swift in Sources */,
 				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */,
@@ -921,6 +956,7 @@
 				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
 				930575192132C89800B6923F /* BagItems.swift in Sources */,
+				930561C321353AAF00E204F6 /* ReserveResult.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
 				938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
@@ -929,6 +965,7 @@
 				938955D32132F37C001725E9 /* Transactions.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
+				930561C721354F7900E204F6 /* NotificationTableViewCell.swift in Sources */,
 				93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */,
 				930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */,
 				938955DC2133017E001725E9 /* TransactionDetails.swift in Sources */,
@@ -946,10 +983,13 @@
 				93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */,
 				938955D52132F385001725E9 /* TransactionsRes.swift in Sources */,
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
+				930561C521353AB900E204F6 /* ReserveResultResp.swift in Sources */,
+				930561C921354FEC00E204F6 /* NotificationsViewController.swift in Sources */,
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */,
 				9304DEE22133E1BF004E8A0E /* GetRecievers.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
+				930561CB21355B5000E204F6 /* FilterViewController.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
 				9305750521329DB600B6923F /* AvailableFeaturedBags.swift in Sources */,
 				930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */,

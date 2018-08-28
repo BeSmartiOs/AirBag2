@@ -27,6 +27,8 @@ class GetAvailableBags: NSObject{
         
         NetWorkConnection.dataWithHeader(url: url, httpmethod: .post, aceessToken: aceessToken, parameters: parameters as NSDictionary , completionHandler: {responseObject, error in
 
+            
+            
             if(error==nil)
             {
 

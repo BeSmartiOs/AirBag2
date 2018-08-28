@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NotificationViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:AirBag.xcodeproj">
    </FileRef>
    <FileRef

@@ -28,6 +28,7 @@ struct Constants{
          static let getTransactions = "/currentTransactions"
         static let getUsers  = "/users"
          static let items  = "/items"
+        static let reserveBag = "/bag/reserve"
         
     }
     
