@@ -135,7 +135,6 @@ class AvailableBagFromFilterViewController: UIViewController,UITableViewDelegate
         }
     }
 
-    
     func creatAlert(tite : String){
         // create the alert
         let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)

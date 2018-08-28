@@ -170,6 +170,13 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     @IBAction func Filter(_ sender: Any) {
+        if( DeparCityId == 0 || DestCityId == 0 || carrierId == 0){
+            //please fill required
+        }else{
+            if(fightText.text == "" || fightText.text?.isEmpty == true){
+                //please fill required
+            }
+        }
         getFilteredBags()
     }
     @IBAction func Reset(_ sender: Any) {
