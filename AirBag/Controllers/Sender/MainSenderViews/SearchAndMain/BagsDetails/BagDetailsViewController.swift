@@ -115,6 +115,7 @@ class BagDetailsViewController: UIViewController {
         hud.show(in: self.view)
         BagDetails.GetBagDetails(bagId: bagId) { (bagDetailsResp, error) in
             self.hud.dismiss()
+            if(error == ""){
             if(bagDetailsResp?.bagInfo?.count != 0){
                 self.currentBag = bagDetailsResp
                 for bagInfo in (bagDetailsResp?.bagInfo)!{
@@ -160,7 +161,10 @@ class BagDetailsViewController: UIViewController {
                 self.restirectedCategories.text = categoryRest
             }
             
-        }
+            }else{
+                
+            }
+    }
     }
     
 }

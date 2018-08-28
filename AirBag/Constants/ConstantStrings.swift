@@ -73,7 +73,7 @@ struct  ConstantStrings{
      static let confirmLogout = "Are you sure you want to logout?"
     static let confirm = "Confirm"
     static let reserveBag = "Reserve Bag"
-    
+    static let airLines = "Airlines"
     
     
 }

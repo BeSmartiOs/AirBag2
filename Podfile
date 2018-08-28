@@ -12,6 +12,7 @@ target 'AirBag' do
 	pod 'JGProgressHUD'
 	pod 'Firebase/Core'
 	pod 'Firebase/Messaging'
+	pod 'ReachabilitySwift'
 
   target 'AirBagTests' do
     inherit! :search_paths

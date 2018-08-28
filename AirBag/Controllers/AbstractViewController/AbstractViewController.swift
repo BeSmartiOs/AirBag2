@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reachability
 
 class AbstractViewController: UIViewController {
 
@@ -82,6 +83,22 @@ class AbstractViewController: UIViewController {
             return true
         }else{
             print("notnumber")//Not number
+            return false
+        }
+    }
+    
+    //MARK:- Connectivity Func
+    class func connected() -> Bool {
+        let reachability = Reachability()!
+        if reachability.connection != .none {
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+            return true
+        } else {
+            print("Network not reachable")
             return false
         }
     }

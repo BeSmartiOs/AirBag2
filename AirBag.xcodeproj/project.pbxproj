@@ -31,6 +31,9 @@
 		930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575132132B6C500B6923F /* BagDetialsResp.swift */; };
 		930575162132B72E00B6923F /* BagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575152132B72E00B6923F /* BagDetails.swift */; };
 		930575192132C89800B6923F /* BagItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575182132C89800B6923F /* BagItems.swift */; };
+		932EB5C921358B29005527E8 /* DeparDestCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */; };
+		932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */; };
+		932EB5CD21359F97005527E8 /* AvailableBagFromFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */; };
 		93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C10212ABF8E0080E2B1 /* DottedView.swift */; };
 		93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */; };
 		93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */; };
@@ -68,6 +71,8 @@
 		93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF672125629900E5DB84 /* NetworkConnection.swift */; };
 		93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */; };
 		93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF6F2125648200E5DB84 /* CountriesResp.swift */; };
+		93FC292D21357550002D87BF /* ChooseAirLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC292C21357550002D87BF /* ChooseAirLineViewController.swift */; };
+		93FC292F2135789F002D87BF /* Airlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FC292E2135789F002D87BF /* Airlines.swift */; };
 		93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FCEAE12124126500C16F1C /* AppDelegate.swift */; };
 		93FCEAE72124126500C16F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93FCEAE52124126500C16F1C /* Main.storyboard */; };
 		93FCEAE92124126600C16F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FCEAE82124126600C16F1C /* Assets.xcassets */; };
@@ -129,6 +134,9 @@
 		930575132132B6C500B6923F /* BagDetialsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetialsResp.swift; sourceTree = "<group>"; };
 		930575152132B72E00B6923F /* BagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetails.swift; sourceTree = "<group>"; };
 		930575182132C89800B6923F /* BagItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagItems.swift; sourceTree = "<group>"; };
+		932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCountryViewController.swift; sourceTree = "<group>"; };
+		932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCityViewController.swift; sourceTree = "<group>"; };
+		932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBagFromFilterViewController.swift; sourceTree = "<group>"; };
 		93653C10212ABF8E0080E2B1 /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetailsViewController.swift; sourceTree = "<group>"; };
 		93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBagViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +174,8 @@
 		93F8FF672125629900E5DB84 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesCities.swift; sourceTree = "<group>"; };
 		93F8FF6F2125648200E5DB84 /* CountriesResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResp.swift; sourceTree = "<group>"; };
+		93FC292C21357550002D87BF /* ChooseAirLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAirLineViewController.swift; sourceTree = "<group>"; };
+		93FC292E2135789F002D87BF /* Airlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airlines.swift; sourceTree = "<group>"; };
 		93FCEADE2124126500C16F1C /* AirBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FCEAE12124126500C16F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93FCEAE62124126500C16F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -418,10 +428,10 @@
 		93D7FE742129C78E00D377EF /* SearchAndMain */ = {
 			isa = PBXGroup;
 			children = (
+				93FC292B21357535002D87BF /* Filter */,
 				93653C12212ABFFB0080E2B1 /* BagsDetails */,
 				93CE54A0212AA9020011BFD7 /* customCells */,
 				93D7FE702129C1AC00D377EF /* MainSenderViewController.swift */,
-				930561CA21355B5000E204F6 /* FilterViewController.swift */,
 			);
 			path = SearchAndMain;
 			sourceTree = "<group>";
@@ -540,6 +550,7 @@
 			children = (
 				93F8FF6E2125646300E5DB84 /* Cities */,
 				93F8FF6F2125648200E5DB84 /* CountriesResp.swift */,
+				93FC292E2135789F002D87BF /* Airlines.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -549,6 +560,18 @@
 			children = (
 			);
 			path = Cities;
+			sourceTree = "<group>";
+		};
+		93FC292B21357535002D87BF /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				930561CA21355B5000E204F6 /* FilterViewController.swift */,
+				93FC292C21357550002D87BF /* ChooseAirLineViewController.swift */,
+				932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */,
+				932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */,
+				932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		93FCEAD52124126500C16F1C = {
@@ -852,6 +875,7 @@
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -861,6 +885,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -930,6 +955,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */,
+				932EB5C921358B29005527E8 /* DeparDestCountryViewController.swift in Sources */,
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
 				930561C02135378B00E204F6 /* ReserveBag.swift in Sources */,
@@ -937,6 +963,7 @@
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */,
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
+				93FC292F2135789F002D87BF /* Airlines.swift in Sources */,
 				93D7FE782129C7B200D377EF /* MenuViewController.swift in Sources */,
 				93CE54A8212ABA1F0011BFD7 /* SuccessRepsonses.swift in Sources */,
 				930575102132B6A900B6923F /* BagInfo.swift in Sources */,
@@ -951,12 +978,14 @@
 				930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */,
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
 				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
+				932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */,
 				9305750B21329E1D00B6923F /* GetAvailableBags.swift in Sources */,
 				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
 				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
 				930575192132C89800B6923F /* BagItems.swift in Sources */,
 				930561C321353AAF00E204F6 /* ReserveResult.swift in Sources */,
+				93FC292D21357550002D87BF /* ChooseAirLineViewController.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
 				938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
@@ -984,6 +1013,7 @@
 				938955D52132F385001725E9 /* TransactionsRes.swift in Sources */,
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
 				930561C521353AB900E204F6 /* ReserveResultResp.swift in Sources */,
+				932EB5CD21359F97005527E8 /* AvailableBagFromFilterViewController.swift in Sources */,
 				930561C921354FEC00E204F6 /* NotificationsViewController.swift in Sources */,
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */,
