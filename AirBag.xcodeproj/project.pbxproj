@@ -244,6 +244,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		93014A50213688AF009BD62A /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		9304DEE02133E1AF004E8A0E /* GetRecievers */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +710,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93014A50213688AF009BD62A /* Notifications */,
 				9304DEE32133E2FA004E8A0E /* DataModels */,
 				938955D12132F369001725E9 /* Transactions */,
 				9305750021329D8700B6923F /* Bags */,

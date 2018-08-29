@@ -172,12 +172,15 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBAction func Filter(_ sender: Any) {
         if( DeparCityId == 0 || DestCityId == 0 || carrierId == 0){
             //please fill required
+            self.creatAlert(tite: ConstantStrings.pleaseFillRequired)
         }else{
-            if(fightText.text == "" || fightText.text?.isEmpty == true){
-                //please fill required
+            if(fightText.text == "" || fightText.text?.isEmpty == true || airLineId == 0 ){
+                self.creatAlert(tite: ConstantStrings.pleaseFillRequired)
+            }else{
+                getFilteredBags()
             }
         }
-        getFilteredBags()
+       
     }
     @IBAction func Reset(_ sender: Any) {
         
@@ -255,9 +258,11 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
         let userDefaults = UserDefaults.standard
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+        self.hud.dismiss()
         GetAvailableBags.GetAvailableBags(departureId: DeparCityId, destinationId: DestCityId, carrierId: carrierId, categoryId: self.categoryId, airlineId: airLineId, flightNumber: fightText.text! , aceessToken: decodedUser.token!, type: 1) { (bags, error) in
             
                             if(error == ""){
+                                self.hud.dismiss()
                                 self.bagsResp = bags
                                 if(bags?.availableFeaturedBags?.count != 0){
                                     self.itemsA = bags?.availableFeaturedBags
@@ -265,11 +270,21 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
                                 }
                                 
                         self.performSegue(withIdentifier: "filteredBags", sender: self)
-                            }
-            
+                            }else{
+                                self.hud.dismiss()
+            }
+            self.hud.dismiss()
 
         }
         
+    }
+    func creatAlert(tite : String){
+        // create the alert
+        let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

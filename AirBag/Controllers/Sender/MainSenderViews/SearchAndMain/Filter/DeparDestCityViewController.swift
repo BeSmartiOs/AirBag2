@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JGProgressHUD
     
 
     protocol ClassDepartureCityFiltered: class {
@@ -16,8 +16,9 @@ import UIKit
     protocol ClassDestCityFiltered: class {
         func DestCityFiltered(_ city: String?, _ id : Int?)
     }
-    class DeparDestCityViewController: UIViewController,UITableViewDataSource,UITableViewDelegate  {
+    class DeparDestCityViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate  {
 
+        @IBOutlet weak var searchBar: UISearchBar!
         @IBOutlet weak var myNavBarItem: UINavigationItem!
         @IBOutlet weak var myNavigationBar: UINavigationBar!
         @IBOutlet weak var countryCityTableView: UITableView!
@@ -27,10 +28,15 @@ import UIKit
         var departureCityId : Int?
         var departureCountryId : Int?
         var cityResp : [CountriesResp]?
+         var cityResFiltered : [CountriesResp]?
         var typeOfWay : Int?
+         let hud  = JGProgressHUD(style: .light)
         override func viewDidLoad() {
             super.viewDidLoad()
             self.myNavBarItem.title = self.currentCountry
+             hud.textLabel.text = ConstantStrings.pleaseWait
+             searchBar.delegate = self
+            
             // Do any additional setup after loading the view.
         }
         override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +79,14 @@ import UIKit
             }
           
         }
-        
+        //MARK: Search Bar
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            self.cityResp = self.cityResFiltered?.filter({ animal -> Bool in
+                if searchText.isEmpty { return true }
+                return animal.name!.lowercased().contains(searchText.lowercased())
+            })
+            self.countryCityTableView.reloadData()
+        }
         
         @IBAction func dismissView(_ sender: UIBarButtonItem) {
             self.navigationController?.popViewController(animated: true)
@@ -81,12 +94,19 @@ import UIKit
         }
         
         func getCities(id :Int){
+            hud.show(in: self.view)
             GetCountriesCities.GetCities(id: id) { (cities, error) in
+                
                 if(error == ""){
+                    self.hud.dismiss()
                     self.cityResp = cities
-                    self.countryCityTableView.reloadData()
+                   self.cityResFiltered  = self.cityResp
+                self.countryCityTableView.reloadData()
                     
+                }else{
+                    self.hud.dismiss()
                 }
+                self.hud.dismiss()
             }
             
         }

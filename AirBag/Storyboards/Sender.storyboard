@@ -558,10 +558,10 @@
                                     <outlet property="delegate" destination="FnL-6H-EgE" id="2Q7-4b-LkC"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDl-R5-pL2">
-                                <rect key="frame" x="16" y="495" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDl-R5-pL2">
+                                <rect key="frame" x="16" y="495" width="113.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Flight Number is required with AirLine" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68y-7A-LQQ">
@@ -798,8 +798,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-Kh-j0n">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPX-vB-M14">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Title" id="GMT-2I-lfG">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vrs-Xd-8sM">
+                                            <connections>
+                                                <action selector="dismissView:" destination="vfg-DF-Wdp" id="hRE-Od-ml0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-5w-gJc">
+                                <rect key="frame" x="0.0" y="108" width="375" height="56"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vfg-DF-Wdp" id="H9P-WP-f4g"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o7t-Rp-2jd">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="454"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCitiesCell" rowHeight="110" id="m2x-t6-YVw" customClass="ChooseCtitesTableViewCell" customModule="AirBag" customModuleProvider="target">
@@ -856,32 +877,22 @@
                                     <outlet property="delegate" destination="vfg-DF-Wdp" id="y7E-ZY-4N4"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPX-vB-M14">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <color key="barTintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem title="Title" id="GMT-2I-lfG">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vrs-Xd-8sM">
-                                            <connections>
-                                                <action selector="dismissView:" destination="vfg-DF-Wdp" id="hRE-Od-ml0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zTU-WC-vJ8" firstAttribute="trailing" secondItem="o7t-Rp-2jd" secondAttribute="trailing" id="4f3-ch-OSY"/>
-                            <constraint firstItem="o7t-Rp-2jd" firstAttribute="top" secondItem="vPX-vB-M14" secondAttribute="bottom" id="5C1-p3-OWM"/>
                             <constraint firstItem="5qB-Kh-j0n" firstAttribute="trailing" secondItem="zTU-WC-vJ8" secondAttribute="trailing" id="6kH-Cv-9hS"/>
                             <constraint firstItem="vPX-vB-M14" firstAttribute="top" secondItem="zTU-WC-vJ8" secondAttribute="top" id="Dh2-Hb-T86"/>
                             <constraint firstItem="zTU-WC-vJ8" firstAttribute="trailing" secondItem="vPX-vB-M14" secondAttribute="trailing" id="GHm-aa-IPh"/>
+                            <constraint firstItem="o7t-Rp-2jd" firstAttribute="top" secondItem="nJo-5w-gJc" secondAttribute="bottom" id="LNP-AN-yBs"/>
                             <constraint firstItem="zTU-WC-vJ8" firstAttribute="top" secondItem="5qB-Kh-j0n" secondAttribute="top" id="RC7-5R-R2J"/>
+                            <constraint firstItem="nJo-5w-gJc" firstAttribute="leading" secondItem="zTU-WC-vJ8" secondAttribute="leading" id="S3p-KH-gIo"/>
                             <constraint firstItem="o7t-Rp-2jd" firstAttribute="bottom" secondItem="zTU-WC-vJ8" secondAttribute="bottom" id="SVa-nr-Bf5"/>
                             <constraint firstItem="zTU-WC-vJ8" firstAttribute="bottom" secondItem="5qB-Kh-j0n" secondAttribute="bottom" id="axQ-N4-X4L"/>
                             <constraint firstItem="vPX-vB-M14" firstAttribute="leading" secondItem="zTU-WC-vJ8" secondAttribute="leading" id="gOP-kS-U2P"/>
+                            <constraint firstItem="nJo-5w-gJc" firstAttribute="top" secondItem="vPX-vB-M14" secondAttribute="bottom" id="o4G-tf-ZTN"/>
                             <constraint firstItem="5qB-Kh-j0n" firstAttribute="leading" secondItem="zTU-WC-vJ8" secondAttribute="leading" id="oC9-zr-PxB"/>
+                            <constraint firstItem="zTU-WC-vJ8" firstAttribute="trailing" secondItem="nJo-5w-gJc" secondAttribute="trailing" id="src-B9-fNf"/>
                             <constraint firstItem="o7t-Rp-2jd" firstAttribute="leading" secondItem="zTU-WC-vJ8" secondAttribute="leading" id="waq-2d-5uU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zTU-WC-vJ8"/>
@@ -890,11 +901,12 @@
                         <outlet property="countryCityTableView" destination="o7t-Rp-2jd" id="Pmx-5J-iIg"/>
                         <outlet property="myNavBarItem" destination="GMT-2I-lfG" id="C3r-f9-WpT"/>
                         <outlet property="myNavigationBar" destination="vPX-vB-M14" id="Ngu-iL-2S4"/>
+                        <outlet property="searchBar" destination="nJo-5w-gJc" id="4wc-cp-VT6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOX-Wo-wqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4214" y="-1801"/>
+            <point key="canvasLocation" x="4213.6000000000004" y="-1801.3493253373315"/>
         </scene>
         <!--Choose Air Line View Controller-->
         <scene sceneID="xJW-sP-m9j">
@@ -2807,11 +2819,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="STv-Hr-jWG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oHS-5P-J3T">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="vf9-ts-iBl">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="oHS-5P-J3T"/>
                     <connections>
                         <outlet property="senderTableView" destination="clt-e9-ecE" id="auu-Yb-tDe"/>
                         <segue destination="9GC-bE-iJu" kind="show" identifier="goToBagDetailsFromFilter" id="JR2-EV-d4z"/>

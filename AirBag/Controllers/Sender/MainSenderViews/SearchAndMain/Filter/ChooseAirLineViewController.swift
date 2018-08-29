@@ -93,7 +93,6 @@ class ChooseAirLineViewController: UIViewController,UITableViewDataSource,UITabl
         return 110
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         if(type == 1){
         self.choosenAirLine = (self.airlinesRes?[indexPath.row].name)!
         self.choosenAirLineId = (self.airlinesRes?[indexPath.row].id)!

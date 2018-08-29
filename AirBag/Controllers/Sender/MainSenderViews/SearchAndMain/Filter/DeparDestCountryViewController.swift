@@ -63,7 +63,6 @@ class DeparDestCountryViewController: UIViewController,UITableViewDataSource,UIT
         return 110
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
          self.departureCountryId = (self.countriesRes?[indexPath.row].id)!
         if(typeOfWay == 3){
            
