@@ -12,6 +12,7 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
     
     
 
+    @IBOutlet weak var noTransactionAvail: UILabel!
     @IBOutlet weak var carrierName: UILabel!
     @IBOutlet weak var recieverName: UILabel!
     @IBOutlet weak var dateTime: UILabel!
@@ -27,6 +28,7 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.noTransactionAvail.text = ""
         getTransactions(id : self.transactionId)
  hud.textLabel.text = ConstantStrings.pleaseWait
         // Do any additional setup after loading the view.
@@ -81,9 +83,16 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
                     self.dateTime.text = details.departureDatetime
              
                 }
+                if(self.transactionsDetails?.transactionItems?.count == 0){
+                    self.itemTableView.isHidden = true
+                    self.noTransactionAvail.text = "No Transaction Items"
+                }else{
+                     self.itemTableView.isHidden = false
+                     self.itemTableView.reloadData()
+                }
             
                 
-                self.itemTableView.reloadData()
+               
             }
         }
     }

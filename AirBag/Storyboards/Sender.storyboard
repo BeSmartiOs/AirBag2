@@ -382,6 +382,12 @@
                                     <outlet property="delegate" destination="hbV-p1-Dwh" id="BlV-YK-fmJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azw-fo-oLu">
+                                <rect key="frame" x="166" y="523.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -402,6 +408,7 @@
                             <constraint firstItem="oTs-3z-zWR" firstAttribute="trailing" secondItem="HYU-yb-CYY" secondAttribute="trailing" id="Dkg-tY-Oc0"/>
                             <constraint firstItem="dar-n2-r97" firstAttribute="trailing" secondItem="N0J-Tf-49b" secondAttribute="trailing" constant="15" id="FUX-v5-tKC"/>
                             <constraint firstItem="LEF-Um-Pl5" firstAttribute="trailing" secondItem="Q3p-kt-8k1" secondAttribute="trailing" id="Fig-vH-XKC"/>
+                            <constraint firstItem="Azw-fo-oLu" firstAttribute="centerX" secondItem="SPa-ln-6Qr" secondAttribute="centerX" id="GJT-C5-2sa"/>
                             <constraint firstItem="Ql5-Kh-7jC" firstAttribute="leading" secondItem="LEF-Um-Pl5" secondAttribute="leading" id="JrM-19-osg"/>
                             <constraint firstItem="HYU-yb-CYY" firstAttribute="width" secondItem="RkS-sp-dz6" secondAttribute="width" id="K8O-7N-0rD"/>
                             <constraint firstItem="SPa-ln-6Qr" firstAttribute="bottom" secondItem="dar-n2-r97" secondAttribute="bottom" id="KMB-OH-dFa"/>
@@ -431,6 +438,7 @@
                             <constraint firstItem="Pfy-am-Rkh" firstAttribute="width" secondItem="TsQ-bw-Xik" secondAttribute="width" id="mGm-QX-4dJ"/>
                             <constraint firstItem="HYU-yb-CYY" firstAttribute="top" secondItem="RkS-sp-dz6" secondAttribute="bottom" constant="20" id="ms2-II-AXV"/>
                             <constraint firstItem="H1P-u3-w1e" firstAttribute="top" secondItem="KHt-b8-i84" secondAttribute="bottom" constant="20" id="oKI-be-C7l"/>
+                            <constraint firstItem="Azw-fo-oLu" firstAttribute="centerY" secondItem="SPa-ln-6Qr" secondAttribute="centerY" id="pp4-A6-hwn"/>
                             <constraint firstItem="je7-wD-TlL" firstAttribute="trailing" secondItem="uu5-jR-f0P" secondAttribute="trailing" id="qfA-U8-yjE"/>
                             <constraint firstItem="C2h-Tx-UdC" firstAttribute="leading" secondItem="TsQ-bw-Xik" secondAttribute="leading" id="rUx-Hu-oU6"/>
                             <constraint firstItem="H1P-u3-w1e" firstAttribute="leading" secondItem="KHt-b8-i84" secondAttribute="leading" id="vsd-VH-DA5"/>
@@ -446,6 +454,7 @@
                         <outlet property="departure" destination="uu5-jR-f0P" id="gth-0w-rU0"/>
                         <outlet property="destination" destination="je7-wD-TlL" id="mBz-p4-6vo"/>
                         <outlet property="itemTableView" destination="SPa-ln-6Qr" id="7Z3-ks-D2A"/>
+                        <outlet property="noTransactionAvail" destination="Azw-fo-oLu" id="7Y9-iy-jNe"/>
                         <outlet property="recieverName" destination="Q3p-kt-8k1" id="i7m-Vm-wgG"/>
                         <outlet property="transactionPrice" destination="mDs-X8-uwq" id="f4C-Fk-KIi"/>
                         <outlet property="weight" destination="Ql5-Kh-7jC" id="JcT-Mx-CpQ"/>

@@ -183,7 +183,7 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
        
     }
     @IBAction func Reset(_ sender: Any) {
-        
+        fightText.text = ""
          airLineId = 0
          airLineName = ""
          carrierId = 0
