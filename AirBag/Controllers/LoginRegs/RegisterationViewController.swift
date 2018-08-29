@@ -6,6 +6,18 @@
 //  Copyright © 2018 Geek. All rights reserved.
 //
 
+
+/*
+0
+ 
+1
+ 
+2
+ 
+3
+ */
+
+
 import UIKit
 import JGProgressHUD
 //MARK:- Global

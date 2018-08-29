@@ -31,7 +31,7 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var loginResp : LoginResponse?
     let hud = JGProgressHUD(style: .light)
     var navController: UINavigationController?
-    var tabController: SenderViewController?
+    var tabController: UITabBarController?
     override func viewDidLoad() {
         super.viewDidLoad()
         hud.textLabel.text = ConstantStrings.pleaseWait
@@ -156,16 +156,23 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.hud.dismiss()
                 self.loginResp = logResp
                 let userDefaults = UserDefaults.standard
-                let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.loginResp)
+                let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.loginResp?.content)
                 userDefaults.set(encodedData, forKey: "logResp")
                 userDefaults.synchronize()
-                let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
-                self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                if(self.loginResp?.content?.currentTypeId == 1){
+                    
+                }else  if(self.loginResp?.content?.currentTypeId == 2){
+                    let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                }else if(self.loginResp?.content?.currentTypeId == 3){
+                    
+                }
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = self.tabController
                 appDelegate.window?.makeKeyAndVisible()
             }else{
                 self.hud.dismiss()
+                self.creatAlert(tite: "Please enter valid Email or password!")
             }
         }
     }

@@ -57,7 +57,7 @@ class ReservationsViewController: UIViewController,UITableViewDelegate,UITableVi
             let weightFinal = String(describing: weight!)
             cell.weightLabel.text = weightFinal
             
-            let carrier = self.transactions?.transactions![indexPath.row].carrierName
+            let carrier = self.transactions?.transactions![indexPath.row].receiverName
             let carrierFinal = String(describing: carrier!)
             cell.seenLabel.text = carrierFinal
         

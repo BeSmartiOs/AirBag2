@@ -257,7 +257,7 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
     func getFilteredBags(){
         let userDefaults = UserDefaults.standard
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
-        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
         self.hud.dismiss()
         GetAvailableBags.GetAvailableBags(departureId: DeparCityId, destinationId: DestCityId, carrierId: carrierId, categoryId: self.categoryId, airlineId: airLineId, flightNumber: fightText.text! , aceessToken: decodedUser.token!, type: 1) { (bags, error) in
             

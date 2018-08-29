@@ -141,7 +141,7 @@ class MainSenderViewController: UIViewController,UITableViewDelegate,UITableView
         if(AbstractViewController.connected()){
         hud.show(in: self.view)
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
-        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
         GetAvailableBags.GetAvailableBags(departureId: 0, destinationId: 0, carrierId: 0, categoryId: 0, airlineId: 0, flightNumber: "0", aceessToken: decodedUser.token!, type: 0) { (response, error) in
             self.hud.dismiss()
             
@@ -153,7 +153,9 @@ class MainSenderViewController: UIViewController,UITableViewDelegate,UITableView
             }
                 self.senderTableView.reloadData()
             
-        }
+            }else{
+                self.creatAlert(tite : "Please check Internet Connectivity!")
+            }
     }
     
 }else{

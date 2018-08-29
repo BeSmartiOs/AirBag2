@@ -31,6 +31,11 @@
 		930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575132132B6C500B6923F /* BagDetialsResp.swift */; };
 		930575162132B72E00B6923F /* BagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575152132B72E00B6923F /* BagDetails.swift */; };
 		930575192132C89800B6923F /* BagItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575182132C89800B6923F /* BagItems.swift */; };
+		931865A1213694E600D86369 /* LoginContentt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A0213694E600D86369 /* LoginContentt.swift */; };
+		931865A3213694F400D86369 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A2213694F400D86369 /* LoginError.swift */; };
+		931865A5213699CB00D86369 /* NotificationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */; };
+		931865A8213699EE00D86369 /* NotificationDetailsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A7213699EE00D86369 /* NotificationDetailsResp.swift */; };
+		931865AA21369A0300D86369 /* NotificationDetailSeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A921369A0300D86369 /* NotificationDetailSeen.swift */; };
 		932EB5C921358B29005527E8 /* DeparDestCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */; };
 		932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */; };
 		932EB5CD21359F97005527E8 /* AvailableBagFromFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */; };
@@ -45,6 +50,11 @@
 		938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955D82132FEA1001725E9 /* TransactionItemsTableViewCell.swift */; };
 		938955DC2133017E001725E9 /* TransactionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955DB2133017E001725E9 /* TransactionDetails.swift */; };
 		938955DE21330189001725E9 /* TransactionDetailsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938955DD21330189001725E9 /* TransactionDetailsResp.swift */; };
+		93B3CCBC21368B0700AEFE00 /* NotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCBB21368B0700AEFE00 /* NotificationContent.swift */; };
+		93B3CCBE21368B1C00AEFE00 /* NotificationErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCBD21368B1C00AEFE00 /* NotificationErrorMsg.swift */; };
+		93B3CCC021368B2900AEFE00 /* NotificationResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCBF21368B2900AEFE00 /* NotificationResp.swift */; };
+		93B3CCC221368B9000AEFE00 /* Notificationss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCC121368B9000AEFE00 /* Notificationss.swift */; };
+		93B3CCC521368C8E00AEFE00 /* GetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCC421368C8E00AEFE00 /* GetNotifications.swift */; };
 		93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */; };
 		93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */; };
 		93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE54A4212ABA1E0011BFD7 /* Content.swift */; };
@@ -134,6 +144,11 @@
 		930575132132B6C500B6923F /* BagDetialsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetialsResp.swift; sourceTree = "<group>"; };
 		930575152132B72E00B6923F /* BagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetails.swift; sourceTree = "<group>"; };
 		930575182132C89800B6923F /* BagItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagItems.swift; sourceTree = "<group>"; };
+		931865A0213694E600D86369 /* LoginContentt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentt.swift; sourceTree = "<group>"; };
+		931865A2213694F400D86369 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsViewController.swift; sourceTree = "<group>"; };
+		931865A7213699EE00D86369 /* NotificationDetailsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsResp.swift; sourceTree = "<group>"; };
+		931865A921369A0300D86369 /* NotificationDetailSeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailSeen.swift; sourceTree = "<group>"; };
 		932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCountryViewController.swift; sourceTree = "<group>"; };
 		932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCityViewController.swift; sourceTree = "<group>"; };
 		932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBagFromFilterViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +163,11 @@
 		938955D82132FEA1001725E9 /* TransactionItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemsTableViewCell.swift; sourceTree = "<group>"; };
 		938955DB2133017E001725E9 /* TransactionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetails.swift; sourceTree = "<group>"; };
 		938955DD21330189001725E9 /* TransactionDetailsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsResp.swift; sourceTree = "<group>"; };
+		93B3CCBB21368B0700AEFE00 /* NotificationContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContent.swift; sourceTree = "<group>"; };
+		93B3CCBD21368B1C00AEFE00 /* NotificationErrorMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationErrorMsg.swift; sourceTree = "<group>"; };
+		93B3CCBF21368B2900AEFE00 /* NotificationResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResp.swift; sourceTree = "<group>"; };
+		93B3CCC121368B9000AEFE00 /* Notificationss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificationss.swift; sourceTree = "<group>"; };
+		93B3CCC421368C8E00AEFE00 /* GetNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNotifications.swift; sourceTree = "<group>"; };
 		93CE54A1212AA9240011BFD7 /* MainSenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSenderTableViewCell.swift; sourceTree = "<group>"; };
 		93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMsg.swift; sourceTree = "<group>"; };
 		93CE54A4212ABA1E0011BFD7 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
@@ -247,6 +267,11 @@
 		93014A50213688AF009BD62A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				931865A6213699D900D86369 /* Details */,
+				93B3CCBB21368B0700AEFE00 /* NotificationContent.swift */,
+				93B3CCBD21368B1C00AEFE00 /* NotificationErrorMsg.swift */,
+				93B3CCBF21368B2900AEFE00 /* NotificationResp.swift */,
+				93B3CCC121368B9000AEFE00 /* Notificationss.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -344,6 +369,25 @@
 			path = BagItems;
 			sourceTree = "<group>";
 		};
+		9318659F213694C500D86369 /* LoginResp */ = {
+			isa = PBXGroup;
+			children = (
+				93D7FE66212996D200D377EF /* LoginResponse.swift */,
+				931865A0213694E600D86369 /* LoginContentt.swift */,
+				931865A2213694F400D86369 /* LoginError.swift */,
+			);
+			path = LoginResp;
+			sourceTree = "<group>";
+		};
+		931865A6213699D900D86369 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				931865A7213699EE00D86369 /* NotificationDetailsResp.swift */,
+				931865A921369A0300D86369 /* NotificationDetailSeen.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		93653C12212ABFFB0080E2B1 /* BagsDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +428,14 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		93B3CCC321368C7B00AEFE00 /* Notifiations */ = {
+			isa = PBXGroup;
+			children = (
+				93B3CCC421368C8E00AEFE00 /* GetNotifications.swift */,
+			);
+			path = Notifiations;
+			sourceTree = "<group>";
+		};
 		93CE54A0212AA9020011BFD7 /* customCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,11 +456,11 @@
 		93D7FE612129754400D377EF /* SuccessResponse */ = {
 			isa = PBXGroup;
 			children = (
+				9318659F213694C500D86369 /* LoginResp */,
 				93CE54A4212ABA1E0011BFD7 /* Content.swift */,
 				93CE54A3212ABA1E0011BFD7 /* ErrorMsg.swift */,
 				93CE54A5212ABA1E0011BFD7 /* SuccessRepsonses.swift */,
 				93D7FE622129755700D377EF /* SuccessResponse.swift */,
-				93D7FE66212996D200D377EF /* LoginResponse.swift */,
 			);
 			path = SuccessResponse;
 			sourceTree = "<group>";
@@ -459,6 +511,7 @@
 				93D7FE772129C7B200D377EF /* MenuViewController.swift */,
 				930561C621354F7900E204F6 /* NotificationTableViewCell.swift */,
 				930561C821354FEC00E204F6 /* NotificationsViewController.swift */,
+				931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -528,6 +581,7 @@
 		93F8FF652125625800E5DB84 /* ServiceHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				93B3CCC321368C7B00AEFE00 /* Notifiations */,
 				9305750821329E0300B6923F /* Sender */,
 				93D7FE5E212971D300D377EF /* LoginAndRegister */,
 				93DBBE3C21256D250054BD7D /* GetCategories */,
@@ -964,9 +1018,11 @@
 			files = (
 				9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */,
 				932EB5C921358B29005527E8 /* DeparDestCountryViewController.swift in Sources */,
+				931865A3213694F400D86369 /* LoginError.swift in Sources */,
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
 				930561C02135378B00E204F6 /* ReserveBag.swift in Sources */,
+				93B3CCC221368B9000AEFE00 /* Notificationss.swift in Sources */,
 				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */,
@@ -984,17 +1040,20 @@
 				93D7FE732129C43500D377EF /* NAvImage.swift in Sources */,
 				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
 				930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */,
+				93B3CCBC21368B0700AEFE00 /* NotificationContent.swift in Sources */,
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
 				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
 				932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */,
 				9305750B21329E1D00B6923F /* GetAvailableBags.swift in Sources */,
 				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
+				93B3CCC021368B2900AEFE00 /* NotificationResp.swift in Sources */,
 				93DBBE4221256DAB0054BD7D /* CategoryResp.swift in Sources */,
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
 				930575192132C89800B6923F /* BagItems.swift in Sources */,
 				930561C321353AAF00E204F6 /* ReserveResult.swift in Sources */,
 				93FC292D21357550002D87BF /* ChooseAirLineViewController.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
+				931865A1213694E600D86369 /* LoginContentt.swift in Sources */,
 				938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
@@ -1002,7 +1061,10 @@
 				938955D32132F37C001725E9 /* Transactions.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
+				93B3CCC521368C8E00AEFE00 /* GetNotifications.swift in Sources */,
 				930561C721354F7900E204F6 /* NotificationTableViewCell.swift in Sources */,
+				931865A8213699EE00D86369 /* NotificationDetailsResp.swift in Sources */,
+				931865A5213699CB00D86369 /* NotificationDetailsViewController.swift in Sources */,
 				93D7FE6C21299F0900D377EF /* SenderViewController.swift in Sources */,
 				930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */,
 				938955DC2133017E001725E9 /* TransactionDetails.swift in Sources */,
@@ -1017,6 +1079,7 @@
 				93DBBE47212570B70054BD7D /* ChooseAddressCityViewController.swift in Sources */,
 				93DBBE45212570A70054BD7D /* ChooseAddressCountriesViewController.swift in Sources */,
 				938955DE21330189001725E9 /* TransactionDetailsResp.swift in Sources */,
+				93B3CCBE21368B1C00AEFE00 /* NotificationErrorMsg.swift in Sources */,
 				93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */,
 				938955D52132F385001725E9 /* TransactionsRes.swift in Sources */,
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
@@ -1030,6 +1093,7 @@
 				930561CB21355B5000E204F6 /* FilterViewController.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
 				9305750521329DB600B6923F /* AvailableFeaturedBags.swift in Sources */,
+				931865AA21369A0300D86369 /* NotificationDetailSeen.swift in Sources */,
 				930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */,
 				93FCEB15212414E300C16F1C /* Constants.swift in Sources */,
 				93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */,

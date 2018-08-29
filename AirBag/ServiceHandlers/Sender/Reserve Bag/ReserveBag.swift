@@ -14,7 +14,7 @@ class ReserveBag: NSObject{
     class func ReserveBag(bagId : Int, weight : [Double], height : [Double],width : [Double],length : [Double],receiver_id : Int,item_id : [Int],img : [String],descriptionString : [String], completionHandler:@escaping(ReserveResultResp?,String)->()){
         let userDefaults = UserDefaults.standard
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
-        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
         let url = Constants.WebService.baseUrl + Constants.WebService.reserveBag + "/\(bagId)"
         let  parameters =  ["weight" : weight,  "height" : height ,
                                          "width" : width ,

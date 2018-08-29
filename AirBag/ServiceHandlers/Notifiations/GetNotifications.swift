@@ -1,53 +1,57 @@
 //
-//  LoginApi.swift
+//  GetNotifications.swift
 //  AirBag
 //
-//  Created by Geek on 8/19/18.
+//  Created by Geek on 8/29/18.
 //  Copyright © 2018 Geek. All rights reserved.
 //
 
 import Foundation
+import Foundation
 import ObjectMapper
-class GetReservations: NSObject{
-    class func GetTransactions( completionHandler:@escaping(TransactionsRes?,String)->()){
+
+class GetNotifications: NSObject{
+    class func GetNotifications( completionHandler:@escaping(NotificationResp?,String)->()){
         let userDefaults = UserDefaults.standard
-        let url = Constants.WebService.baseUrl + Constants.WebService.getTransactions
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
+        let url = Constants.WebService.baseUrl + Constants.WebService.notifications
+        
         NetWorkConnection.dataGetWithHeader(url: url, httpmethod: .get, aceessToken: decodedUser.token!, completionHandler: {responseObject, error in
+            
             
             if(error==nil)
             {
                 
-                let loginResponse = Mapper<TransactionsRes>().map(JSON:responseObject as! [String : Any]) //Swift 3
-                if(loginResponse?.transactions?.count != 0)
+                let loginResponse = Mapper<NotificationResp>().map(JSON:responseObject as! [String : Any]) //Swift 3
+                if(loginResponse?.msg == "success")
                 {
                     completionHandler(loginResponse!,"")
                 }else{
-                    completionHandler(loginResponse!,"error")
+                    completionHandler(loginResponse!,(loginResponse?.msg)!)
                 }
             }
             else
             {
-                completionHandler(Mapper<TransactionsRes>().map(JSON:[:])!,"no_internet");
+                completionHandler(Mapper<NotificationResp>().map(JSON:[:])!,"no_internet");
             }
         });
     }
     
-    
-    
-    class func GetTransactionsDetails(transactionId : Int,completionHandler:@escaping(TransactionDetailsResp?,String)->()){
+    class func GetNotificationsDetails(notificationId : Int, completionHandler:@escaping(NotificationDetailsResp?,String)->()){
         let userDefaults = UserDefaults.standard
-        let url = Constants.WebService.baseUrl + Constants.WebService.getTransactions + "/\(transactionId)"
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
+        let url = Constants.WebService.baseUrl + Constants.WebService.notifications + "/\(notificationId)"
+        
         NetWorkConnection.dataGetWithHeader(url: url, httpmethod: .get, aceessToken: decodedUser.token!, completionHandler: {responseObject, error in
+            
             
             if(error==nil)
             {
                 
-                let loginResponse = Mapper<TransactionDetailsResp>().map(JSON:responseObject as! [String : Any]) //Swift 3
-                if(loginResponse?.transaction?.count != 0)
+                let loginResponse = Mapper<NotificationDetailsResp>().map(JSON:responseObject as! [String : Any]) //Swift 3
+                if(loginResponse?.id != 0)
                 {
                     completionHandler(loginResponse!,"")
                 }else{
@@ -56,14 +60,9 @@ class GetReservations: NSObject{
             }
             else
             {
-                completionHandler(Mapper<TransactionDetailsResp>().map(JSON:[:])!,"no_internet");
+                completionHandler(Mapper<NotificationDetailsResp>().map(JSON:[:])!,"no_internet");
             }
         });
     }
 }
-
-
-
-
-
 

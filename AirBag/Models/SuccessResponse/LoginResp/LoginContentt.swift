@@ -1,15 +1,7 @@
 //
-//  LoginResponse.swift
-//  AirBag
+//    Content.swift
 //
-//  Created by Geek on 8/19/18.
-//  Copyright © 2018 Geek. All rights reserved.
-//
-
-//
-//    RootClass.swift
-//
-//    Create by Geek on 19/8/2018
+//    Create by Geek on 29/8/2018
 //    Copyright © 2018. All rights reserved.
 //    Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -17,16 +9,17 @@ import Foundation
 import ObjectMapper
 
 
-class LoginResponse : NSObject, NSCoding, Mappable{
+class LoginContentt : NSObject, NSCoding, Mappable{
     
     var active : Int?
-    var currentTypeID : String?
+    var currentTypeId : Int?
     var nickname : String?
     var token : String?
+    var userId : Int?
     
     
     class func newInstance(map: Map) -> Mappable?{
-        return LoginResponse()
+        return LoginContentt()
     }
     required init?(map: Map){}
     private override init(){}
@@ -34,9 +27,10 @@ class LoginResponse : NSObject, NSCoding, Mappable{
     func mapping(map: Map)
     {
         active <- map["active"]
-        currentTypeID <- map["currentTypeID"]
+        currentTypeId <- map["current_type_id"]
         nickname <- map["nickname"]
         token <- map["token"]
+        userId <- map["user_id"]
         
     }
     
@@ -47,9 +41,10 @@ class LoginResponse : NSObject, NSCoding, Mappable{
     @objc required init(coder aDecoder: NSCoder)
     {
         active = aDecoder.decodeObject(forKey: "active") as? Int
-        currentTypeID = aDecoder.decodeObject(forKey: "currentTypeID") as? String
+        currentTypeId = aDecoder.decodeObject(forKey: "current_type_id") as? Int
         nickname = aDecoder.decodeObject(forKey: "nickname") as? String
         token = aDecoder.decodeObject(forKey: "token") as? String
+        userId = aDecoder.decodeObject(forKey: "user_id") as? Int
         
     }
     
@@ -62,14 +57,17 @@ class LoginResponse : NSObject, NSCoding, Mappable{
         if active != nil{
             aCoder.encode(active, forKey: "active")
         }
-        if currentTypeID != nil{
-            aCoder.encode(currentTypeID, forKey: "currentTypeID")
+        if currentTypeId != nil{
+            aCoder.encode(currentTypeId, forKey: "current_type_id")
         }
         if nickname != nil{
             aCoder.encode(nickname, forKey: "nickname")
         }
         if token != nil{
             aCoder.encode(token, forKey: "token")
+        }
+        if userId != nil{
+            aCoder.encode(userId, forKey: "user_id")
         }
         
     }

@@ -122,11 +122,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 
             } else {
                 print("you're logged in")
-                let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
-                self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                
                 let decoded  = userDefaults.object(forKey: "logResp") as! Data
-                let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+                let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
                 print("access token ---> \(decodedUser.token)")
+                print("current type id---> \(decodedUser.currentTypeId)")
+                if(decodedUser.currentTypeId == 1){
+                    
+                }else  if(decodedUser.currentTypeId == 2){
+                    let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                }else if(decodedUser.currentTypeId == 3){
+                    
+                }
+               
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = self.tabController
                 appDelegate.window?.makeKeyAndVisible()

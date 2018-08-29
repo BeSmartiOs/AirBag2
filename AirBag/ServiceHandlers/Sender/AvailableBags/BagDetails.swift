@@ -17,7 +17,7 @@ class BagDetails: NSObject{
         let userDefaults = UserDefaults.standard
         let url = Constants.WebService.baseUrl + Constants.WebService.bagInfo + "/\(bagId)"
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
-        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginResponse
+        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
         NetWorkConnection.dataGetWithHeader(url: url, httpmethod: .get, aceessToken: decodedUser.token!, completionHandler: {responseObject, error in
             
             if(error==nil)

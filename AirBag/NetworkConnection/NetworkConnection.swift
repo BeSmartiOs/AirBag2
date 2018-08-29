@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class NetWorkConnection: NSObject {
+    /*no headers*/
     static func fetchDataDic( url:String,httpmethod:HTTPMethod,parameters:NSDictionary,completionHandler:@escaping(NSDictionary?, String?) -> ()){
-        
         Alamofire.request(url, method: httpmethod, parameters: nil, headers:nil).responseJSON { response in
             print("Request \(String(describing: response.request))")
             print("RESPONSE \(String(describing:response.result.value))")
@@ -81,7 +81,7 @@ class NetWorkConnection: NSObject {
             }
         }
     }
-    
+     /* headers*/
     static func dataWithHeader( url:String,httpmethod:HTTPMethod,aceessToken : String, parameters:NSDictionary,completionHandler: @escaping (NSDictionary?, String?) -> ()){
         
         let authorization = ["Authorization" : "Bearer \(aceessToken)"]
@@ -102,11 +102,6 @@ class NetWorkConnection: NSObject {
         }
     }
 
-    
-    
-    
-    //HEADERSSSS
-    
     
     static func dataGetWithHeader( url:String,httpmethod:HTTPMethod,aceessToken : String,completionHandler: @escaping (NSDictionary?, String?) -> ()){
         

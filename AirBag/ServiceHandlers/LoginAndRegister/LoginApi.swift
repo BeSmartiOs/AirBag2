@@ -22,7 +22,7 @@ class LoginApi: NSObject{
             {
                 
                 let loginResponse = Mapper<LoginResponse>().map(JSON:responseObject as! [String : Any]) //Swift 3
-                if(loginResponse?.token != "")
+                if(loginResponse?.msg == "success")
                 {
                     completionHandler(loginResponse!,"")
                 }else{
