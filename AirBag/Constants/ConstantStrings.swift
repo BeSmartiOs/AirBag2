@@ -54,7 +54,7 @@ struct  ConstantStrings{
     static let main = "Main"
     static let menu = "Menu"
     static let reservation = "Reservations"
-    
+      static let transactions = "Transactions"
     
     static let departureText = "Departure"
     static let DestinationText = "Destination"

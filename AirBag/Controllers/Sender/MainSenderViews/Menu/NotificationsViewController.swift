@@ -72,6 +72,15 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
          let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableViewCell
         cell.titleLabel.text = self.notificationsRes?.content?.notifications![indexPath.row].title
            cell.bodyLabel.text = self.notificationsRes?.content?.notifications![indexPath.row].body
+        cell.isRead.backgroundColor = UIColor.appBlue
+        cell.isRead.layer.cornerRadius = cell.isRead.frame.size.width/2
+        cell.isRead.clipsToBounds = true
+        
+        if(self.notificationsRes?.content?.notifications![indexPath.row].seen! == "0000-00-00 00:00:00"){
+            cell.isRead.isHidden = false
+        }else{
+                    cell.isRead.isHidden = true
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

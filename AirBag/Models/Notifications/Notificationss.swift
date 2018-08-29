@@ -14,7 +14,7 @@ class Notificationss : NSObject, Mappable{
     var body : String?
     var id : Int?
     var notificationTypeId : Int?
-    var seen : AnyObject?
+    var seen : String?
     var title : String?
     var userTypeId : Int?
     var bagId : Int?

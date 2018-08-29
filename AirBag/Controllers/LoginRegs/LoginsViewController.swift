@@ -148,7 +148,11 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
-    
+    /*
+     static let carrier = 1
+     static let sender = 2
+     static let reciever = 3
+     */
     func login(email : String, password : String, userType : Int){
         self.hud.show(in: self.view)
         LoginApi.LoginApi(email: email, currentTypeId: userType, password: password) { (logResp, error) in
@@ -165,7 +169,8 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
                 }else if(self.loginResp?.content?.currentTypeId == 3){
-                    
+                    let myStoryboard = UIStoryboard(name: "Reciever", bundle: nil) as UIStoryboard
+                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "RecieverViewController") as? RecieverViewController
                 }
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = self.tabController

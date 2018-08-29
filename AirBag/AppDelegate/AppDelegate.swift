@@ -133,7 +133,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
                 }else if(decodedUser.currentTypeId == 3){
-                    
+                    let myStoryboard = UIStoryboard(name: "Reciever", bundle: nil) as UIStoryboard
+                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "RecieverViewController") as? RecieverViewController
                 }
                
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate

@@ -12,7 +12,7 @@ import ObjectMapper
 class TransactionDetailsResp : NSObject, Mappable{
     
     var transaction : [TransactionDetails]?
-    var transactionItems : [AnyObject]?
+    var transactionItems : [TransactionDetailsItems]?
     
     
     class func newInstance(map: Map) -> Mappable?{

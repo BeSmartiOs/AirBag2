@@ -22,7 +22,7 @@ class Transactions : NSObject, Mappable{
     var reservedWeight : Int?
     var transactionId : Int?
     var transactionPrice : Int?
-    
+    var senderName : String?
     
     class func newInstance(map: Map) -> Mappable?{
         return Transactions()
@@ -43,6 +43,7 @@ class Transactions : NSObject, Mappable{
         reservedWeight <- map["reserved_weight"]
         transactionId <- map["transaction_id"]
         transactionPrice <- map["transaction_price"]
+        senderName <- map["sender_name"]
         
     }
     

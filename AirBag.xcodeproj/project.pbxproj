@@ -39,6 +39,11 @@
 		932EB5C921358B29005527E8 /* DeparDestCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */; };
 		932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */; };
 		932EB5CD21359F97005527E8 /* AvailableBagFromFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */; };
+		93333CA82136B9B400F896A6 /* Reciever.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93333CA72136B9B400F896A6 /* Reciever.storyboard */; };
+		93333CAB2136BB8B00F896A6 /* RecieverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CAA2136BB8B00F896A6 /* RecieverViewController.swift */; };
+		93333CAE2136C1ED00F896A6 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CAD2136C1ED00F896A6 /* TransactionsViewController.swift */; };
+		93333CB02136D0DA00F896A6 /* TransactionDetailsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CAF2136D0DA00F896A6 /* TransactionDetailsItems.swift */; };
+		93333CB22136D95B00F896A6 /* ViewQrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CB12136D95B00F896A6 /* ViewQrCodeViewController.swift */; };
 		93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C10212ABF8E0080E2B1 /* DottedView.swift */; };
 		93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */; };
 		93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */; };
@@ -152,6 +157,11 @@
 		932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCountryViewController.swift; sourceTree = "<group>"; };
 		932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCityViewController.swift; sourceTree = "<group>"; };
 		932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBagFromFilterViewController.swift; sourceTree = "<group>"; };
+		93333CA72136B9B400F896A6 /* Reciever.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reciever.storyboard; sourceTree = "<group>"; };
+		93333CAA2136BB8B00F896A6 /* RecieverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecieverViewController.swift; sourceTree = "<group>"; };
+		93333CAD2136C1ED00F896A6 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		93333CAF2136D0DA00F896A6 /* TransactionDetailsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsItems.swift; sourceTree = "<group>"; };
+		93333CB12136D95B00F896A6 /* ViewQrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewQrCodeViewController.swift; sourceTree = "<group>"; };
 		93653C10212ABF8E0080E2B1 /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetailsViewController.swift; sourceTree = "<group>"; };
 		93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBagViewController.swift; sourceTree = "<group>"; };
@@ -388,6 +398,24 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		93333CA92136BB2000F896A6 /* Reciever */ = {
+			isa = PBXGroup;
+			children = (
+				93333CAC2136C1BA00F896A6 /* Transactions */,
+				93333CAA2136BB8B00F896A6 /* RecieverViewController.swift */,
+			);
+			path = Reciever;
+			sourceTree = "<group>";
+		};
+		93333CAC2136C1BA00F896A6 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				93333CAD2136C1ED00F896A6 /* TransactionsViewController.swift */,
+				93333CB12136D95B00F896A6 /* ViewQrCodeViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		93653C12212ABFFB0080E2B1 /* BagsDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +452,7 @@
 			children = (
 				938955DB2133017E001725E9 /* TransactionDetails.swift */,
 				938955DD21330189001725E9 /* TransactionDetailsResp.swift */,
+				93333CAF2136D0DA00F896A6 /* TransactionDetailsItems.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -696,6 +725,7 @@
 		93FCEB0F2124149100C16F1C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				93333CA92136BB2000F896A6 /* Reciever */,
 				93D7FE6A21299EE300D377EF /* Sender */,
 				93DBBE35212568140054BD7D /* AbstractViewController */,
 				93FCEB162124158C00C16F1C /* LoginRegs */,
@@ -727,6 +757,7 @@
 				93FCEAE52124126500C16F1C /* Main.storyboard */,
 				93FCEAEA2124126700C16F1C /* LaunchScreen.storyboard */,
 				93D7FE6821299E6900D377EF /* Sender.storyboard */,
+				93333CA72136B9B400F896A6 /* Reciever.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -901,6 +932,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FCEAEC2124126700C16F1C /* LaunchScreen.storyboard in Resources */,
+				93333CA82136B9B400F896A6 /* Reciever.storyboard in Resources */,
 				93D7FE5D21295CD300D377EF /* GoogleService-Info.plist in Resources */,
 				93FCEAE92124126600C16F1C /* Assets.xcassets in Resources */,
 				93FCEAE72124126500C16F1C /* Main.storyboard in Resources */,
@@ -1021,6 +1053,7 @@
 				931865A3213694F400D86369 /* LoginError.swift in Sources */,
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
+				93333CAB2136BB8B00F896A6 /* RecieverViewController.swift in Sources */,
 				930561C02135378B00E204F6 /* ReserveBag.swift in Sources */,
 				93B3CCC221368B9000AEFE00 /* Notificationss.swift in Sources */,
 				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
@@ -1037,6 +1070,7 @@
 				930575122132B6B500B6923F /* BagRestriction.swift in Sources */,
 				93CE54A2212AA9240011BFD7 /* MainSenderTableViewCell.swift in Sources */,
 				93EE8010212AFAD700F782E9 /* AddItemsInBagViewController.swift in Sources */,
+				93333CB02136D0DA00F896A6 /* TransactionDetailsItems.swift in Sources */,
 				93D7FE732129C43500D377EF /* NAvImage.swift in Sources */,
 				93FCEB1E21241CF700C16F1C /* LoginsViewController.swift in Sources */,
 				930574FF21328F1000B6923F /* ChooseItemViewController.swift in Sources */,
@@ -1089,6 +1123,7 @@
 				93DBBE3B2125689B0054BD7D /* ChooseDestinationCityViewController.swift in Sources */,
 				9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */,
 				9304DEE22133E1BF004E8A0E /* GetRecievers.swift in Sources */,
+				93333CAE2136C1ED00F896A6 /* TransactionsViewController.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
 				930561CB21355B5000E204F6 /* FilterViewController.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
@@ -1096,6 +1131,7 @@
 				931865AA21369A0300D86369 /* NotificationDetailSeen.swift in Sources */,
 				930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */,
 				93FCEB15212414E300C16F1C /* Constants.swift in Sources */,
+				93333CB22136D95B00F896A6 /* ViewQrCodeViewController.swift in Sources */,
 				93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
