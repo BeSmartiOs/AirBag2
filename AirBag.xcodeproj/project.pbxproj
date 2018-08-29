@@ -44,6 +44,7 @@
 		93333CAE2136C1ED00F896A6 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CAD2136C1ED00F896A6 /* TransactionsViewController.swift */; };
 		93333CB02136D0DA00F896A6 /* TransactionDetailsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CAF2136D0DA00F896A6 /* TransactionDetailsItems.swift */; };
 		93333CB22136D95B00F896A6 /* ViewQrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93333CB12136D95B00F896A6 /* ViewQrCodeViewController.swift */; };
+		93333CB42136DF3E00F896A6 /* Carrier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93333CB32136DF3E00F896A6 /* Carrier.storyboard */; };
 		93653C11212ABF8E0080E2B1 /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C10212ABF8E0080E2B1 /* DottedView.swift */; };
 		93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */; };
 		93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */; };
@@ -162,6 +163,7 @@
 		93333CAD2136C1ED00F896A6 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		93333CAF2136D0DA00F896A6 /* TransactionDetailsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsItems.swift; sourceTree = "<group>"; };
 		93333CB12136D95B00F896A6 /* ViewQrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewQrCodeViewController.swift; sourceTree = "<group>"; };
+		93333CB32136DF3E00F896A6 /* Carrier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carrier.storyboard; sourceTree = "<group>"; };
 		93653C10212ABF8E0080E2B1 /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		93653C13212AC00F0080E2B1 /* BagDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetailsViewController.swift; sourceTree = "<group>"; };
 		93653C15212AF1590080E2B1 /* ReserveBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBagViewController.swift; sourceTree = "<group>"; };
@@ -758,6 +760,7 @@
 				93FCEAEA2124126700C16F1C /* LaunchScreen.storyboard */,
 				93D7FE6821299E6900D377EF /* Sender.storyboard */,
 				93333CA72136B9B400F896A6 /* Reciever.storyboard */,
+				93333CB32136DF3E00F896A6 /* Carrier.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				93FCEAEC2124126700C16F1C /* LaunchScreen.storyboard in Resources */,
 				93333CA82136B9B400F896A6 /* Reciever.storyboard in Resources */,
 				93D7FE5D21295CD300D377EF /* GoogleService-Info.plist in Resources */,
+				93333CB42136DF3E00F896A6 /* Carrier.storyboard in Resources */,
 				93FCEAE92124126600C16F1C /* Assets.xcassets in Resources */,
 				93FCEAE72124126500C16F1C /* Main.storyboard in Resources */,
 				93D7FE6921299E6A00D377EF /* Sender.storyboard in Resources */,

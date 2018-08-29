@@ -93,7 +93,7 @@ class NotificationDetailsViewController: UIViewController {
                         self.actionPerformed.setTitle("Be a Carrier to view more Info", for: .normal)
                         if(self.notification?.notificationTypeId == 1){
                             //go to carrier bagId
-                        }else if(self.notification?.notificationTypeId == 2){
+                        }else {
                             //go to carrier transId
                         }
                             }
@@ -110,7 +110,7 @@ class NotificationDetailsViewController: UIViewController {
                          self.actionPerformed.setTitle("Be a Sender to view more Info", for: .normal)
                         if(self.notification?.notificationTypeId == 1){
                             //go to sender bagId
-                        }else if(self.notification?.notificationTypeId == 2){
+                        }else {
                             //go to sender transId
                         }
                     }
@@ -125,7 +125,7 @@ class NotificationDetailsViewController: UIViewController {
                         self.actionPerformed.setTitle("Be a Reciever to view more Info", for: .normal)
                         if(self.notification?.notificationTypeId == 1){
                             //go to rec bagId
-                        }else if(self.notification?.notificationTypeId == 2){
+                        }else {
                             //go to rec transId
                         }
                     }
