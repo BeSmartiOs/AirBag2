@@ -53,6 +53,35 @@ class RegisterApi: NSObject{
             }
         });
     }
+    
+    
+    
+    class func ActivateMobile(code : String, userId : Int, completionHandler:@escaping(SuccessResponse?,String)->()){
+        let url = Constants.WebService.baseUrl + Constants.WebService.activateMob + "\(userId)"
+        
+        let   parameters = ["code" : code] as [String : Any] as NSDictionary
+        print(parameters)
+        
+        NetWorkConnection.postData(url: url, httpmethod: .post, parameters: parameters as NSDictionary , completionHandler: {responseObject, error in
+            
+            if(error==nil)
+            {
+                
+                let loginResponse = Mapper<SuccessResponse>().map(JSON:responseObject as! [String : Any]) //Swift 3
+                if(loginResponse?.msg == "registered successfully, please make email activation")
+                {
+                    completionHandler(loginResponse!,"")
+                }else{
+                    completionHandler(loginResponse!,(loginResponse?.msg)!)
+                }
+            }
+            else
+            {
+                completionHandler(Mapper<SuccessResponse>().map(JSON:[:])!,"no_internet");
+            }
+        });
+    }
+    
 }
 
 

@@ -91,6 +91,7 @@
 		93F88D9E213809AB00C7F054 /* AirPortCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F88D9D213809AB00C7F054 /* AirPortCountryViewController.swift */; };
 		93F88DA0213809B800C7F054 /* AirPortCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F88D9F213809B800C7F054 /* AirPortCityViewController.swift */; };
 		93F88DA2213809C500C7F054 /* AirPortssViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F88DA1213809C500C7F054 /* AirPortssViewController.swift */; };
+		93F88DA42138415A00C7F054 /* VerifyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F88DA32138415A00C7F054 /* VerifyNumberViewController.swift */; };
 		93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF672125629900E5DB84 /* NetworkConnection.swift */; };
 		93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */; };
 		93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8FF6F2125648200E5DB84 /* CountriesResp.swift */; };
@@ -217,6 +218,7 @@
 		93F88D9D213809AB00C7F054 /* AirPortCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPortCountryViewController.swift; sourceTree = "<group>"; };
 		93F88D9F213809B800C7F054 /* AirPortCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPortCityViewController.swift; sourceTree = "<group>"; };
 		93F88DA1213809C500C7F054 /* AirPortssViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPortssViewController.swift; sourceTree = "<group>"; };
+		93F88DA32138415A00C7F054 /* VerifyNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNumberViewController.swift; sourceTree = "<group>"; };
 		93F8FF672125629900E5DB84 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		93F8FF6A212562C500E5DB84 /* GetCountriesCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesCities.swift; sourceTree = "<group>"; };
 		93F8FF6F2125648200E5DB84 /* CountriesResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResp.swift; sourceTree = "<group>"; };
@@ -836,6 +838,7 @@
 				93FCEB262124396D00C16F1C /* CustomCells */,
 				93FCEB17212415B500C16F1C /* RegisterationViewController.swift */,
 				93FCEB1D21241CF700C16F1C /* LoginsViewController.swift */,
+				93F88DA32138415A00C7F054 /* VerifyNumberViewController.swift */,
 			);
 			path = LoginRegs;
 			sourceTree = "<group>";
@@ -1191,6 +1194,7 @@
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
 				930561CB21355B5000E204F6 /* FilterViewController.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
+				93F88DA42138415A00C7F054 /* VerifyNumberViewController.swift in Sources */,
 				9305750521329DB600B6923F /* AvailableFeaturedBags.swift in Sources */,
 				931865AA21369A0300D86369 /* NotificationDetailSeen.swift in Sources */,
 				930574FD21328EFF00B6923F /* ChooseCategoryViewController.swift in Sources */,
