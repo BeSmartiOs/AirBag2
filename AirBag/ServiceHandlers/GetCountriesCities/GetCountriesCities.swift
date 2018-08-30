@@ -72,7 +72,29 @@ class GetCountriesCities: NSObject{
             }
         });
     }
-    
+    class func GetAirPorts(id : Int, completionHandler:@escaping([Airlines]?,String)->()){
+        let url = Constants.WebService.baseUrl + Constants.WebService.airports + "\(id)"
+        let userDefaults = UserDefaults.standard
+        let decoded  = userDefaults.object(forKey: "logResp") as! Data
+        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
+        NetWorkConnection.dataGetWithHeaderArr(url: url, httpmethod: .get, aceessToken: decodedUser.token!, completionHandler: {responseObject, error in
+            
+            if(error==nil)
+            {
+                let subCat =
+                    Mapper<Airlines>().mapArray(JSONObject: responseObject)//Swift 3
+                if(subCat?.count != 0){
+                    completionHandler(subCat!,"")
+                }else{
+                    completionHandler(subCat!,"No data")
+                }
+            }
+            else
+            {
+                completionHandler(Mapper<Airlines>().mapArray(JSONObject: []),"no_internet");
+            }
+        });
+    }
     
 }
 

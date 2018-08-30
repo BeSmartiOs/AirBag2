@@ -826,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynt-3A-VZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="-1770"/>
+            <point key="canvasLocation" x="3529" y="-1699"/>
         </scene>
         <!--Depar Dest City View Controller-->
         <scene sceneID="135-mT-J4L">
@@ -947,7 +947,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOX-Wo-wqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4213.6000000000004" y="-1801.3493253373315"/>
+            <point key="canvasLocation" x="4188" y="-1700"/>
         </scene>
         <!--Choose Air Line View Controller-->
         <scene sceneID="xJW-sP-m9j">

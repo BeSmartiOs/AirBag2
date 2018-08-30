@@ -164,7 +164,8 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 userDefaults.set(encodedData, forKey: "logResp")
                 userDefaults.synchronize()
                 if(self.loginResp?.content?.currentTypeId == 1){
-                    
+                    let myStoryboard = UIStoryboard(name: "Carrier", bundle: nil) as UIStoryboard
+                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "CarrierMainViewController") as? CarrierMainViewController
                 }else  if(self.loginResp?.content?.currentTypeId == 2){
                     let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController

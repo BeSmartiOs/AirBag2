@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CreateBagViewController.doneClicked():CreateBagViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ChooseCountriesViewController.dismissView(_:):ChooseCountriesViewController.swift">
          <PersistentStrings>
             <PersistentString

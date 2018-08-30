@@ -16,6 +16,15 @@ struct Constants{
         
     }
     
+    
+    /*
+     0- just registered
+     1- only mobile activation is done
+     2- only email activation is done
+     3- email and mobile activation are done
+     .. user can open app now
+     */
+    
     struct WebService{
         static let baseUrl = "http://206.189.17.20"
         static let getCountries = "/countries"
@@ -31,6 +40,7 @@ struct Constants{
         static let reserveBag = "/bag/reserve"
          static let getAirLines = "/airlines"
         static let notifications = "/notifications"
+          static let airports = "/airports/"
         
     }
     
