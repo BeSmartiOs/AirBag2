@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     var navController: UINavigationController?
     var tabController: UITabBarController?
+      var viewController: UIViewController?
     let userDefaults = UserDefaults.standard
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -127,6 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
                 print("access token ---> \(decodedUser.token)")
                 print("current type id---> \(decodedUser.currentTypeId)")
+                if(decodedUser.active == 3){
                 if(decodedUser.currentTypeId == 1){
                     let myStoryboard = UIStoryboard(name: "Carrier", bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "CarrierMainViewController") as? CarrierMainViewController
@@ -141,6 +143,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = self.tabController
                 appDelegate.window?.makeKeyAndVisible()
+               
+                    /*
+                     
+                     active states:
+                     0- just registered
+                     1- only mobile activation is done
+                     2- only email activation is done
+                     */
+                }else  if(decodedUser.currentTypeId == 2){
+                    let myStoryboard = UIStoryboard(name: "Main", bundle: nil) as UIStoryboard
+                    self.viewController = myStoryboard.instantiateViewController(withIdentifier: "VerifyNumberViewController") as? VerifyNumberViewController
+                }
             }
         }
         

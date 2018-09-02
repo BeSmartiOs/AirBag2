@@ -36,6 +36,15 @@
 		931865A5213699CB00D86369 /* NotificationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */; };
 		931865A8213699EE00D86369 /* NotificationDetailsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A7213699EE00D86369 /* NotificationDetailsResp.swift */; };
 		931865AA21369A0300D86369 /* NotificationDetailSeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A921369A0300D86369 /* NotificationDetailSeen.swift */; };
+		9320A840213BC3C1004B9A54 /* RegisterContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A83F213BC3C1004B9A54 /* RegisterContent.swift */; };
+		9320A842213BC3CC004B9A54 /* RegisterErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A841213BC3CC004B9A54 /* RegisterErrorMsg.swift */; };
+		9320A844213BC3D5004B9A54 /* ResgisterResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A843213BC3D5004B9A54 /* ResgisterResp.swift */; };
+		9320A846213BC7E7004B9A54 /* PhoneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A845213BC7E7004B9A54 /* PhoneContent.swift */; };
+		9320A848213BC7F7004B9A54 /* PhoneErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A847213BC7F7004B9A54 /* PhoneErrorMsg.swift */; };
+		9320A84A213BC806004B9A54 /* PhoneVerificationResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A849213BC806004B9A54 /* PhoneVerificationResp.swift */; };
+		9320A84C213BCA91004B9A54 /* ActivateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A84B213BCA91004B9A54 /* ActivateEmailViewController.swift */; };
+		9320A84F213BE25D004B9A54 /* CretaeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A84E213BE25D004B9A54 /* CretaeBag.swift */; };
+		9320A852213BF1B6004B9A54 /* BagCreationResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9320A851213BF1B6004B9A54 /* BagCreationResp.swift */; };
 		932EB5C921358B29005527E8 /* DeparDestCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */; };
 		932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */; };
 		932EB5CD21359F97005527E8 /* AvailableBagFromFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */; };
@@ -163,6 +172,15 @@
 		931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsViewController.swift; sourceTree = "<group>"; };
 		931865A7213699EE00D86369 /* NotificationDetailsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsResp.swift; sourceTree = "<group>"; };
 		931865A921369A0300D86369 /* NotificationDetailSeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailSeen.swift; sourceTree = "<group>"; };
+		9320A83F213BC3C1004B9A54 /* RegisterContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContent.swift; sourceTree = "<group>"; };
+		9320A841213BC3CC004B9A54 /* RegisterErrorMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterErrorMsg.swift; sourceTree = "<group>"; };
+		9320A843213BC3D5004B9A54 /* ResgisterResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResgisterResp.swift; sourceTree = "<group>"; };
+		9320A845213BC7E7004B9A54 /* PhoneContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneContent.swift; sourceTree = "<group>"; };
+		9320A847213BC7F7004B9A54 /* PhoneErrorMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneErrorMsg.swift; sourceTree = "<group>"; };
+		9320A849213BC806004B9A54 /* PhoneVerificationResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationResp.swift; sourceTree = "<group>"; };
+		9320A84B213BCA91004B9A54 /* ActivateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateEmailViewController.swift; sourceTree = "<group>"; };
+		9320A84E213BE25D004B9A54 /* CretaeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CretaeBag.swift; sourceTree = "<group>"; };
+		9320A851213BF1B6004B9A54 /* BagCreationResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagCreationResp.swift; sourceTree = "<group>"; };
 		932EB5C821358B29005527E8 /* DeparDestCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCountryViewController.swift; sourceTree = "<group>"; };
 		932EB5CA21358B58005527E8 /* DeparDestCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparDestCityViewController.swift; sourceTree = "<group>"; };
 		932EB5CC21359F97005527E8 /* AvailableBagFromFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBagFromFilterViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +361,7 @@
 				930561C121353A9400E204F6 /* ReserveBag */,
 				9305750E2132B69500B6923F /* BagDetails */,
 				9305750121329D8F00B6923F /* SenderBags */,
+				9320A851213BF1B6004B9A54 /* BagCreationResp.swift */,
 			);
 			path = Bags;
 			sourceTree = "<group>";
@@ -414,6 +433,34 @@
 				931865A921369A0300D86369 /* NotificationDetailSeen.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		9320A83D213BC1FC004B9A54 /* Verifications */ = {
+			isa = PBXGroup;
+			children = (
+				9320A845213BC7E7004B9A54 /* PhoneContent.swift */,
+				9320A847213BC7F7004B9A54 /* PhoneErrorMsg.swift */,
+				9320A849213BC806004B9A54 /* PhoneVerificationResp.swift */,
+			);
+			path = Verifications;
+			sourceTree = "<group>";
+		};
+		9320A83E213BC3A7004B9A54 /* RegisterationModel */ = {
+			isa = PBXGroup;
+			children = (
+				9320A83F213BC3C1004B9A54 /* RegisterContent.swift */,
+				9320A841213BC3CC004B9A54 /* RegisterErrorMsg.swift */,
+				9320A843213BC3D5004B9A54 /* ResgisterResp.swift */,
+			);
+			path = RegisterationModel;
+			sourceTree = "<group>";
+		};
+		9320A84D213BE24A004B9A54 /* CarrierBags */ = {
+			isa = PBXGroup;
+			children = (
+				9320A84E213BE25D004B9A54 /* CretaeBag.swift */,
+			);
+			path = CarrierBags;
 			sourceTree = "<group>";
 		};
 		93333CA92136BB2000F896A6 /* Reciever */ = {
@@ -628,6 +675,7 @@
 		93DBBE4021256D890054BD7D /* LoginAndRegisteration */ = {
 			isa = PBXGroup;
 			children = (
+				9320A83E213BC3A7004B9A54 /* RegisterationModel */,
 				93DBBE3F21256D780054BD7D /* Categories */,
 				93F8FF6D2125644B00E5DB84 /* Countries */,
 				93FCEB222124235700C16F1C /* UserTypes.swift */,
@@ -666,6 +714,7 @@
 		93F8FF652125625800E5DB84 /* ServiceHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				9320A84D213BE24A004B9A54 /* CarrierBags */,
 				93B3CCC321368C7B00AEFE00 /* Notifiations */,
 				9305750821329E0300B6923F /* Sender */,
 				93D7FE5E212971D300D377EF /* LoginAndRegister */,
@@ -839,6 +888,7 @@
 				93FCEB17212415B500C16F1C /* RegisterationViewController.swift */,
 				93FCEB1D21241CF700C16F1C /* LoginsViewController.swift */,
 				93F88DA32138415A00C7F054 /* VerifyNumberViewController.swift */,
+				9320A84B213BCA91004B9A54 /* ActivateEmailViewController.swift */,
 			);
 			path = LoginRegs;
 			sourceTree = "<group>";
@@ -854,6 +904,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9320A83D213BC1FC004B9A54 /* Verifications */,
 				93014A50213688AF009BD62A /* Notifications */,
 				9304DEE32133E2FA004E8A0E /* DataModels */,
 				938955D12132F369001725E9 /* Transactions */,
@@ -1114,10 +1165,13 @@
 				931865A3213694F400D86369 /* LoginError.swift in Sources */,
 				93D7FE712129C1AC00D377EF /* MainSenderViewController.swift in Sources */,
 				93653C16212AF1590080E2B1 /* ReserveBagViewController.swift in Sources */,
+				9320A846213BC7E7004B9A54 /* PhoneContent.swift in Sources */,
 				93333CAB2136BB8B00F896A6 /* RecieverViewController.swift in Sources */,
 				930561C02135378B00E204F6 /* ReserveBag.swift in Sources */,
+				9320A848213BC7F7004B9A54 /* PhoneErrorMsg.swift in Sources */,
 				93B3CCC221368B9000AEFE00 /* Notificationss.swift in Sources */,
 				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
+				9320A84F213BE25D004B9A54 /* CretaeBag.swift in Sources */,
 				93FCEB2021241DFC00C16F1C /* ConstantStrings.swift in Sources */,
 				9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */,
 				93D7FE632129755700D377EF /* SuccessResponse.swift in Sources */,
@@ -1126,6 +1180,7 @@
 				93CE54A8212ABA1F0011BFD7 /* SuccessRepsonses.swift in Sources */,
 				930575102132B6A900B6923F /* BagInfo.swift in Sources */,
 				93D7FE67212996D200D377EF /* LoginResponse.swift in Sources */,
+				9320A852213BF1B6004B9A54 /* BagCreationResp.swift in Sources */,
 				93653C14212AC00F0080E2B1 /* BagDetailsViewController.swift in Sources */,
 				938955CD2132F220001725E9 /* ReservationsViewController.swift in Sources */,
 				930575122132B6B500B6923F /* BagRestriction.swift in Sources */,
@@ -1140,6 +1195,7 @@
 				93DBBE39212568920054BD7D /* ChooseDestinationCountryViewController.swift in Sources */,
 				93F8FF682125629A00E5DB84 /* NetworkConnection.swift in Sources */,
 				932EB5CB21358B58005527E8 /* DeparDestCityViewController.swift in Sources */,
+				9320A844213BC3D5004B9A54 /* ResgisterResp.swift in Sources */,
 				9305750B21329E1D00B6923F /* GetAvailableBags.swift in Sources */,
 				93F88D9E213809AB00C7F054 /* AirPortCountryViewController.swift in Sources */,
 				93FCEB282124398E00C16F1C /* ChooseCtitesTableViewCell.swift in Sources */,
@@ -1157,6 +1213,7 @@
 				93F88DA2213809C500C7F054 /* AirPortssViewController.swift in Sources */,
 				93FCEB2C212475DD00C16F1C /* ChooseCityViewController.swift in Sources */,
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
+				9320A84C213BCA91004B9A54 /* ActivateEmailViewController.swift in Sources */,
 				938955D32132F37C001725E9 /* Transactions.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
@@ -1182,6 +1239,7 @@
 				938955DE21330189001725E9 /* TransactionDetailsResp.swift in Sources */,
 				93B3CCBE21368B1C00AEFE00 /* NotificationErrorMsg.swift in Sources */,
 				93FCEB252124381000C16F1C /* ChooseCountriesViewController.swift in Sources */,
+				9320A840213BC3C1004B9A54 /* RegisterContent.swift in Sources */,
 				938955D52132F385001725E9 /* TransactionsRes.swift in Sources */,
 				93DBBE3E21256D3A0054BD7D /* GetCategories.swift in Sources */,
 				930561C521353AB900E204F6 /* ReserveResultResp.swift in Sources */,
@@ -1191,7 +1249,9 @@
 				9304DEE9213400F0004E8A0E /* ItemsInCategResp.swift in Sources */,
 				9304DEE22133E1BF004E8A0E /* GetRecievers.swift in Sources */,
 				93333CAE2136C1ED00F896A6 /* TransactionsViewController.swift in Sources */,
+				9320A84A213BC806004B9A54 /* PhoneVerificationResp.swift in Sources */,
 				93FCEAE22124126500C16F1C /* AppDelegate.swift in Sources */,
+				9320A842213BC3CC004B9A54 /* RegisterErrorMsg.swift in Sources */,
 				930561CB21355B5000E204F6 /* FilterViewController.swift in Sources */,
 				93D7FE6E2129BBA500D377EF /* ColorsHepers.swift in Sources */,
 				93F88DA42138415A00C7F054 /* VerifyNumberViewController.swift in Sources */,

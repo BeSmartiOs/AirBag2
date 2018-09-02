@@ -32,6 +32,7 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let hud = JGProgressHUD(style: .light)
     var navController: UINavigationController?
     var tabController: UITabBarController?
+    var viewController: UIViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         hud.textLabel.text = ConstantStrings.pleaseWait
@@ -163,19 +164,43 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.loginResp?.content)
                 userDefaults.set(encodedData, forKey: "logResp")
                 userDefaults.synchronize()
-                if(self.loginResp?.content?.currentTypeId == 1){
-                    let myStoryboard = UIStoryboard(name: "Carrier", bundle: nil) as UIStoryboard
-                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "CarrierMainViewController") as? CarrierMainViewController
-                }else  if(self.loginResp?.content?.currentTypeId == 2){
-                    let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
-                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
-                }else if(self.loginResp?.content?.currentTypeId == 3){
-                    let myStoryboard = UIStoryboard(name: "Reciever", bundle: nil) as UIStoryboard
-                    self.tabController = myStoryboard.instantiateViewController(withIdentifier: "RecieverViewController") as? RecieverViewController
+                
+                /*
+                 
+                 active states:
+                 0- just registered
+                 1- only mobile activation is done
+                 2- only email activation is done
+                 
+                 */
+                
+                            /*3- email and mobile activation are done
+                                .. user can open app now*/
+                if(self.loginResp?.content?.active == 3){
+                    if(self.loginResp?.content?.currentTypeId == 1){
+                        let myStoryboard = UIStoryboard(name: "Carrier", bundle: nil) as UIStoryboard
+                        self.tabController = myStoryboard.instantiateViewController(withIdentifier: "CarrierMainViewController") as? CarrierMainViewController
+                    }else  if(self.loginResp?.content?.currentTypeId == 2){
+                        let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                        self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
+                    }else if(self.loginResp?.content?.currentTypeId == 3){
+                        let myStoryboard = UIStoryboard(name: "Reciever", bundle: nil) as UIStoryboard
+                        self.tabController = myStoryboard.instantiateViewController(withIdentifier: "RecieverViewController") as? RecieverViewController
+                    }
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = self.tabController
+                    appDelegate.window?.makeKeyAndVisible()
+                }else if(self.loginResp?.content?.active == 0){ //just registered
+                    
+                }else if(self.loginResp?.content?.active == 1){ // only mobile activation is done
+                    let myStoryboard = UIStoryboard(name: "Main", bundle: nil) as UIStoryboard
+                    self.viewController = myStoryboard.instantiateViewController(withIdentifier: "ActivateEmailViewController") as? ActivateEmailViewController
+                    self.navigationController?.pushViewController(self.viewController!, animated: true)
+                }else{ //2- only email activation is done
+                    
                 }
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = self.tabController
-                appDelegate.window?.makeKeyAndVisible()
+                
+
             }else{
                 self.hud.dismiss()
                 self.creatAlert(tite: "Please enter valid Email or password!")

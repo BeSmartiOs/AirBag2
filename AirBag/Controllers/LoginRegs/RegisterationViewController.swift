@@ -166,9 +166,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
                                        //   self.creatAlert(tite: "DONE")
                                         
                                         self.registerAccount(firstName: self.firstName.text!, lastName: self.lastName.text!, password: self.password.text!, confirmPass: self.confirmPassword.text!, email: self.email.text!, favDepartureCity: self.favouriteDeparture_id!, favDestinationCity: self.favouriteDestination_id! , addressCityID: self.addressCity!, mobile: self.mobileTextFeild.text!, address: self.addressTextFeild.text!, categories: chooseCats, creditCard: self.creditCard.text!, numOfTravels: self.numberOfTravel.text!, registerationToken: self.regtoken)
-                                        
-                                        
-                                        
+
                                         
                                     }else{
                                               self.creatAlert(tite: ConstantStrings.fillRequiredAddress)
@@ -391,13 +389,13 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         self.present(alert, animated: true, completion: nil)
     }
     
-    func creatAlertSucess(tite : String){
+    func creatAlertSucess(tite : String, message : String){
         // create the alert
-        let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: tite, message: message, preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler:{ action in
             
-          self.navigationController?.popViewController(animated: true)
+         self.performSegue(withIdentifier: "goToConfirmNum", sender: self)
         }))
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -430,13 +428,35 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         }
         hud.show(in: self.view)
         RegisterApi.RegisterApi(fcmToken: registerationToken, firstName: firstName, lastName: lastName, email: email, mobile: mobile, addressCityId: addressCityID, address: address, password: password, passwordConfirmation: confirmPass, frequentTravelNumber: travel, favouriteDepartureId: favDepartureCity, favouriteDestinationId: favDestinationCity, creditCard: internalCreditCard, preferredCategories: categoriesInt) { (succss, error) in
+             self.hud.dismiss()
             if(error == ""){
                     self.hud.dismiss()
-                self.creatAlertSucess(tite:  ConstantStrings.successfulyReg)
+                if(succss?.msg == "success"){
+                    self.creatAlertSucess(tite:  ConstantStrings.successfulyReg, message : "Please Verify Phone Number and Email")
+                    let currentUserId = succss?.content?.userId
+                    let defaults = UserDefaults.standard
+                    defaults.set(currentUserId, forKey: "currentUserId")
+                    defaults.set(self.mobileTextFeild.text! , forKey : "currentUserMobile")
+                    defaults.set(self.email.text! , forKey : "currentUserEmail")
+                }
+               
             }
         }
         
         
+    }
+    
+   
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if(segue.identifier == "goToConfirmNum"){
+            let destination = segue.destination as! VerifyNumberViewController
+            destination.title = "Verify Phone"
+            
+            
+        }
     }
     
 }

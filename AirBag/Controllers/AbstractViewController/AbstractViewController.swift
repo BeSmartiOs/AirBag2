@@ -75,6 +75,23 @@ class AbstractViewController: UIViewController {
              return false
         }
     }
+    
+    class func validateNumCount(number: String) -> Bool{
+        let numbersTest = number
+        if let number = Int(numbersTest){
+            print(number)//contains onlyy number
+            if(numbersTest.count == 6){
+                return true
+            }else{
+            return false
+            }
+        }else{
+            print("notnumber")//Not number
+            return false
+        }
+    }
+    
+    
     class func validateNumDouble(number: String) -> Bool{
         
         let numbersTest = number

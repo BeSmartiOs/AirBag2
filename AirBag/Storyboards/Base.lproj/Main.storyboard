@@ -546,19 +546,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verification Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XH3-tD-Cu9">
-                                <rect key="frame" x="90" y="94" width="195" height="30"/>
+                                <rect key="frame" x="90" y="154" width="195" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDN-W5-8Cu">
-                                <rect key="frame" x="90" y="192" width="195" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please uppdate Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDN-W5-8Cu">
+                                <rect key="frame" x="45" y="252" width="285" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d9-Ry-rBd">
-                                <rect key="frame" x="40" y="318" width="92" height="30"/>
+                                <rect key="frame" x="40" y="378" width="92" height="30"/>
                                 <state key="normal" title="Resend Code">
                                     <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -567,7 +567,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUb-RF-5mi">
-                                <rect key="frame" x="236" y="318" width="99" height="30"/>
+                                <rect key="frame" x="236" y="378" width="99" height="30"/>
                                 <state key="normal" title="Verify Number">
                                     <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -575,77 +575,72 @@
                                     <action selector="verify:" destination="TdB-NC-RqR" eventType="touchUpInside" id="5T3-cN-5W2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-7y-NZ8">
-                                <rect key="frame" x="171" y="527" width="32" height="30"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="Next:" destination="TdB-NC-RqR" eventType="touchUpInside" id="dJB-ae-mnk"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter 6-digit verification code sent to your phone number." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORv-3K-HDb">
+                                <rect key="frame" x="40" y="82" width="295" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Go5-js-u9d" firstAttribute="trailing" secondItem="SUb-RF-5mi" secondAttribute="trailing" constant="40" id="1E1-sG-Jqy"/>
-                            <constraint firstItem="qfk-7y-NZ8" firstAttribute="top" secondItem="7d9-Ry-rBd" secondAttribute="bottom" constant="179" id="5YU-EL-QVW"/>
-                            <constraint firstItem="EDN-W5-8Cu" firstAttribute="leading" secondItem="XH3-tD-Cu9" secondAttribute="leading" id="7iC-lH-LKc"/>
+                            <constraint firstItem="ORv-3K-HDb" firstAttribute="trailing" secondItem="SUb-RF-5mi" secondAttribute="trailing" id="3ib-TR-zSL"/>
                             <constraint firstItem="Go5-js-u9d" firstAttribute="trailing" secondItem="XH3-tD-Cu9" secondAttribute="trailing" constant="90" id="Hgg-Wp-ySO"/>
+                            <constraint firstItem="Go5-js-u9d" firstAttribute="trailing" secondItem="EDN-W5-8Cu" secondAttribute="trailing" constant="45" id="KLN-Uf-d6d"/>
                             <constraint firstItem="7d9-Ry-rBd" firstAttribute="leading" secondItem="Go5-js-u9d" secondAttribute="leading" constant="40" id="W8R-5N-bEZ"/>
                             <constraint firstItem="XH3-tD-Cu9" firstAttribute="leading" secondItem="Go5-js-u9d" secondAttribute="leading" constant="90" id="XFW-LY-fDZ"/>
-                            <constraint firstItem="qfk-7y-NZ8" firstAttribute="centerX" secondItem="Go5-js-u9d" secondAttribute="centerX" id="YjF-g2-icB"/>
                             <constraint firstItem="EDN-W5-8Cu" firstAttribute="top" secondItem="XH3-tD-Cu9" secondAttribute="bottom" constant="68" id="b0w-n9-BVc"/>
-                            <constraint firstItem="XH3-tD-Cu9" firstAttribute="top" secondItem="Go5-js-u9d" secondAttribute="top" constant="30" id="bZC-CT-YYN"/>
                             <constraint firstItem="SUb-RF-5mi" firstAttribute="leading" secondItem="7d9-Ry-rBd" secondAttribute="trailing" constant="104" id="dI9-T7-65u"/>
+                            <constraint firstItem="XH3-tD-Cu9" firstAttribute="top" secondItem="ORv-3K-HDb" secondAttribute="bottom" constant="31" id="efB-57-nAH"/>
+                            <constraint firstItem="ORv-3K-HDb" firstAttribute="leading" secondItem="7d9-Ry-rBd" secondAttribute="leading" id="gwE-iR-PCt"/>
                             <constraint firstItem="7d9-Ry-rBd" firstAttribute="top" secondItem="EDN-W5-8Cu" secondAttribute="bottom" constant="96" id="h2I-8v-zOl"/>
                             <constraint firstItem="SUb-RF-5mi" firstAttribute="centerY" secondItem="7d9-Ry-rBd" secondAttribute="centerY" id="hm7-89-zcD"/>
-                            <constraint firstItem="EDN-W5-8Cu" firstAttribute="trailing" secondItem="XH3-tD-Cu9" secondAttribute="trailing" id="klH-ED-Idb"/>
+                            <constraint firstItem="ORv-3K-HDb" firstAttribute="top" secondItem="Go5-js-u9d" secondAttribute="top" constant="18" id="j0O-Do-wqp"/>
+                            <constraint firstItem="EDN-W5-8Cu" firstAttribute="leading" secondItem="Go5-js-u9d" secondAttribute="leading" constant="45" id="pH0-l2-tY7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Go5-js-u9d"/>
                     </view>
                     <connections>
-                        <outlet property="nextBtn" destination="qfk-7y-NZ8" id="SHX-bZ-11V"/>
                         <outlet property="resendBtn" destination="7d9-Ry-rBd" id="I4p-Iq-PBG"/>
                         <outlet property="updatePhoneNumbr" destination="EDN-W5-8Cu" id="XfQ-Q9-rik"/>
                         <outlet property="verificationCode" destination="XH3-tD-Cu9" id="ehs-IM-cEf"/>
                         <outlet property="verifyBtn" destination="SUb-RF-5mi" id="vO0-Pt-qd5"/>
+                        <segue destination="vjF-dP-cNW" kind="show" identifier="activateEmail" id="TbT-0y-bpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMc-zg-Rn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="933.28335832083962"/>
         </scene>
-        <!--View Controller-->
+        <!--Activate Email View Controller-->
         <scene sceneID="zFi-oE-Cug">
             <objects>
-                <viewController id="vjF-dP-cNW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivateEmailViewController" id="vjF-dP-cNW" customClass="ActivateEmailViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLO-qA-ngk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-Cn-eBa">
-                                <rect key="frame" x="90" y="78" width="195" height="30"/>
+                                <rect key="frame" x="50" y="122" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqE-Ti-KSu">
-                                <rect key="frame" x="15" y="204" width="176" height="30"/>
+                                <rect key="frame" x="15" y="248" width="176" height="30"/>
                                 <state key="normal" title="Resend Confirmation Mail">
                                     <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-sa-x9Y">
-                                <rect key="frame" x="279" y="204" width="81" height="30"/>
+                                <rect key="frame" x="279" y="248" width="81" height="30"/>
                                 <state key="normal" title="Verify Email">
                                     <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-tK-YgE">
-                                <rect key="frame" x="171" y="413" width="32" height="30"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.08235294118" green="0.1647058824" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <connections>
+                                    <action selector="checkEmailVerification:" destination="vjF-dP-cNW" eventType="touchUpInside" id="prV-Jk-UOt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -653,16 +648,17 @@
                             <constraint firstItem="kqE-Ti-KSu" firstAttribute="leading" secondItem="HEv-J9-N0r" secondAttribute="leading" constant="15" id="2R0-J2-bZh"/>
                             <constraint firstItem="HEv-J9-N0r" firstAttribute="trailing" secondItem="Xpa-sa-x9Y" secondAttribute="trailing" constant="15" id="8Sb-bv-z53"/>
                             <constraint firstItem="1Cu-Cn-eBa" firstAttribute="top" secondItem="HEv-J9-N0r" secondAttribute="top" constant="58" id="AJH-tb-ebp"/>
-                            <constraint firstItem="iZO-tK-YgE" firstAttribute="top" secondItem="kqE-Ti-KSu" secondAttribute="bottom" constant="179" id="IUg-11-xAR"/>
-                            <constraint firstItem="1Cu-Cn-eBa" firstAttribute="leading" secondItem="HEv-J9-N0r" secondAttribute="leading" constant="90" id="VU9-lx-rRf"/>
+                            <constraint firstItem="1Cu-Cn-eBa" firstAttribute="leading" secondItem="HEv-J9-N0r" secondAttribute="leading" constant="50" id="VU9-lx-rRf"/>
                             <constraint firstItem="Xpa-sa-x9Y" firstAttribute="leading" secondItem="kqE-Ti-KSu" secondAttribute="trailing" constant="88" id="a2l-NQ-CN0"/>
                             <constraint firstItem="kqE-Ti-KSu" firstAttribute="top" secondItem="1Cu-Cn-eBa" secondAttribute="bottom" constant="96" id="f7k-Ch-3IH"/>
-                            <constraint firstItem="iZO-tK-YgE" firstAttribute="centerX" secondItem="HEv-J9-N0r" secondAttribute="centerX" id="oLi-yJ-uaA"/>
                             <constraint firstItem="Xpa-sa-x9Y" firstAttribute="centerY" secondItem="kqE-Ti-KSu" secondAttribute="centerY" id="oWT-eX-FHE"/>
-                            <constraint firstItem="HEv-J9-N0r" firstAttribute="trailing" secondItem="1Cu-Cn-eBa" secondAttribute="trailing" constant="90" id="vKt-2M-fri"/>
+                            <constraint firstItem="HEv-J9-N0r" firstAttribute="trailing" secondItem="1Cu-Cn-eBa" secondAttribute="trailing" constant="50" id="vKt-2M-fri"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HEv-J9-N0r"/>
                     </view>
+                    <connections>
+                        <outlet property="upateEmail" destination="1Cu-Cn-eBa" id="2TU-dB-bzO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Rk-kx-eKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

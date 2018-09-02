@@ -42,6 +42,10 @@ struct Constants{
         static let notifications = "/notifications"
           static let airports = "/airports/"
         static let activateMob = "/activateMobile/"
+         static let checkActivation = "/checkActivation/"
+        static let createBag = "/bag/create"
+        static let userBags = "/userBags"
+         static let sealBAg = "/bag/seal/"
         
     }
     

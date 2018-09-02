@@ -109,9 +109,14 @@ class MenuViewController: UIViewController {
         let idForUserDefaults = "logResp"
         let userDefaults = UserDefaults.standard
         userDefaults.removeObject(forKey: idForUserDefaults)
+        userDefaults.removeObject(forKey: "currentUserId")
+        userDefaults.removeObject(forKey: "currentUserEmail")
+        userDefaults.removeObject(forKey: "currentUserMobile")
         userDefaults.synchronize()
         print(userDefaults.data(forKey: "logResp")?.count ?? 0)
-        
+        print(userDefaults.integer(forKey: "currentUserId") )
+        print(userDefaults.string(forKey: "currentUserEmail") ?? "")
+        print(userDefaults.string(forKey: "currentUserMobile") ?? "")
                 let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
                 let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate

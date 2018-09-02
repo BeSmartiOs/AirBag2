@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AirBag/Controllers/Carrier/MainAndCreateBag/CreateBagViewController.swift"
-            timestampString = "557331339.830223"
+            timestampString = "557589730.679912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "320"
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AirBag/Controllers/Carrier/MainAndCreateBag/CreateBagViewController.swift"
-            timestampString = "557331339.831089"
+            timestampString = "557589730.680768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "321"
             endingLineNumber = "321"
             landmarkName = "AirPortBag(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBag/Controllers/Carrier/MainAndCreateBag/CurrentBagViewController.swift"
+            timestampString = "557589730.681831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "sealBag(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

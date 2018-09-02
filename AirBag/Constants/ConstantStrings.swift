@@ -74,6 +74,6 @@ struct  ConstantStrings{
     static let confirm = "Confirm"
     static let reserveBag = "Reserve Bag"
     static let airLines = "Airlines"
-    static let airBAg = "Bags"
+    static let airBAg = "Bag"
     
 }

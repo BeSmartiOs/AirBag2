@@ -465,32 +465,52 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
                 self.m3_price = Double(self.m3WeightPrice.text ?? "") ?? 0.0
                
                 if(self.ticketScan.image != nil ){
-                    let imageData = UIImageJPEGRepresentation(self.ticketScan.image!, 0.4)
-                    let base64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-                    self.ticketScanString = base64String!
-                    print(base64String ?? "")
+                    let imageData:NSData = UIImageJPEGRepresentation(self.ticketScan.image! , 0.50)! as NSData //UIImagePNGRepresentation(img)
+                    let imgString = imageData.base64EncodedString(options: .init(rawValue: 0))
+                    self.ticketScanString = imgString
+                   // print(base64String ?? "")
                 }else{
                     self.ticketScanString = ""
                 }
-                
+                var featuredDates = ""
                 if(featureSwitc.isOn == true){
                     featured = 2
+                    featuredDates = self.featureDate
                 }else{
                      featured = 1
+                     featuredDates = ""
                 }
+                var catss = [Int]()
+                if(chooseCats.count == 0){
+                    catss = []
+                }else{
+                   catss = self.chooseCats
+                }
+                  var catsstring = [String]()
+                if(self.addNewCategories.text != ""){
+                let fullName = self.addNewCategories.text!
+                let dateTime = fullName.components(separatedBy: " ")
 
-                    self.createBag(available_weight: self.available_weight, kg_price: self.kg_price, m3_price: self.m3_price, departure_mobile: self.deartureMob.text!, destination_mobile: self.destinationMob.text!, flight_number: self.flightNumber.text!, featured: self.featured, featured_till: self.featureDate, ticket_scan: ticketScanString, departure: bagAirDepartureAiportId, destination: bagAirDestinationAiportId, airline_id: bagAirLineId, departure_datetime: self.departureDateTime, categories_restrictions: self.chooseCats, new_categories: self.chooseCatsString, not_available_from: self.availableFrom, not_available_to: self.availableTo )
-  
+                    if(dateTime.count == 0){
+                        catsstring = [""]
+                    }else{
+                        catsstring = dateTime
+                        var p = catsstring.joined(separator: ",")
+                    }
+                }
+                
+               
+                if(AbstractViewController.validateNum(number: self.destinationMob.text!) || AbstractViewController.validateNum(number: self.deartureMob.text!)  ){
+                    print("num yes ")
+                    self.createBag(available_weight: self.available_weight, kg_price: self.kg_price, m3_price: self.m3_price, departure_mobile: self.deartureMob.text!, destination_mobile: self.destinationMob.text!, flight_number: self.flightNumber.text!, featured: self.featured, featured_till: featuredDates, ticket_scan: ticketScanString, departure: bagAirDepartureAiportId, destination: bagAirDestinationAiportId, airline_id: bagAirLineId, departure_datetime: self.departureDateTime, categories_restrictions: catss, new_categories: catsstring, not_available_from: self.availableFrom, not_available_to: self.availableTo )
+                }else{
+                    createAlert(title: "Please enter valid number!")
+                }
                 
             }else{
                createAlert(title: "Please enter valid Bag Weight!")
             }
-            if(AbstractViewController.validateNum(number: self.destinationMob.text!) || AbstractViewController.validateNum(number: self.departureTime.text!)  ){
-                print("num yes ")
-                
-            }else{
-                createAlert(title: "Please enter valid number!")
-            }
+            
             
             
             
@@ -504,7 +524,15 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func createBag(available_weight : Double , kg_price : Double ,m3_price : Double, departure_mobile : String, destination_mobile : String, flight_number : String, featured : Int , featured_till : String, ticket_scan : String, departure  : Int , destination : Int , airline_id  : Int , departure_datetime : String, categories_restrictions : [Int],
                         new_categories : [String], not_available_from : String, not_available_to : String){
-        
+        hud.show(in: self.view)
+        CretaeBag.CretaeBag(available_weight : available_weight , kg_price : kg_price ,m3_price : m3_price, departure_mobile : departure_mobile, destination_mobile : destination_mobile, flight_number : flight_number, featured : featured , featured_till : featured_till, ticket_scan : ticket_scan, departure  : departure , destination : destination , airline_id  : airline_id , departure_datetime : departure_datetime, categories_restrictions : categories_restrictions,
+                            new_categories : new_categories, not_available_from : not_available_from, not_available_to : not_available_to) { (success, error) in
+                                self.hud.dismiss()
+                                if(error == "" )
+                                {
+                                    print("ttt")
+                                }
+        }
         
     }
     
