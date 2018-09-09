@@ -119,4 +119,21 @@ class AbstractViewController: UIViewController {
             return false
         }
     }
+    
+    //
+    // Convert String to base64
+    //
+    class func convertImageToBase64(image: UIImage) -> String {
+        let imageData = UIImagePNGRepresentation(image)!
+        return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+        print(imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters))
+    }
+    
+    //
+    // Convert base64 to String
+    //
+    class func convertBase64ToImage(imageString: String) -> UIImage {
+        let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+        return UIImage(data: imageData)!
+    }
 }

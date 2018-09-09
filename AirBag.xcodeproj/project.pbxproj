@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07753CEDBE95FD1CA97691D9 /* Pods_AirBag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */; };
 		8DB05F7D8AD568F617148758 /* Pods_AirBagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441829E565E497872B14807 /* Pods_AirBagUITests.framework */; };
+		930074742145060700860767 /* CarrierTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930074732145060700860767 /* CarrierTransactionViewController.swift */; };
+		9300747621455CA000860767 /* EditBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9300747521455CA000860767 /* EditBagViewController.swift */; };
 		9304DEE22133E1BF004E8A0E /* GetRecievers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE12133E1BF004E8A0E /* GetRecievers.swift */; };
 		9304DEE52133E316004E8A0E /* UsersResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE42133E316004E8A0E /* UsersResp.swift */; };
 		9304DEE72133FBFE004E8A0E /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */; };
@@ -145,6 +147,8 @@
 		3DFED54CA9D45A11D177A8EE /* Pods-AirBagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagTests/Pods-AirBagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DEDF7EAA0FDBEED0C93A4EF /* Pods-AirBag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBag/Pods-AirBag.debug.xcconfig"; sourceTree = "<group>"; };
 		8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		930074732145060700860767 /* CarrierTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierTransactionViewController.swift; sourceTree = "<group>"; };
+		9300747521455CA000860767 /* EditBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBagViewController.swift; sourceTree = "<group>"; };
 		9304DEE12133E1BF004E8A0E /* GetRecievers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecievers.swift; sourceTree = "<group>"; };
 		9304DEE42133E316004E8A0E /* UsersResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResp.swift; sourceTree = "<group>"; };
 		9304DEE62133FBFE004E8A0E /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
@@ -308,6 +312,14 @@
 				8AEC3D528091548531D7BB60 /* Pods-AirBagUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		93007472214505E000860767 /* TransactionsCarrier */ = {
+			isa = PBXGroup;
+			children = (
+				930074732145060700860767 /* CarrierTransactionViewController.swift */,
+			);
+			path = TransactionsCarrier;
 			sourceTree = "<group>";
 		};
 		93014A50213688AF009BD62A /* Notifications */ = {
@@ -484,6 +496,7 @@
 		934BF8C82137DFF100654878 /* Carrier */ = {
 			isa = PBXGroup;
 			children = (
+				93007472214505E000860767 /* TransactionsCarrier */,
 				934BF8CB2137E2C000654878 /* MainAndCreateBag */,
 				934BF8C92137E01300654878 /* CarrierMainViewController.swift */,
 			);
@@ -496,6 +509,7 @@
 				93F88D992137EB6D00C7F054 /* Airports&Airlines */,
 				934BF8CC2137E2DF00654878 /* CurrentBagViewController.swift */,
 				934BF8CE2137E31C00654878 /* CreateBagViewController.swift */,
+				9300747521455CA000860767 /* EditBagViewController.swift */,
 			);
 			path = MainAndCreateBag;
 			sourceTree = "<group>";
@@ -1204,6 +1218,7 @@
 				93F8FF702125648200E5DB84 /* CountriesResp.swift in Sources */,
 				930575192132C89800B6923F /* BagItems.swift in Sources */,
 				930561C321353AAF00E204F6 /* ReserveResult.swift in Sources */,
+				9300747621455CA000860767 /* EditBagViewController.swift in Sources */,
 				93FC292D21357550002D87BF /* ChooseAirLineViewController.swift in Sources */,
 				934BF8CA2137E01300654878 /* CarrierMainViewController.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
@@ -1215,6 +1230,7 @@
 				93DBBE492125A5640054BD7D /* AbstractViewController.swift in Sources */,
 				9320A84C213BCA91004B9A54 /* ActivateEmailViewController.swift in Sources */,
 				938955D32132F37C001725E9 /* Transactions.swift in Sources */,
+				930074742145060700860767 /* CarrierTransactionViewController.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
 				93B3CCC521368C8E00AEFE00 /* GetNotifications.swift in Sources */,

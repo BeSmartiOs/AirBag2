@@ -75,5 +75,8 @@ struct  ConstantStrings{
     static let reserveBag = "Reserve Bag"
     static let airLines = "Airlines"
     static let airBAg = "Bag"
-    
+    static let sealBagConfirm = "Are you sure you want to seal this bag?"
+    static let bagSealedSuccess =  "Your bag has been sealed successfully!"
+    static let sessionExpired = "Sessios Expired, please login again!"
+    static let pleaseSeal = "Please seal this bag first, before adding a new one!!"
 }

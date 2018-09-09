@@ -21,6 +21,7 @@ class CurrentBagViewController: UIViewController {
     @IBOutlet weak var M3Price: UILabel!
     @IBOutlet weak var M3PriceData: UILabel!
     
+    @IBOutlet weak var noDataLabel: UILabel!
     
     @IBOutlet weak var destinationAir: UILabel!
     @IBOutlet weak var destinationAirData: UILabel!
@@ -57,11 +58,13 @@ class CurrentBagViewController: UIViewController {
         let hud = JGProgressHUD(style: .light)
         var bagResp : BagDetialsResp?
         var bagId = 0
+        var typeOfBtn : Int?
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             customeCenterImage()
+            self.clearData()
             hud.textLabel.text = ConstantStrings.pleaseWait
-
             // Do any additional setup after loading the view.
         }
     override func viewWillAppear(_ animated: Bool) {
@@ -71,24 +74,18 @@ class CurrentBagViewController: UIViewController {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
-    
-    
-        /*
-        // MARK: - Navigation
-    
-        // In a storyboard-based application, you will often want to do a little preparation before navigation
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Get the new view controller using segue.destinationViewController.
-            // Pass the selected object to the new view controller.
-        }
-        */
-    
+
         func getBag(){
             hud.show(in: self.view)
             CretaeBag.GetCarrierBags { (bagResp, error) in
                 self.hud.dismiss()
+                print(error)
+                self.bagResp = bagResp
                 if(error == ""){
-                    self.bagResp = bagResp
+                    if(bagResp?.bagInfo?.count != 0){
+                    
+                    self.setData()
+                         self.noDataLabel.text = ""
                     for info in  (self.bagResp?.bagInfo)!{
                     let weight = info.availableWeight!
                         self.availableWeightData.text = "\(weight)"
@@ -107,59 +104,225 @@ class CurrentBagViewController: UIViewController {
                             self.featuredTillData.text = "Featured flight!" + " " + info.featuredTill!
                             
                         }
-                        
-                        
                             self.flightNumberData.text = info.flightNumber
-                        
                             self.departureTimeData.text = info.departureDatetime
-                        
-                        
-                        
                             self.airLineLabelData.text = info.airlineName
-                        
-                            self.bagAvialFrom.text = info.notAvailableFrom
-                            self.bagAvialTo.text = info.notAvailableTo
+                        self.bagAvialFrom.text = "From: " + info.notAvailableFrom!
+                        self.bagAvialTo.text = "To: " + info.notAvailableTo!
                             self.bagId = info.id!
-                        
                             if(self.bagId == 0){
                             self.sealBagBtn.isEnabled = false
                             }else{
                             self.sealBagBtn.isEnabled = true
                                     }
-//                        let imagess = info.ticketScan!
-//                        let data = Data(imagess.utf8)
-//                        let dataDecode:NSData = NSData(base64Encoded: data, options:.ignoreUnknownCharacters)!
-//                        let avatarImage:UIImage = UIImage(data: dataDecode as Data)!
-                       // print(avatarImage.)
+                        // Get the String from UserDefaults
+                        if let myString = self.userDefaults.string(forKey: "ticketScanString") {
+                              self.ticketScan.image = AbstractViewController.convertBase64ToImage(imageString: myString)
+                            
+                        }
+                  
             }
                     
-                    
+                        var catsString = [""]
                     for cats in (self.bagResp?.bagRestrictions)!{
-                          self.newCategoriesData.text = cats.name
+                        catsString.append(cats.name!)
+                        
                     }
+                       let joined = catsString.joined(separator: " ")
+                          self.newCategoriesData.text = joined
+                    }else{
+                        self.noDataLabel.text = "No bag created yet!"
+                        self.clearData()
+                    }
+                }else if (error == Constants.UserType.tokenExpired){
+                   self.bagResp = bagResp
+                    self.createAlert(title: ConstantStrings.sessionExpired)
+                }else{
+                    self.bagResp = bagResp
+                     self.clearData()
+                     self.noDataLabel.text = "No bag created yet!"
                 }
-    }
-
+            }
 }
+
+    
+  
     @IBAction func sealBag(_ sender: Any) {
         if(self.bagId == 0){
             
         }else{
-            
-            CretaeBag.sealBag(bagId: self.bagId) { (bag, error) in
-                if(error == ""){
-                    
-                }
-            }
+            self.createAlert(title:ConstantStrings.sealBagConfirm)
+         
         }
     }
-    func convertBase64ToImage(base64String: String) -> UIImage {
+    @IBAction func editBag(_ sender: Any) {
+        if(self.bagResp?.bagInfo?.count == 0){
+       
+        }else{
+            //self.typeOfBtn = 1
+            performSegue(withIdentifier: "goToEdit", sender: self)
+            
+        }
         
-        let decodedData = NSData(base64Encoded: base64String, options: NSData.Base64DecodingOptions(rawValue: 0) )
         
-        let decodedimage = UIImage(data: decodedData! as Data)
         
-        return decodedimage!
         
+    }
+//    func convertBase64ToImage(base64String: String) -> UIImage {
+//
+//        let decodedData = NSData(base64Encoded: base64String, options: NSData.Base64DecodingOptions(rawValue: 0) )
+//
+//        let decodedimage = UIImage(data: decodedData! as Data)
+//
+//        return decodedimage!
+//
+//    }
+    
+//      func getImageFromBase64(base64:String) -> UIImage {
+//        let data = Data(base64Encoded: base64, options: Data.Base64DecodingOptions.init(rawValue: 0))
+//        return UIImage(data: data!)!
+//    }
+    
+    func createAlert(title : String){
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        if(title == ConstantStrings.sealBagConfirm){
+            alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+                self.sealBAg()
+            }))
+        }else if(title == ConstantStrings.bagSealedSuccess){
+            alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+              self.getBag()
+            }))
+        }else if(title == ConstantStrings.sessionExpired){
+            alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+               self.logOutFromApp()
+            }))
+        }else if(title ==  ConstantStrings.pleaseSeal){
+            alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+               
+            }))
+        }
+       
+        alert.addAction(UIAlertAction(title:ConstantStrings.no , style: UIAlertActionStyle.destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+   
+    
+    
+    func sealBAg(){
+        hud.show(in: self.view)
+        CretaeBag.sealBag(bagId: self.bagId) { (bag, error) in
+            if(error == ""){
+                self.hud.dismiss()
+                self.userDefaults.removeObject(forKey: "ticketScanString")
+                self.ticketScan.image = nil
+                self.createAlert(title: ConstantStrings.bagSealedSuccess)
+            }else{
+                 self.hud.dismiss()
+            }
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToEdit"){
+            let des = segue.destination as! EditBagViewController
+            des.bagResp = self.bagResp
+            
+        }else{
+            let des = segue.destination as! CreateBagViewController
+           
+          
+        }
+    }
+    
+    func clearData(){
+        self.availableWeight.isHidden = true
+        self.availableWeightData.text =  ""
+        self.kgPrice.isHidden = true
+        self.kgPriceData.text =  ""
+        self.M3Price.isHidden = true
+        self.M3PriceData.text =  ""
+        self.destinationAir.isHidden = true
+        self.destinationAirData.text =  ""
+        self.departureAir.isHidden = true
+        self.departureAirData.text =  ""
+        self.deartureMob.isHidden = true
+        self.deartureMobData.text =  ""
+        self.destinationMob.isHidden = true
+        self.destinationMobData.text =  ""
+        self.featuredTill.isHidden = true
+        self.featuredTillData.text =  ""
+        self.flightNumber.isHidden = true
+        self.flightNumberData.text =  ""
+        self.departureTime.isHidden = true
+        self.departureTimeData.text =  ""
+        self.newCategories.isHidden = true
+        self.newCategoriesData.text =  ""
+        self.airLineLabel.isHidden = true
+        self.airLineLabelData.text =  ""
+        self.bagAvialability.isHidden = true
+        self.bagAvialFrom.text =  ""
+        self.bagAvialTo.text =  ""
+        self.ticketScanData.isHidden = true
+    }
+    
+    func setData(){
+        self.availableWeight.isHidden = false
+
+        self.kgPrice.isHidden = false
+
+        self.M3Price.isHidden = false
+
+        self.destinationAir.isHidden = false
+       
+        self.departureAir.isHidden = false
+
+        self.deartureMob.isHidden = false
+
+        self.destinationMob.isHidden = false
+
+        self.featuredTill.isHidden = false
+  
+        self.flightNumber.isHidden = false
+     
+        self.departureTime.isHidden = false
+    
+        self.newCategories.isHidden = false
+  
+        self.airLineLabel.isHidden = false
+
+        self.ticketScanData.isHidden = false
+        self.bagAvialability.isHidden = false
+    }
+    
+    @IBAction func addBag(_ sender: UIBarButtonItem) {
+        if(self.bagResp?.bagInfo?.count == 0){
+           // self.typeOfBtn = 2
+            performSegue(withIdentifier: "addNewBag", sender: self)
+        }else{
+                self.createAlert(title:ConstantStrings.pleaseSeal)
+        }
+    }
+    func logOutFromApp(){
+        let idForUserDefaults = "logResp"
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: idForUserDefaults)
+        userDefaults.removeObject(forKey: "currentUserId")
+        userDefaults.removeObject(forKey: "currentUserEmail")
+        userDefaults.removeObject(forKey: "currentUserMobile")
+        userDefaults.synchronize()
+        print(userDefaults.data(forKey: "logResp")?.count ?? 0)
+        print(userDefaults.integer(forKey: "currentUserId") )
+        print(userDefaults.string(forKey: "currentUserEmail") ?? "")
+        print(userDefaults.string(forKey: "currentUserMobile") ?? "")
+        let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = mainViewController
     }
 }

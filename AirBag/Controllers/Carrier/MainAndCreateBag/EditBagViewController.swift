@@ -9,30 +9,30 @@
 
 
 
-var bagAirLineId = 0
-var bagAirLineName = ""
+var editbagAirLineId = 0
+var editbagAirLineName = ""
 
 
 
 
-var bagAirDepartureAiportId = 0
-var bagAirDepartureName = ""
-var bagAirDepartureCountryName = ""
+var editbagAirDepartureAiportId = 0
+var editbagAirDepartureName = ""
+var editbagAirDepartureCountryName = ""
 
-var bagAirDestinationAiportId = 0
-var bagAirDestinationName = ""
-var bagAirDestinationCountryName = ""
+var editbagAirDestinationAiportId = 0
+var editbagAirDestinationName = ""
+var editbagAirDestinationCountryName = ""
 
 
 
 import UIKit
 import JGProgressHUD
-class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate,ClassAirLineBag,UITextFieldDelegate,ClassAirPortBag,ClassAirPortBagDes  {
+class EditBagViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate,ClassAirLineBag,UITextFieldDelegate,ClassAirPortBag,ClassAirPortBagDes  {
     
     
     
     
-
+    
     @IBOutlet weak var destinationAir: UILabel!
     @IBOutlet weak var departureAir: UILabel!
     @IBOutlet weak var availableWeight: UITextField!
@@ -76,14 +76,19 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     var available_weight = Double()
     var  kg_price = Double()
     var m3_price = Double()
-     var bagResp : BagDetialsResp?
-     var typeAddEdit : String?
+    var bagResp : BagDetialsResp?
+    var typeAddEdit : String?
+    let userDefaults = UserDefaults.standard
+     var destinationToEdit = 0
+     var airLineToEdit = 0
+    var departureToEdit = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         airPortssViewController.delegateDep = self
         airPortssViewController.delegateDes = self
         self.featuredTill.isEnabled = false
-       
+        setUpViews()
         getCountries()
         createDatePicker1()
         createDatePicker2()
@@ -96,48 +101,44 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-      
-       getCategries()
+        getCategries()
         self.navigationController?.navigationBar.isHidden = false
-        //if()
-        if(bagAirLineId == 0){
-           
-                  self.airLineLabel.text = ""
-          
-            
+//        //if()
+        if(editbagAirLineId == 0){
+
         }else{
-            self.airLineLabel.text = bagAirLineName
-            
+            self.airLineToEdit = editbagAirLineId
+           self.airLineLabel.text = editbagAirLineName
+
         }
-        if(bagAirDepartureName == ""){
-           
-                self.departureAir.text = ""
-          
+        if(editbagAirDepartureName == ""){
+
+
+
         }else{
-             self.departureAir.text  = bagAirDepartureName
-            print(bagAirDepartureAiportId)
-            print(bagAirDepartureName)
-            print(bagAirDepartureCountryName)
-            
-            
+            self.departureToEdit = editbagAirDepartureAiportId
+            self.departureAir.text  = editbagAirDepartureName
+            print(editbagAirDepartureAiportId )
+            print(editbagAirDepartureName)
+            print(editbagAirDepartureCountryName)
+
+
         }
-        if(bagAirDestinationName == ""){
-          
-                self.destinationAir.text = ""
-           
-            
+        if(editbagAirDestinationName == ""){
+
         }else{
-               self.destinationAir.text  = bagAirDestinationName
-            print(bagAirDestinationAiportId)
-            print(bagAirDestinationName)
-            print(bagAirDestinationCountryName)
-            
-            
+               self.destinationToEdit = editbagAirDestinationAiportId
+            self.destinationAir.text  = editbagAirDestinationName
+            print(editbagAirDestinationAiportId)
+            print(editbagAirDestinationName)
+            print(editbagAirDestinationCountryName)
+
+
         }
-        
+//
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -145,19 +146,19 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBAction func DeartureAirPort(_ sender: Any) {
         self.airPortWay = 1
-        self.typeAddEdit = "addBag"
-        performSegue(withIdentifier: "goToDepDesAirport", sender: self)
+          self.typeAddEdit = "editBag"
+        performSegue(withIdentifier: "goToDepDesAirportEdit", sender: self)
     }
     
     @IBAction func DestinationAirPort(_ sender: Any) {
         self.airPortWay = 2
-        self.typeAddEdit = "addBag"
-        performSegue(withIdentifier: "goToDepDesAirport", sender: self)
+          self.typeAddEdit = "editBag"
+        performSegue(withIdentifier: "goToDepDesAirportEdit", sender: self)
     }
     
     @IBAction func AirLines(_ sender: Any) {
-        self.typeAddEdit = "addBag"
-        performSegue(withIdentifier: "goToAirlines", sender: self)
+          self.typeAddEdit = "editBag"
+        performSegue(withIdentifier: "goToAirlinesEdit", sender: self)
     }
     
     @IBAction func ResytictedCategories(_ sender: Any) {
@@ -172,7 +173,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.view.layoutIfNeeded()
         }
     }
-
+    
     @IBAction func uploadTickScan(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -207,8 +208,8 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.featuredTill.isEnabled = true
             self.featuredTill.isHidden = false
         }else{
-             self.featured = 1
-              self.featuredTill.isEnabled = false
+            self.featured = 1
+            self.featuredTill.isEnabled = false
             self.featuredTill.isHidden = true
         }
     }
@@ -312,15 +313,15 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if(segue.identifier == "goToAirlines"){
+        if(segue.identifier == "goToAirlinesEdit"){
             let destination = segue.destination as! AirLinesViewController
-            destination.typeAddEdit = self.typeAddEdit
             destination.delegateDes = self
-           
+            destination.typeAddEdit = self.typeAddEdit
+            
         }else{
             let destination = segue.destination as! AirPortCountryViewController
             destination.airPortWay = self.airPortWay
-             destination.typeAddEdit = self.typeAddEdit
+            destination.typeAddEdit = self.typeAddEdit
             destination.countriesRes = self.countriesRes
             
         }
@@ -328,25 +329,25 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func AirLineBag(_ airline: String?, _ id: Int?) {
         
-         bagAirLineId = id!
-         bagAirLineName = airline!
+        editbagAirLineId = id!
+        editbagAirLineName = airline!
     }
     
     func AirPortBag(_ airline: String?, _ id: Int?) {
-         bagAirDepartureAiportId = id!
-         bagAirDepartureName = airline!
+        editbagAirDepartureAiportId = id!
+        editbagAirDepartureName = airline!
         
     }
     
     func AirPortBagDes(_ airline: String?, _ id: Int?) {
-         bagAirDestinationAiportId = id!
-         bagAirDestinationName = airline!
+        editbagAirDestinationAiportId = id!
+        editbagAirDestinationName = airline!
     }
     
     /*
      departure date time
      feature date only
-      avail from to  time only
+     avail from to  time only
      
      */
     
@@ -363,7 +364,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         toolbar.setItems([doneButton], animated: true)
         departureTime.inputAccessoryView = toolbar
     }
-   
+    
     @objc func doneClickedDT(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
@@ -386,7 +387,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.departureDateTime = date
         self.view.endEditing(true)
     }
-
+    
     func createDatePicker2(){
         //format for datepicker display
         datePicker2.datePickerMode = .date
@@ -402,20 +403,20 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     @objc func doneClickedFT(){
         
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .long
-            dateFormatter.timeStyle = .medium
-            featuredTill.text = dateFormatter.string(from: datePicker2.date)
-            
-            
-            //format for displaying the date in our textfield
-            let calendar = Calendar.current
-            let comp = calendar.dateComponents([.day, .month, .year], from: datePicker2.date)
-            let date = "\(comp.year!)" + "-" + "\(comp.month!)" + "-" +  "\(comp.day!)"
-            self.featureDate = date
-            self.view.endEditing(true)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        featuredTill.text = dateFormatter.string(from: datePicker2.date)
         
-
+        
+        //format for displaying the date in our textfield
+        let calendar = Calendar.current
+        let comp = calendar.dateComponents([.day, .month, .year], from: datePicker2.date)
+        let date = "\(comp.year!)" + "-" + "\(comp.month!)" + "-" +  "\(comp.day!)"
+        self.featureDate = date
+        self.view.endEditing(true)
+        
+        
     }
     
     
@@ -479,7 +480,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         if minute! < 10 {
             minutes = "0" + "\(String(describing: minute!))"
         }else{
-             minutes = "\(String(describing: minute!))"
+            minutes = "\(String(describing: minute!))"
             
         }
         
@@ -494,7 +495,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         }))
         alert.addAction(UIAlertAction(title:ConstantStrings.no , style: UIAlertActionStyle.destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
-
+        
     }
     
     func createAlertSuccess(title : String){
@@ -502,19 +503,15 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)
         }))
-       
+        
         self.present(alert, animated: true, completion: nil)
         
     }
     
     @IBAction func addNewBag(_ sender: Any) {
-        let imageData = self.ticketScan.image?.jpeg(.lowest)
-        print(imageData?.count)
-        let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters)
-        print(strBase64)
-        self.ticketScanString = strBase64!
-        if(bagAirLineId == 0 || self.availableWeight.text! == "" || self.kgWeightPrice.text! == "" || self.m3WeightPrice.text! == "" || self.deartureMob.text! == "" || self.destinationMob.text! == "" || flightNumber.text == "" ||  departureDateTime == "" ||  availableFrom == "" || availableTo == "" ){
-           createAlert(title: ConstantStrings.pleaseFillRequired)
+     
+        if(airLineToEdit == 0 || self.availableWeight.text! == "" || self.kgWeightPrice.text! == "" || self.m3WeightPrice.text! == "" || self.deartureMob.text! == "" || self.destinationMob.text! == "" || flightNumber.text == "" ||  departureDateTime == "" ||  availableFrom == "" || availableTo == "" ){
+            createAlert(title: ConstantStrings.pleaseFillRequired)
         }else{
             
             if(AbstractViewController.validateNum(number: self.availableWeight.text!)){
@@ -522,17 +519,17 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
                 self.available_weight = Double(self.availableWeight.text ?? "") ?? 0.0
                 self.kg_price = Double(self.kgWeightPrice.text ?? "") ?? 0.0
                 self.m3_price = Double(self.m3WeightPrice.text ?? "") ?? 0.0
-               
+                
                 if(self.ticketScan.image != nil ){
-                     let imageData = self.ticketScan.image?.jpeg(.lowest)
+                    let imageData = self.ticketScan.image?.jpeg(.lowest)
                     print(imageData?.count)
                     let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters)
                     print(strBase64)
                     self.ticketScanString = strBase64!
                     let defaults = UserDefaults.standard
-
+                    
                     defaults.set( self.ticketScanString, forKey: "ticketScanString")
-                 
+                    
                 }else{
                     self.ticketScanString = ""
                 }
@@ -541,20 +538,20 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
                     featured = 2
                     featuredDates = self.featureDate
                 }else{
-                     featured = 1
-                     featuredDates = ""
+                    featured = 1
+                    featuredDates = ""
                 }
                 var catss = [Int]()
                 if(chooseCats.count == 0){
                     catss = []
                 }else{
-                   catss = self.chooseCats
+                    catss = self.chooseCats
                 }
-                  var catsstring = [String]()
+                var catsstring = [String]()
                 if(self.addNewCategories.text != ""){
-                let fullName = self.addNewCategories.text!
-                let dateTime = fullName.components(separatedBy: " ")
-
+                    let fullName = self.addNewCategories.text!
+                    let dateTime = fullName.components(separatedBy: " ")
+                    
                     if(dateTime.count == 0){
                         catsstring = [""]
                     }else{
@@ -563,18 +560,18 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
                     }
                 }
                 
-               
+                
                 if(AbstractViewController.validateNum(number: self.destinationMob.text!) || AbstractViewController.validateNum(number: self.deartureMob.text!)  ){
                     print("num yes ")
                     
-
-                    self.createBag(available_weight: self.available_weight, kg_price: self.kg_price, m3_price: self.m3_price, departure_mobile: self.deartureMob.text!, destination_mobile: self.destinationMob.text!, flight_number: self.flightNumber.text!, featured: self.featured, featured_till: featuredDates, ticket_scan: ticketScanString, departure: bagAirDepartureAiportId, destination: bagAirDestinationAiportId, airline_id: bagAirLineId, departure_datetime: self.departureDateTime, categories_restrictions: catss, new_categories: catsstring, not_available_from: self.availableFrom, not_available_to: self.availableTo )
+                    
+                    self.createBag(available_weight: self.available_weight, kg_price: self.kg_price, m3_price: self.m3_price, departure_mobile: self.deartureMob.text!, destination_mobile: self.destinationMob.text!, flight_number: self.flightNumber.text!, featured: self.featured, featured_till: featuredDates, ticket_scan: ticketScanString, departure: departureToEdit, destination: destinationToEdit, airline_id: airLineToEdit, departure_datetime: self.departureDateTime, categories_restrictions: catss, new_categories: catsstring, not_available_from: self.availableFrom, not_available_to: self.availableTo )
                 }else{
                     createAlert(title: "Please enter valid number!")
                 }
                 
             }else{
-               createAlert(title: "Please enter valid Bag Weight!")
+                createAlert(title: "Please enter valid Bag Weight!")
             }
             
             
@@ -596,22 +593,18 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         }
         return imageData?.base64EncodedString()
     }
-    /*
-     
-     available_weight : Double , kg_price : Double ,m3_price : Double, departure_mobile : String, destination_mobile : String, flight_number : String, featured : Int , featured_till : String, ticket_scan : String, departure  : Int , destination : Int , airline_id  : Int , departure_datetime : String, categories_restrictions : [Int],
-       new_categories : [string], not_available_from : String, not_available_to : String
-     */
+  
     
     func createBag(available_weight : Double , kg_price : Double ,m3_price : Double, departure_mobile : String, destination_mobile : String, flight_number : String, featured : Int , featured_till : String, ticket_scan : String, departure  : Int , destination : Int , airline_id  : Int , departure_datetime : String, categories_restrictions : [Int],
-                        new_categories : [String], not_available_from : String, not_available_to : String){
+                   new_categories : [String], not_available_from : String, not_available_to : String){
         hud.show(in: self.view)
-        CretaeBag.CretaeBag(type: 2, bagId: 0, available_weight : available_weight , kg_price : kg_price ,m3_price : m3_price, departure_mobile : departure_mobile, destination_mobile : destination_mobile, flight_number : flight_number, featured : featured , featured_till : featured_till, ticket_scan : ticket_scan, departure  : departure , destination : destination , airline_id  : airline_id , departure_datetime : departure_datetime, categories_restrictions : categories_restrictions,
+        CretaeBag.CretaeBag(type: 1, bagId: self.bagId, available_weight : available_weight , kg_price : kg_price ,m3_price : m3_price, departure_mobile : departure_mobile, destination_mobile : destination_mobile, flight_number : flight_number, featured : featured , featured_till : featured_till, ticket_scan : ticket_scan, departure  : departure , destination : destination , airline_id  : airline_id , departure_datetime : departure_datetime, categories_restrictions : categories_restrictions,
                             new_categories : new_categories, not_available_from : not_available_from, not_available_to : not_available_to) { (success, error) in
                                 self.hud.dismiss()
                                 if(error == "" )
                                 { // msg = "bag is created successfully :) ";
                                     self.createAlertSuccess(title: "This bag has been created successfully!")
-                                   
+                                    
                                 }
         }
         
@@ -632,41 +625,38 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.flightNumber.text = info.flightNumber
             self.departureTime.text = info.departureDatetime
             self.airLineLabel.text = info.airlineName
-            self.bagAvialFrom.text = "From: " + info.notAvailableFrom!
-            self.bagAvialTo.text = "To: " + info.notAvailableTo!
+            self.bagAvialFrom.text = info.notAvailableFrom!
+            self.bagAvialTo.text =  info.notAvailableTo!
             self.bagId = info.id!
+            availableFrom = info.notAvailableFrom!
+            availableTo = info.notAvailableTo!
+            self.destinationToEdit = info.destination!
+            self.airLineToEdit = info.airlineId!
+            self.departureToEdit = info.departure!
+            //"2018-09-09 16:25:00"
+            let index = info.departureDatetime!.index((info.departureDatetime?.startIndex)!, offsetBy: 16)
+            let mySubstring = info.departureDatetime![..<index] // Hello
+            print(mySubstring)
+            self.departureDateTime = String(mySubstring)
             
-            
-            
-    }
-    }
-    
-    func aiLines(){
-     for info in  (self.bagResp?.bagInfo)!{
-        self.destinationAir.text =  info.destinationName
-        self.departureAir.text = info.departureName
-           self.airLineLabel.text = info.airlineName
-        departureDateTime = info.departureDatetime!
-        availableFrom = info.notAvailableFrom!
-        availableTo = info.notAvailableTo!
-   
+            // Get the String from UserDefaults
+            if let myString = self.userDefaults.string(forKey: "ticketScanString") {
+                self.ticketScan.image = AbstractViewController.convertBase64ToImage(imageString: myString)
+                
+            }
         }
     }
-}
-extension UIImage {
-    enum JPEGQuality: CGFloat {
-        case lowest  = 0
-        case low     = 0.25
-        case medium  = 0.5
-        case high    = 0.75
-        case highest = 1
-    }
     
-    /// Returns the data for the specified image in JPEG format.
-    /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
-    /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
-    func jpeg(_ quality: JPEGQuality) -> Data? {
-        return UIImageJPEGRepresentation(self, quality.rawValue)
-    }
+//    func aiLines(){
+//        for info in  (self.bagResp?.bagInfo)!{
+//            self.destinationAir.text =  info.destinationName
+//            self.departureAir.text = info.departureName
+//            self.airLineLabel.text = info.airlineName
+
+//
+//        }
+//    }
 }
+
+
 

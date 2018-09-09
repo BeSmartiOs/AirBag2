@@ -22,6 +22,7 @@ class AirPortCityViewController: UIViewController,UITableViewDataSource,UITableV
     var cityResp : [CountriesResp]?
     var cityRespFilter : [CountriesResp]?
      var airPortWay : Int?
+        var typeAddEdit : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         search.delegate = self
@@ -64,7 +65,7 @@ class AirPortCityViewController: UIViewController,UITableViewDataSource,UITableV
             let des = segue.destination as! AirPortssViewController
             des.departureCityId = self.departureCityId
           des.airPortWay = self.airPortWay
-            
+              des.typeAddEdit = self.typeAddEdit
             
         }
     }

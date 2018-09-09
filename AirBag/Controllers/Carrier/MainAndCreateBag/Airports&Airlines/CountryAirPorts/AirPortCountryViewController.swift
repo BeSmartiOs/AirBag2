@@ -27,6 +27,7 @@ class AirPortCountryViewController: UIViewController,UITableViewDataSource,UITab
     var departureCityId : Int?
     var departureCountryId : Int?
     var airPortWay : Int?
+     var typeAddEdit : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -99,6 +100,7 @@ class AirPortCountryViewController: UIViewController,UITableViewDataSource,UITab
             des.departureCountryId = self.departureCountryId
             des.currentCountry  =  self.choosenCountry
            des.airPortWay = self.airPortWay
+            des.typeAddEdit = self.typeAddEdit
             
         }
     }

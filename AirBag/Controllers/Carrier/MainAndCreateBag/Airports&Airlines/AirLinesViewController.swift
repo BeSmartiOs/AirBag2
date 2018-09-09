@@ -26,11 +26,12 @@ class AirLinesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var departureCityId : Int?
     var airlinesResFiltered : [Airlines]?
      weak var delegateDes: ClassAirLineBag?
-    
+     var typeAddEdit : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
         hud.textLabel.text = ConstantStrings.pleaseWait
+            self.navigationItem.title = "Choose AirLine"
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -70,11 +71,16 @@ class AirLinesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if(self.typeAddEdit == "addBag"){
         delegateDes?.AirLineBag(self.airlinesRes![indexPath.row].name!, self.airlinesRes![indexPath.row].id!)
+        }else{
+           // delegateDes?.AirLineBag(self.airlinesRes![indexPath.row].name!, self.airlinesRes![indexPath.row].id!)
+            editbagAirLineId = self.airlinesRes![indexPath.row].id!
+            editbagAirLineName =  self.airlinesRes![indexPath.row].name!
+        }
 
     }
-    //MARK: Search Bar
+    //MARK: Search Bar/Users/geek/Documents/AirBag/AirBag/Controllers/Carrier/MainAndCreateBag/Airports&Airlines/AirLinesViewController.swift:            editbagAirLineId = self.airlinesRes![indexPath.row].id!
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.airlinesRes = self.airlinesResFiltered?.filter({ animal -> Bool in
             if searchText.isEmpty { return true }

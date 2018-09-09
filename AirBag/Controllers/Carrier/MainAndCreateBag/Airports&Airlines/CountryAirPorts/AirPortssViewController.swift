@@ -29,9 +29,11 @@ class AirPortssViewController: UIViewController,UITableViewDataSource,UITableVie
     weak var delegateDep: ClassAirPortBag?
     weak var delegateDes: ClassAirPortBagDes?
      var airPortWay : Int?
+        var typeAddEdit : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         search.delegate = self
+        self.navigationItem.title = "Choose AirPort"
         // self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
@@ -64,14 +66,28 @@ class AirPortssViewController: UIViewController,UITableViewDataSource,UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(airPortWay == 1){
                 delegateDep?.AirPortBag(self.cityResp?[indexPath.row].name!, self.cityResp?[indexPath.row].id!)
-            bagAirDepartureAiportId = (self.cityResp?[indexPath.row].id!)!
-            bagAirDepartureName = (self.cityResp?[indexPath.row].name!)!
+           
+            if(self.typeAddEdit == "addBag"){
+                bagAirDepartureAiportId = (self.cityResp?[indexPath.row].id!)!
+                bagAirDepartureName = (self.cityResp?[indexPath.row].name!)!
+            }else{
+                editbagAirDepartureAiportId = (self.cityResp?[indexPath.row].id!)!
+                editbagAirDepartureName = (self.cityResp?[indexPath.row].name!)!
+            }
+            
+           
           
             
         }else{
+            
                 delegateDes?.AirPortBagDes(self.cityResp?[indexPath.row].name!, self.cityResp?[indexPath.row].id!)
+             if(self.typeAddEdit == "addBag"){
              bagAirDestinationAiportId = (self.cityResp?[indexPath.row].id!)!
             bagAirDestinationName = (self.cityResp?[indexPath.row].name!)!
+            }else{
+                editbagAirDestinationAiportId = (self.cityResp?[indexPath.row].id!)!
+                editbagAirDestinationName = (self.cityResp?[indexPath.row].name!)!
+            }
         }
 
     

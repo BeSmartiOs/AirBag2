@@ -11,6 +11,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in static CretaeBag.GetCarrierBags(completionHandler:):CretaeBag.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentBagViewController.base64Convert(base64String:):CurrentBagViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentBagViewController.imageForBase64String(_:):CurrentBagViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "static AbstractViewController.convertBase64ToImage(imageString:):AbstractViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentBagViewController.addBag(_:):CurrentBagViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bagResp?.bagInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CurrentBagViewController.getImageFromBase64(base64:):CurrentBagViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "ChooseCountriesViewController.dismissView(_:):ChooseCountriesViewController.swift">
          <PersistentStrings>
             <PersistentString

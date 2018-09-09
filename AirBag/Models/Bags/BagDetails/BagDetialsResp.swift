@@ -13,7 +13,7 @@ class BagDetialsResp : NSObject, Mappable{
     
     var bagInfo : [BagInfo]?
     var bagRestrictions : [BagRestriction]?
-    
+    var reserved : Int?
     
     class func newInstance(map: Map) -> Mappable?{
         return BagDetialsResp()
@@ -25,6 +25,7 @@ class BagDetialsResp : NSObject, Mappable{
     {
         bagInfo <- map["bagInfo"]
         bagRestrictions <- map["bagRestrictions"]
+        reserved <- map["reserved"]
         
     }
     
