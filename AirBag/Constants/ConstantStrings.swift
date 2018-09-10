@@ -80,4 +80,13 @@ struct  ConstantStrings{
     static let sessionExpired = "Sessios Expired, please login again!"
     static let pleaseSeal = "Please seal this bag first, before adding a new one!!"
     static let editProfile = "Edit and save new profile data?"
+    static let sureSender = "Are you sure you want to change to Sender?"
+    static let sureCarrier = "Are you sure you want to change to Carrier?"
+    static let sureRec = "Are you sure you want to change to Reciever?"
+    
+    
+    static let alreadySender = "You're already a Sender"
+    static let alreadyCarrier = "You're already a Carrier"
+    static let alreadyRec = "You're already a Reciever"
+    
 }

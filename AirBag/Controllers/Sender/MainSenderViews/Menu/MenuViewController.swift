@@ -18,7 +18,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var notifications: UIButton!
     @IBOutlet weak var logOut: UIButton!
     let userDefaults = UserDefaults.standard
-  
+    var userTypeChanges : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,24 +51,22 @@ class MenuViewController: UIViewController {
     static let reciever = 3 */
     
     @IBAction func beSenderAction(_ sender: Any) {
-
-       
-            createAlert(title: "Are you sure you want to change to Sender?")
-    
+       self.userTypeChanges = 2
+        createAlert(title: ConstantStrings.sureSender)
     }
     
     
     @IBAction func beCarrierAction(_ sender: Any) {
-    
-            createAlert(title: "Are you sure you want to change to Carrier?")
+        self.userTypeChanges = 1
+        createAlert(title: ConstantStrings.sureCarrier)
        
     }
     
     
     
     @IBAction func beRecieverAction(_ sender: Any) {
-       
-           createAlert(title: "Are you sure you want to change to Reciever?")
+        self.userTypeChanges = 3
+        createAlert(title: ConstantStrings.sureRec)
     
         
     }
@@ -96,18 +94,17 @@ class MenuViewController: UIViewController {
         self.beReciever.setTitle(ConstantStrings.beReciever, for: .normal)
         self.notifications.setTitle(ConstantStrings.notifications, for: .normal)
         self.logOut.setTitle(ConstantStrings.logOut, for: .normal)
-        
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
         if(decodedUser.currentTypeId == 1){
-              self.beCarrier.setTitle("You're already a Carrier", for: .normal)
+              self.beCarrier.setTitle(ConstantStrings.alreadyCarrier, for: .normal)
             self.beCarrier.isEnabled = false
         }else  if(decodedUser.currentTypeId == 2){
                self.beSender.isEnabled = false
-               self.beSender.setTitle("You're already a Sender", for: .normal)
+               self.beSender.setTitle(ConstantStrings.alreadySender, for: .normal)
         }else{
                self.beReciever.isEnabled = false
-                 self.beReciever.setTitle("You're already a Reciever", for: .normal)
+                 self.beReciever.setTitle(ConstantStrings.alreadyRec, for: .normal)
         }
         
     }
@@ -124,9 +121,9 @@ class MenuViewController: UIViewController {
         print(userDefaults.integer(forKey: "currentUserId") )
         print(userDefaults.string(forKey: "currentUserEmail") ?? "")
         print(userDefaults.string(forKey: "currentUserMobile") ?? "")
-                let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
-                let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = mainViewController
     }
     
@@ -137,8 +134,7 @@ class MenuViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title:ConstantStrings.no , style: UIAlertActionStyle.destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
-        
+  
     }
     func createAlert(title : String){
     let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.alert)
