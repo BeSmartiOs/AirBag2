@@ -27,12 +27,15 @@ struct Constants{
      */
     
     struct WebService{
+          /*BAseUrl*/
         static let baseUrl = "http://206.189.17.20"
         /*Authintications*/
         static let register = "/register"
         static let login = "/login"
         static let activateMob = "/activateMobile/"
         static let checkActivation = "/checkActivation/"
+        static let logoutFromApp = "/logout"
+        static let changeUserType = "/userType"
         
         /*Common*/
         static let getCountries = "/countries"

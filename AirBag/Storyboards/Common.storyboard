@@ -815,12 +815,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3a1-JK-heX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2551.1999999999998" y="1727.5862068965519"/>
+            <point key="canvasLocation" x="2601" y="1807"/>
         </scene>
-        <!--View Controller-->
+        <!--Rating View Controller-->
         <scene sceneID="lTH-sS-CjI">
             <objects>
-                <viewController id="dBj-K4-cUM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RatingViewController" id="dBj-K4-cUM" customClass="RatingViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ozi-sR-NSZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -828,12 +828,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-rR-w6e">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRC-cs-CGx">
+                                <rect key="frame" x="50" y="111" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBs-IN-HI2" customClass="CosmosView" customModule="AirBag" customModuleProvider="target">
-                                <rect key="frame" x="50" y="94" width="275" height="30"/>
+                                <rect key="frame" x="50" y="182" width="275" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xsu-0L-uO7"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                         <integer key="value" value="5"/>
@@ -853,22 +856,54 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-Tv-xPj">
+                                <rect key="frame" x="50" y="352" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AHl-I9-P4W">
+                                <rect key="frame" x="50" y="423" width="275" height="176"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="y4g-99-3vd" firstAttribute="trailing" secondItem="ZHN-rR-w6e" secondAttribute="trailing" id="06D-XH-8TE"/>
-                            <constraint firstItem="zBs-IN-HI2" firstAttribute="leading" secondItem="y4g-99-3vd" secondAttribute="leading" constant="50" id="3wt-ub-MmV"/>
+                            <constraint firstItem="AHl-I9-P4W" firstAttribute="leading" secondItem="S0k-Tv-xPj" secondAttribute="leading" id="0LW-Pd-cS5"/>
                             <constraint firstItem="ZHN-rR-w6e" firstAttribute="top" secondItem="y4g-99-3vd" secondAttribute="top" id="6am-kx-ZKn"/>
                             <constraint firstItem="y4g-99-3vd" firstAttribute="bottom" secondItem="ZHN-rR-w6e" secondAttribute="bottom" id="9uy-om-dPY"/>
-                            <constraint firstItem="y4g-99-3vd" firstAttribute="trailing" secondItem="zBs-IN-HI2" secondAttribute="trailing" constant="50" id="bwG-3R-Iyo"/>
+                            <constraint firstItem="AHl-I9-P4W" firstAttribute="top" secondItem="S0k-Tv-xPj" secondAttribute="bottom" constant="50" id="DPD-4C-HYX"/>
+                            <constraint firstItem="y4g-99-3vd" firstAttribute="trailing" secondItem="zBs-IN-HI2" secondAttribute="trailing" constant="50" id="EhT-HQ-ZFj"/>
+                            <constraint firstItem="y4g-99-3vd" firstAttribute="bottom" secondItem="AHl-I9-P4W" secondAttribute="bottom" constant="68" id="OfE-xb-gFJ"/>
+                            <constraint firstItem="zBs-IN-HI2" firstAttribute="top" secondItem="CRC-cs-CGx" secondAttribute="bottom" constant="50" id="WQe-uA-xEN"/>
+                            <constraint firstItem="S0k-Tv-xPj" firstAttribute="top" secondItem="zBs-IN-HI2" secondAttribute="bottom" constant="140" id="g6h-VO-6ye"/>
+                            <constraint firstItem="zBs-IN-HI2" firstAttribute="leading" secondItem="y4g-99-3vd" secondAttribute="leading" constant="50" id="mW8-r5-QBQ"/>
+                            <constraint firstItem="CRC-cs-CGx" firstAttribute="top" secondItem="y4g-99-3vd" secondAttribute="top" constant="47" id="nZQ-C1-Wj7"/>
                             <constraint firstItem="ZHN-rR-w6e" firstAttribute="leading" secondItem="y4g-99-3vd" secondAttribute="leading" id="oQm-WJ-4Dm"/>
-                            <constraint firstItem="zBs-IN-HI2" firstAttribute="top" secondItem="y4g-99-3vd" secondAttribute="top" constant="30" id="p6r-Pn-F4b"/>
+                            <constraint firstItem="CRC-cs-CGx" firstAttribute="leading" secondItem="zBs-IN-HI2" secondAttribute="leading" id="s2S-Tk-wqU"/>
+                            <constraint firstItem="S0k-Tv-xPj" firstAttribute="leading" secondItem="zBs-IN-HI2" secondAttribute="leading" id="vqx-BA-yzi"/>
+                            <constraint firstItem="AHl-I9-P4W" firstAttribute="trailing" secondItem="zBs-IN-HI2" secondAttribute="trailing" id="zXd-8N-U2N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y4g-99-3vd"/>
                     </view>
                     <navigationItem key="navigationItem" id="eqw-n4-bWe"/>
+                    <connections>
+                        <outlet property="cosmosRates" destination="zBs-IN-HI2" id="9Fy-hL-New"/>
+                        <outlet property="feedBack" destination="AHl-I9-P4W" id="q1Y-as-dRT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFl-Mm-q6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

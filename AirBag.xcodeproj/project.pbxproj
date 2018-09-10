@@ -85,6 +85,7 @@
 		93B08FED2146AD5200CDF3F3 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B08FEC2146AD5200CDF3F3 /* RightToLeft.swift */; };
 		93B08FEF2146AD5F00CDF3F3 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B08FEE2146AD5F00CDF3F3 /* StarFillMode.swift */; };
 		93B08FF12146AD6E00CDF3F3 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B08FF02146AD6E00CDF3F3 /* StarLayer.swift */; };
+		93B08FF32146B57200CDF3F3 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B08FF22146B57200CDF3F3 /* RatingViewController.swift */; };
 		93B3CCBC21368B0700AEFE00 /* NotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCBB21368B0700AEFE00 /* NotificationContent.swift */; };
 		93B3CCBE21368B1C00AEFE00 /* NotificationErrorMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCBD21368B1C00AEFE00 /* NotificationErrorMsg.swift */; };
 		93B3CCC021368B2900AEFE00 /* NotificationResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B3CCBF21368B2900AEFE00 /* NotificationResp.swift */; };
@@ -244,6 +245,7 @@
 		93B08FEC2146AD5200CDF3F3 /* RightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightToLeft.swift; sourceTree = "<group>"; };
 		93B08FEE2146AD5F00CDF3F3 /* StarFillMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFillMode.swift; sourceTree = "<group>"; };
 		93B08FF02146AD6E00CDF3F3 /* StarLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLayer.swift; sourceTree = "<group>"; };
+		93B08FF22146B57200CDF3F3 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		93B3CCBB21368B0700AEFE00 /* NotificationContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContent.swift; sourceTree = "<group>"; };
 		93B3CCBD21368B1C00AEFE00 /* NotificationErrorMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationErrorMsg.swift; sourceTree = "<group>"; };
 		93B3CCBF21368B2900AEFE00 /* NotificationResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResp.swift; sourceTree = "<group>"; };
@@ -706,6 +708,7 @@
 				931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */,
 				93FE5E4A21465F6700BDEDD2 /* ProfilesViewController.swift */,
 				93FE5E4C214661D700BDEDD2 /* EditProfilesViewController.swift */,
+				93B08FF22146B57200CDF3F3 /* RatingViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1341,6 +1344,7 @@
 				93FCEB232124235700C16F1C /* UserTypes.swift in Sources */,
 				934BF8CF2137E31C00654878 /* CreateBagViewController.swift in Sources */,
 				93B08FEF2146AD5F00CDF3F3 /* StarFillMode.swift in Sources */,
+				93B08FF32146B57200CDF3F3 /* RatingViewController.swift in Sources */,
 				93FCEB18212415B500C16F1C /* RegisterationViewController.swift in Sources */,
 				93F8FF6B212562C500E5DB84 /* GetCountriesCities.swift in Sources */,
 				93FE5E4F21467C1800BDEDD2 /* PendingTransactionsViewController.swift in Sources */,
