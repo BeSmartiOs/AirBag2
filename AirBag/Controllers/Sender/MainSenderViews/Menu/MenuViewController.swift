@@ -80,7 +80,8 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func notificationBtn(_ sender: Any) {
-        performSegue(withIdentifier: "goToNotifications", sender: self)
+        let des = UIStoryboard(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
+        self.navigationController?.pushViewController(des, animated: true)
     }
     
     
