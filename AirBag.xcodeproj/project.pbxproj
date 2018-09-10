@@ -126,6 +126,7 @@
 		93FE5E4D214661D700BDEDD2 /* EditProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE5E4C214661D700BDEDD2 /* EditProfilesViewController.swift */; };
 		93FE5E4F21467C1800BDEDD2 /* PendingTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE5E4E21467C1800BDEDD2 /* PendingTransactionsViewController.swift */; };
 		93FE5E522146892300BDEDD2 /* ProfilesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE5E512146892300BDEDD2 /* ProfilesApi.swift */; };
+		93FE5E5421469AB600BDEDD2 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93FE5E5321469AB600BDEDD2 /* Common.storyboard */; };
 		C18B22750F43953D7F181A61 /* Pods_AirBagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7BC64E036A97862E86BE47 /* Pods_AirBagTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -274,6 +275,7 @@
 		93FE5E4C214661D700BDEDD2 /* EditProfilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilesViewController.swift; sourceTree = "<group>"; };
 		93FE5E4E21467C1800BDEDD2 /* PendingTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTransactionsViewController.swift; sourceTree = "<group>"; };
 		93FE5E512146892300BDEDD2 /* ProfilesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesApi.swift; sourceTree = "<group>"; };
+		93FE5E5321469AB600BDEDD2 /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
 		B7AFBFE6F2804849B699C389 /* Pods_AirBag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirBag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC02893092051ECDD60EA11 /* Pods-AirBagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirBagUITests/Pods-AirBagUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C441829E565E497872B14807 /* Pods_AirBagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirBagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -891,6 +893,7 @@
 				93D7FE6821299E6900D377EF /* Sender.storyboard */,
 				93333CA72136B9B400F896A6 /* Reciever.storyboard */,
 				93333CB32136DF3E00F896A6 /* Carrier.storyboard */,
+				93FE5E5321469AB600BDEDD2 /* Common.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1076,6 +1079,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FCEAEC2124126700C16F1C /* LaunchScreen.storyboard in Resources */,
+				93FE5E5421469AB600BDEDD2 /* Common.storyboard in Resources */,
 				93333CA82136B9B400F896A6 /* Reciever.storyboard in Resources */,
 				93D7FE5D21295CD300D377EF /* GoogleService-Info.plist in Resources */,
 				93333CB42136DF3E00F896A6 /* Carrier.storyboard in Resources */,

@@ -234,7 +234,8 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     /*
      
- 
+     
+     
    
      @IBOutlet weak var city: UIButton!
      @IBOutlet weak var favDeparture:  UIButton!
@@ -244,6 +245,9 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
      var departureId == 0
      
      */
+    @IBAction func editProfileAction(_ sender: Any) {
+        self.creatAlert(tite: ConstantStrings.editProfile)
+    }
     func checkFeilds(){
         
         if(self.firstName.text == "" || self.lastName.text == "" ||  self.email.text == "" || self.address.text == ""  ||   self.cityId == 0 ||  self.destinationId == 0 ||  self.departureId == 0 ){
@@ -264,7 +268,19 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
         // create the alert
         let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        if(title == ConstantStrings.emailVAid ||  title == ConstantStrings.fillRequiredAddress){
+            alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+              
+            }))
+        }else{
+            
+            alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+                self.checkFeilds()
+            }))
+        }
+        
+        
+        alert.addAction(UIAlertAction(title: ConstantStrings.no, style: UIAlertActionStyle.destructive, handler: nil))
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }

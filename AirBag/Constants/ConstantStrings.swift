@@ -79,4 +79,5 @@ struct  ConstantStrings{
     static let bagSealedSuccess =  "Your bag has been sealed successfully!"
     static let sessionExpired = "Sessios Expired, please login again!"
     static let pleaseSeal = "Please seal this bag first, before adding a new one!!"
+    static let editProfile = "Edit and save new profile data?"
 }

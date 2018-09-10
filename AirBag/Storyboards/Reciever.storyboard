@@ -667,7 +667,6 @@
                         <outlet property="logOut" destination="opW-EP-Mu1" id="d0k-L6-Z5J"/>
                         <outlet property="notifications" destination="Mac-Ac-Qi4" id="Jdr-si-6ES"/>
                         <segue destination="vXA-E8-d3q" kind="show" identifier="goToNotifications" id="U4j-WL-3AU"/>
-                        <segue destination="egJ-5i-78l" kind="show" identifier="goToProfile" id="6bF-Vm-MvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hB-Bk-6K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -683,7 +682,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isv-CD-Dmf">
-                                <rect key="frame" x="0.0" y="64" width="375" height="786"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="830"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhF-ob-xl0">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="700"/>
@@ -965,7 +964,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2s-VS-JEv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="836"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="880"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYI-W2-tbO">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="800"/>
@@ -1228,6 +1227,9 @@
                     <navigationItem key="navigationItem" id="W93-D2-NIn">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="YZ6-xB-gwW">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="editProfileAction:" destination="eXF-g0-nEW" id="clr-sM-dCK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>

@@ -44,9 +44,6 @@ class MenuViewController: UIViewController {
         if(segue.identifier == "goToNotifications"){
             let destination = segue.destination as! NotificationsViewController
             
-        }else{
-            let destination = segue.destination as! ProfilesViewController
-           
         }
     }
   /*  static let carrier = 1
@@ -88,7 +85,8 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func profile(_ sender: Any) {
-        performSegue(withIdentifier: "goToProfile", sender: self)
+        let des = UIStoryboard(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "ProfilesViewController") as! ProfilesViewController
+        self.navigationController?.pushViewController(des, animated: true)
     }
     
     func setUpsViews(){
