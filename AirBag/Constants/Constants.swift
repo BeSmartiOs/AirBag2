@@ -36,6 +36,8 @@ struct Constants{
         static let bagInfo = "/bagInfo"
          static let getTransactions = "/currentTransactions"
         static let getUsers  = "/users"
+         static let getProfile  = "/profile"
+        static let editProfile  = "/profile/edit"
          static let items  = "/items"
         static let reserveBag = "/bag/reserve"
          static let getAirLines = "/airlines"

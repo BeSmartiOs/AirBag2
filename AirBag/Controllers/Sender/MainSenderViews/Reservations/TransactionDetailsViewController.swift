@@ -22,6 +22,12 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
     @IBOutlet weak var transactionPrice: UILabel!
     
     @IBOutlet weak var itemTableView: UITableView!
+    
+    
+    @IBOutlet weak var declineBtn: UIButton!
+    @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var btnsHeight: NSLayoutConstraint!
+    
      var transactionId = 0
     let hud = JGProgressHUD(style: .light)
     var transactionsDetails : TransactionDetailsResp?
@@ -33,13 +39,27 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
         self.noTransactionAvail.text = ""
         getTransactions(id : self.transactionId)
         hud.textLabel.text = ConstantStrings.pleaseWait
-       
+       self.btnsHeight.constant = 0
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
         self.currentUserType = decodedUser.currentTypeId!
+        /*
+         static let carrier = 1
+         static let sender = 2
+         static let reciever = 3
+         */
+        if(self.currentUserType == 1){
+             self.btnsHeight.constant = 30
+            self.declineBtn.isHidden = false
+            self.confirmBtn.isHidden = false
+        }else{
+             self.btnsHeight.constant = 0
+            self.declineBtn.isHidden = true
+            self.confirmBtn.isHidden = true
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

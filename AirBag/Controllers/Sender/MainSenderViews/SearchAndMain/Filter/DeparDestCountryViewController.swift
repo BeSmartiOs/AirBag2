@@ -28,6 +28,7 @@ class DeparDestCountryViewController: UIViewController,UITableViewDataSource,UIT
     var departureCountryId : Int?
     var cityClass = DeparDestCityViewController()
     var typeOfWay : Int?
+    var typeOfClass  : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -35,6 +36,7 @@ class DeparDestCountryViewController: UIViewController,UITableViewDataSource,UIT
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        print(typeOfWay)
         myNavBarItem.title = ConstantStrings.countries
     }
     
@@ -64,11 +66,15 @@ class DeparDestCountryViewController: UIViewController,UITableViewDataSource,UIT
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          self.departureCountryId = (self.countriesRes?[indexPath.row].id)!
-        if(typeOfWay == 3){
-           
-           DeparCuntryName = (self.countriesRes?[indexPath.row].name)!
-        }else{
+        if(typeOfWay == 3){ //3 departue 4 destination
+
+        DeparCuntryName = (self.countriesRes?[indexPath.row].name)!
+        editProfileDepartureCountryName =  (self.countriesRes?[indexPath.row].name)!
+        }else if(typeOfWay == 4){
             DestCuntryName = (self.countriesRes?[indexPath.row].name)!
+             editProfileDestinationCountryName =  (self.countriesRes?[indexPath.row].name)!
+        }else{
+            editProfileCountryCityName = (self.countriesRes?[indexPath.row].name)!
         }
         
         performSegue(withIdentifier: "goToCitiesFiltered", sender: self)

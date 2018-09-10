@@ -9,21 +9,21 @@
 import UIKit
 import JGProgressHUD
 
-class CarrierTransactionViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+class PendingTransactionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: UITableView!
     
     let hud = JGProgressHUD(style: .light)
     var transactions : TransactionsRes?
-     var transactionId = 0
+    var transactionId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-          hud.textLabel.text = ConstantStrings.pleaseWait
+        hud.textLabel.text = ConstantStrings.pleaseWait
         customeCenterImage()
         getTransactions()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,13 +36,13 @@ class CarrierTransactionViewController: UIViewController,UITableViewDelegate, UI
         }else{
             return 0
         }
-    
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "senderCell", for: indexPath) as! MainSenderTableViewCell
         
-
+        
         cell.fromLabel.text = self.transactions?.transactions![indexPath.row].departure
         cell.toLabel.text = self.transactions?.transactions![indexPath.row].destination
         
@@ -74,16 +74,16 @@ class CarrierTransactionViewController: UIViewController,UITableViewDelegate, UI
         destination.transactionId = id
         self.navigationController?.pushViewController(destination, animated: true)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func getTransactions(){
         hud.show(in: self.view)
         GetReservations.GetTransactions { (transactions, error) in
@@ -96,3 +96,4 @@ class CarrierTransactionViewController: UIViewController,UITableViewDelegate, UI
         
     }
 }
+

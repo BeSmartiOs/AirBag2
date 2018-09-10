@@ -137,7 +137,8 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
 
-
+    //1 -->> choose airLines
+    //2 -->> choose carrrier
     @IBAction func choseAirLine(_ sender: Any) {
         self.type = 1
        performSegue(withIdentifier: "goToAirlines", sender: self)
@@ -148,6 +149,9 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
           self.type = 2
                performSegue(withIdentifier: "goToAirlines", sender: self)
     }
+    //3 -->> choose departure
+     //4 -->> choose Destination
+    
     @IBAction func choseDeparture(_ sender: Any) {
         self.typeOfWay = 3
         

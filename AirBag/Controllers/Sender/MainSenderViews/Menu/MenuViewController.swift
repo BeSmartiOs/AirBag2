@@ -44,6 +44,9 @@ class MenuViewController: UIViewController {
         if(segue.identifier == "goToNotifications"){
             let destination = segue.destination as! NotificationsViewController
             
+        }else{
+            let destination = segue.destination as! ProfilesViewController
+           
         }
     }
   /*  static let carrier = 1
@@ -81,6 +84,11 @@ class MenuViewController: UIViewController {
     
     @IBAction func notificationBtn(_ sender: Any) {
         performSegue(withIdentifier: "goToNotifications", sender: self)
+    }
+    
+    
+    @IBAction func profile(_ sender: Any) {
+        performSegue(withIdentifier: "goToProfile", sender: self)
     }
     
     func setUpsViews(){

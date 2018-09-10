@@ -74,8 +74,17 @@ import JGProgressHUD
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if(typeOfWay == 3){
                   self.delegateDep?.DepartureCityFiltered(self.cityResp?[indexPath.row].name, self.cityResp?[indexPath.row].id)
-            }else{
+                
+                editProfileDepartureName = self.cityResp?[indexPath.row].name
+                editProfileDepartureId = self.cityResp?[indexPath.row].id
+            }else  if(typeOfWay == 4){
                  self.delegateDes?.DestCityFiltered(self.cityResp?[indexPath.row].name, self.cityResp?[indexPath.row].id)
+                
+                editProfileDestinationame = self.cityResp?[indexPath.row].name
+                editProfileDestinationId = self.cityResp?[indexPath.row].id
+            }else{
+                editProfileCityName = self.cityResp?[indexPath.row].name
+                editProfileCityId = self.cityResp?[indexPath.row].id
             }
           
         }

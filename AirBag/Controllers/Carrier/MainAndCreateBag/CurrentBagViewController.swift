@@ -301,7 +301,7 @@ class CurrentBagViewController: UIViewController {
     }
     
     @IBAction func addBag(_ sender: UIBarButtonItem) {
-        if(self.bagResp?.bagInfo?.count == 0){
+        if(self.bagResp?.bagInfo == nil){
            // self.typeOfBtn = 2
             performSegue(withIdentifier: "addNewBag", sender: self)
         }else{
