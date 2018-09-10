@@ -102,7 +102,7 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if(segue.identifier == "viewQrCode"){
-            let des = segue.destination as! ViewQrCodeViewController
+            _ = segue.destination as! ViewQrCodeViewController
         }
     }
    

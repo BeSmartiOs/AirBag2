@@ -509,9 +509,9 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBAction func addNewBag(_ sender: Any) {
         let imageData = self.ticketScan.image?.jpeg(.lowest)
-        print(imageData?.count)
+        print(imageData?.count ?? 0)
         let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters)
-        print(strBase64)
+        print(strBase64 ?? "")
         self.ticketScanString = strBase64!
         if(bagAirLineId == 0 || self.availableWeight.text! == "" || self.kgWeightPrice.text! == "" || self.m3WeightPrice.text! == "" || self.deartureMob.text! == "" || self.destinationMob.text! == "" || flightNumber.text == "" ||  departureDateTime == "" ||  availableFrom == "" || availableTo == "" ){
            createAlert(title: ConstantStrings.pleaseFillRequired)
@@ -525,9 +525,9 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
                
                 if(self.ticketScan.image != nil ){
                      let imageData = self.ticketScan.image?.jpeg(.lowest)
-                    print(imageData?.count)
+                    print(imageData?.count ?? 0)
                     let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters)
-                    print(strBase64)
+                    print(strBase64 ?? "")
                     self.ticketScanString = strBase64!
                     let defaults = UserDefaults.standard
 
@@ -559,7 +559,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
                         catsstring = [""]
                     }else{
                         catsstring = dateTime
-                        var p = catsstring.joined(separator: ",")
+                        _ = catsstring.joined(separator: ",")
                     }
                 }
                 

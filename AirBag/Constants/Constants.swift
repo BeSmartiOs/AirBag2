@@ -16,9 +16,16 @@ struct Constants{
         static let reciever = 3
         static let tokenExpired = "token_expired"
     }
+    struct StroyBoards{
+        static let carrierStoryBoard = "Carrier"
+        static let senderStoryBoard = "Sender"
+        static let recieverStoryBoard = "Reciever"
+        static let commonStoryBoard = "Common"
+         static let mainStoryBoard = "Main"
+        
+    }
     
-    
-    /*
+    /* Constants.StroyBoards.commonStoryBoard
      0- just registered
      1- only mobile activation is done
      2- only email activation is done

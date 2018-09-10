@@ -234,7 +234,7 @@ class CurrentBagViewController: UIViewController {
             des.bagResp = self.bagResp
             
         }else{
-            let des = segue.destination as! CreateBagViewController
+            _ = segue.destination as! CreateBagViewController
            
           
         }
@@ -320,7 +320,7 @@ class CurrentBagViewController: UIViewController {
         print(userDefaults.integer(forKey: "currentUserId") )
         print(userDefaults.string(forKey: "currentUserEmail") ?? "")
         print(userDefaults.string(forKey: "currentUserMobile") ?? "")
-        let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+        let storyboardMain = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil)
         let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = mainViewController

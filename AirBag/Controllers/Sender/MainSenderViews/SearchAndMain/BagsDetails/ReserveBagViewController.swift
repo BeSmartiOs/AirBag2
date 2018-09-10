@@ -79,7 +79,7 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
           
         }
         
-        print(self.recieverName)
+        print(self.recieverName ?? "")
     }
     @objc func addItems(){
         performSegue(withIdentifier: "goToAddItems", sender: self)
@@ -159,7 +159,7 @@ func reserveBags(){
        print(self.images.count)
        print(self.descriptionBag.count)
        print(self.itemId.count)
-       print(self.recieverId)
+       print(self.recieverId ?? 0)
     
     ReserveBag.ReserveBag(bagId: self.bagId, weight: self.weight, height: self.height, width: self.width, length: self.length, receiver_id: self.recieverId!, item_id: self.itemId, img: self.images, descriptionString: self.descriptionBag) { (reserveSuccess, error) in
         if(error == ""){

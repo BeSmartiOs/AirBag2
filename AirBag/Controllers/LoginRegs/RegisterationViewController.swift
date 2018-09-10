@@ -112,13 +112,13 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     }
     //MARK:- IBACTIONS
     @IBAction func favoriteDepartureCountry(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseCountriesViewController") as! ChooseCountriesViewController
+        let popOverVC = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "ChooseCountriesViewController") as! ChooseCountriesViewController
         popOverVC.countriesRes = self.countriesRes
         self.navigationController?.present(popOverVC, animated: true, completion: nil)
     }
     
     @IBAction func favoriteDestinationCountry(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseDestinationCountryViewController") as! ChooseDestinationCountryViewController
+        let popOverVC = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "ChooseDestinationCountryViewController") as! ChooseDestinationCountryViewController
         popOverVC.countriesRes = self.countriesRes
         self.navigationController?.present(popOverVC, animated: true, completion: nil)
     }
@@ -137,7 +137,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         }
     }
     @IBAction func chooseAddressAction(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseAddressCountriesViewController") as! ChooseAddressCountriesViewController
+        let popOverVC = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "ChooseAddressCountriesViewController") as! ChooseAddressCountriesViewController
         popOverVC.countriesRes = self.countriesRes
         popOverVC.delegatePhone = self
         self.navigationController?.present(popOverVC, animated: true, completion: nil)

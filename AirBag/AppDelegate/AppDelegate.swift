@@ -126,17 +126,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 
                 let decoded  = userDefaults.object(forKey: "logResp") as! Data
                 let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
-                print("access token ---> \(decodedUser.token)")
-                print("current type id---> \(decodedUser.currentTypeId)")
+                print("access token ---> \(decodedUser.token ?? "")")
+                print("current type id---> \(decodedUser.currentTypeId ?? 0)")
+                
+                /*
+                 static let carrier = 1
+                 static let sender = 2
+                 static let reciever = 3
+                 */
+                
+                
                 if(decodedUser.active == 3){
                 if(decodedUser.currentTypeId == 1){
-                    let myStoryboard = UIStoryboard(name: "Carrier", bundle: nil) as UIStoryboard
+                    let myStoryboard = UIStoryboard(name : Constants.StroyBoards.carrierStoryBoard, bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "CarrierMainViewController") as? CarrierMainViewController
                 }else  if(decodedUser.currentTypeId == 2){
-                    let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                    let myStoryboard = UIStoryboard(name: Constants.StroyBoards.senderStoryBoard, bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
                 }else if(decodedUser.currentTypeId == 3){
-                    let myStoryboard = UIStoryboard(name: "Reciever", bundle: nil) as UIStoryboard
+                    let myStoryboard = UIStoryboard(name: Constants.StroyBoards.recieverStoryBoard, bundle: nil) as UIStoryboard
                     self.tabController = myStoryboard.instantiateViewController(withIdentifier: "RecieverViewController") as? RecieverViewController
                 }
                
@@ -152,7 +160,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                      2- only email activation is done
                      */
                 }else  if(decodedUser.currentTypeId == 2){
-                    let myStoryboard = UIStoryboard(name: "Main", bundle: nil) as UIStoryboard
+                    let myStoryboard = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil) as UIStoryboard
                     self.viewController = myStoryboard.instantiateViewController(withIdentifier: "VerifyNumberViewController") as? VerifyNumberViewController
                 }
             }

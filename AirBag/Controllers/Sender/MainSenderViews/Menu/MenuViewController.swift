@@ -78,13 +78,13 @@ class MenuViewController: UIViewController {
     
     
     @IBAction func notificationBtn(_ sender: Any) {
-        let des = UIStoryboard(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
+        let des = UIStoryboard(name : Constants.StroyBoards.commonStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
         self.navigationController?.pushViewController(des, animated: true)
     }
     
     
     @IBAction func profile(_ sender: Any) {
-        let des = UIStoryboard(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "ProfilesViewController") as! ProfilesViewController
+        let des = UIStoryboard(name : Constants.StroyBoards.commonStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "ProfilesViewController") as! ProfilesViewController
         self.navigationController?.pushViewController(des, animated: true)
     }
     
@@ -121,7 +121,7 @@ class MenuViewController: UIViewController {
         print(userDefaults.integer(forKey: "currentUserId") )
         print(userDefaults.string(forKey: "currentUserEmail") ?? "")
         print(userDefaults.string(forKey: "currentUserMobile") ?? "")
-        let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+        let storyboardMain = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil)
         let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = mainViewController

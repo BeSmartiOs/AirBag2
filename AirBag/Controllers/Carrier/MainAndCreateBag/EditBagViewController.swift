@@ -522,9 +522,9 @@ class EditBagViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 
                 if(self.ticketScan.image != nil ){
                     let imageData = self.ticketScan.image?.jpeg(.lowest)
-                    print(imageData?.count)
+                    print(imageData?.count ?? 0)
                     let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters)
-                    print(strBase64)
+                    print(strBase64 ?? "" )
                     self.ticketScanString = strBase64!
                     let defaults = UserDefaults.standard
                     
@@ -556,7 +556,7 @@ class EditBagViewController: UIViewController,UITableViewDelegate,UITableViewDat
                         catsstring = [""]
                     }else{
                         catsstring = dateTime
-                        var p = catsstring.joined(separator: ",")
+                        _ = catsstring.joined(separator: ",")
                     }
                 }
                 

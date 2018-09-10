@@ -36,7 +36,7 @@ class DeparDestCountryViewController: UIViewController,UITableViewDataSource,UIT
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        print(typeOfWay)
+        print(typeOfWay ?? 0)
         myNavBarItem.title = ConstantStrings.countries
     }
     

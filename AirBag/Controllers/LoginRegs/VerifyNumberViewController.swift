@@ -131,7 +131,7 @@ class VerifyNumberViewController: UIViewController,UITextFieldDelegate {
         let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
-            let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+            let storyboardMain = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil)
             let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window?.rootViewController = mainViewController

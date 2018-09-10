@@ -54,7 +54,7 @@ class ActivateEmailViewController: UIViewController {
                  */
                 if(success?.msg == "success"){
                     if(success?.content?.active == 2){
-                        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VerifyNumberViewController") as! VerifyNumberViewController
+                        let popOverVC = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "VerifyNumberViewController") as! VerifyNumberViewController
                         self.navigationController?.pushViewController(popOverVC, animated: true)
                     }
                     }else if(success?.content?.active == 3){
@@ -69,7 +69,7 @@ class ActivateEmailViewController: UIViewController {
         let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
-            let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+            let storyboardMain = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil)
             let mainViewController = storyboardMain.instantiateViewController(withIdentifier: "loginView") as! UINavigationController
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window?.rootViewController = mainViewController

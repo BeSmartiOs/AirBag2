@@ -178,13 +178,13 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 .. user can open app now*/
                 if(self.loginResp?.content?.active == 3){
                     if(self.loginResp?.content?.currentTypeId == 1){
-                        let myStoryboard = UIStoryboard(name: "Carrier", bundle: nil) as UIStoryboard
+                        let myStoryboard = UIStoryboard(name : Constants.StroyBoards.carrierStoryBoard, bundle: nil) as UIStoryboard
                         self.tabController = myStoryboard.instantiateViewController(withIdentifier: "CarrierMainViewController") as? CarrierMainViewController
                     }else  if(self.loginResp?.content?.currentTypeId == 2){
-                        let myStoryboard = UIStoryboard(name: "Sender", bundle: nil) as UIStoryboard
+                        let myStoryboard = UIStoryboard(name: Constants.StroyBoards.senderStoryBoard, bundle: nil) as UIStoryboard
                         self.tabController = myStoryboard.instantiateViewController(withIdentifier: "SenderViewController") as? SenderViewController
                     }else if(self.loginResp?.content?.currentTypeId == 3){
-                        let myStoryboard = UIStoryboard(name: "Reciever", bundle: nil) as UIStoryboard
+                        let myStoryboard = UIStoryboard(name: Constants.StroyBoards.recieverStoryBoard, bundle: nil) as UIStoryboard
                         self.tabController = myStoryboard.instantiateViewController(withIdentifier: "RecieverViewController") as? RecieverViewController
                     }
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -193,7 +193,7 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }else if(self.loginResp?.content?.active == 0){ //just registered
                     
                 }else if(self.loginResp?.content?.active == 1){ // only mobile activation is done
-                    let myStoryboard = UIStoryboard(name: "Main", bundle: nil) as UIStoryboard
+                    let myStoryboard = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil) as UIStoryboard
                     self.viewController = myStoryboard.instantiateViewController(withIdentifier: "ActivateEmailViewController") as? ActivateEmailViewController
                     self.navigationController?.pushViewController(self.viewController!, animated: true)
                 }else{ //2- only email activation is done
