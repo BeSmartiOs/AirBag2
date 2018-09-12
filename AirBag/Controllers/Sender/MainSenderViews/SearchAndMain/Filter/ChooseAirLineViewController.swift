@@ -111,7 +111,7 @@ class ChooseAirLineViewController: UIViewController,UITableViewDataSource,UITabl
     }
 
     func getAirLines(){
-          hud.show(in: self.view)
+            hud.show(in: self.view)
         GetCountriesCities.GetAirLines { (airlines, error) in
                self.hud.dismiss()
             if(error == ""){
@@ -123,7 +123,7 @@ class ChooseAirLineViewController: UIViewController,UITableViewDataSource,UITabl
         
     }
     func getRecievers(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetRecievers.GetRecievers { ( users, error) in
               self.hud.dismiss()
             if(error == ""){

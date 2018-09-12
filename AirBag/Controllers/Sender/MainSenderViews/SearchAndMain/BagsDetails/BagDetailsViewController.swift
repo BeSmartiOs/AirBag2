@@ -112,7 +112,7 @@ class BagDetailsViewController: UIViewController {
         }
      }
     func getBagDetails(bagId : Int){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         BagDetails.GetBagDetails(bagId: bagId) { (bagDetailsResp, error) in
             self.hud.dismiss()
             if(error == ""){

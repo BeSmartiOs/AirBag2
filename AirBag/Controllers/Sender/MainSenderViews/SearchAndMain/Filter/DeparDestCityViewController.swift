@@ -103,7 +103,7 @@ import JGProgressHUD
         }
         
         func getCities(id :Int){
-            hud.show(in: self.view)
+              hud.show(in: self.view)
             GetCountriesCities.GetCities(id: id) { (cities, error) in
                 
                 if(error == ""){

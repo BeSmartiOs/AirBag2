@@ -297,7 +297,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     func getCountries(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetCountriesCities.GetCountriesCities { (countries, error) in
             self.hud.dismiss()
             if(error == ""){
@@ -604,7 +604,7 @@ class CreateBagViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func createBag(available_weight : Double , kg_price : Double ,m3_price : Double, departure_mobile : String, destination_mobile : String, flight_number : String, featured : Int , featured_till : String, ticket_scan : String, departure  : Int , destination : Int , airline_id  : Int , departure_datetime : String, categories_restrictions : [Int],
                         new_categories : [String], not_available_from : String, not_available_to : String){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         CretaeBag.CretaeBag(type: 2, bagId: 0, available_weight : available_weight , kg_price : kg_price ,m3_price : m3_price, departure_mobile : departure_mobile, destination_mobile : destination_mobile, flight_number : flight_number, featured : featured , featured_till : featured_till, ticket_scan : ticket_scan, departure  : departure , destination : destination , airline_id  : airline_id , departure_datetime : departure_datetime, categories_restrictions : categories_restrictions,
                             new_categories : new_categories, not_available_from : not_available_from, not_available_to : not_available_to) { (success, error) in
                                 self.hud.dismiss()

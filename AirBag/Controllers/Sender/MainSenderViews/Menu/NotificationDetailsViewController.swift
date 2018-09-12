@@ -72,7 +72,7 @@ class NotificationDetailsViewController: UIViewController {
 
     
     func getNotificationDetails(id : Int) {
-         hud.show(in: self.view)
+           hud.show(in: self.view)
         GetNotifications.GetNotificationsDetails(notificationId: id) { (details, error) in
             if(error == ""){
                 self.hud.dismiss()

@@ -76,7 +76,7 @@ class CurrentBagViewController: UIViewController {
         }
 
         func getBag(){
-            hud.show(in: self.view)
+              hud.show(in: self.view)
             CretaeBag.GetCarrierBags { (bagResp, error) in
                 self.hud.dismiss()
                 print(error)
@@ -214,7 +214,7 @@ class CurrentBagViewController: UIViewController {
     
     
     func sealBAg(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         CretaeBag.sealBag(bagId: self.bagId) { (bag, error) in
             if(error == ""){
                 self.hud.dismiss()

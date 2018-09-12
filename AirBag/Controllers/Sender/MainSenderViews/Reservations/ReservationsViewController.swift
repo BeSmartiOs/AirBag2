@@ -88,7 +88,7 @@ class ReservationsViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     func getTransactions(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetReservations.GetTransactions { (transactions, error) in
             self.hud.dismiss()
             if(error == ""){

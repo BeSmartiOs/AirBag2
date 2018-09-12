@@ -107,7 +107,7 @@ class TransactionDetailsViewController: UIViewController,UITableViewDelegate,UIT
     }
    
     func getTransactions(id : Int){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetReservations.GetTransactionsDetails(transactionId: id) { (transactions, error) in
             self.hud.dismiss()
             if(error == ""){

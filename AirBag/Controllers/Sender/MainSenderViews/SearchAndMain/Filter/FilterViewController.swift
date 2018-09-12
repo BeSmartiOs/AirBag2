@@ -248,7 +248,7 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func getCountries(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetCountriesCities.GetCountriesCities { (countries, error) in
             self.hud.dismiss()
             if(error == ""){
@@ -262,7 +262,7 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
         let userDefaults = UserDefaults.standard
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
-        self.hud.dismiss()
+   hud.show(in: self.view)
         GetAvailableBags.GetAvailableBags(departureId: DeparCityId, destinationId: DestCityId, carrierId: carrierId, categoryId: self.categoryId, airlineId: airLineId, flightNumber: fightText.text! , aceessToken: decodedUser.token!, type: 1) { (bags, error) in
             
                             if(error == ""){

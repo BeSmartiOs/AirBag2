@@ -93,7 +93,7 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func getNotifiations(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetNotifications.GetNotifications { (notifications, error) in
             if(error == ""){
                self.hud.dismiss()

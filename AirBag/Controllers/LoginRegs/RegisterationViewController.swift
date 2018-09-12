@@ -321,7 +321,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
     }
     
     func getCountries(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetCountriesCities.GetCountriesCities { (countries, error) in
             self.hud.dismiss()
             if(error == ""){
@@ -332,7 +332,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         
     }
     func getCategries(){
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         GetCategories.GetCategories{(categories, error) in
             self.hud.dismiss()
             if(error == ""){
@@ -426,7 +426,7 @@ class RegisterationViewController: UIViewController,UITableViewDelegate, UITable
         if(categoriesInt.count == 0){
             categoriesInt = []
         }
-        hud.show(in: self.view)
+          hud.show(in: self.view)
         RegisterApi.RegisterApi(fcmToken: registerationToken, firstName: firstName, lastName: lastName, email: email, mobile: mobile, addressCityId: addressCityID, address: address, password: password, passwordConfirmation: confirmPass, frequentTravelNumber: travel, favouriteDepartureId: favDepartureCity, favouriteDestinationId: favDestinationCity, creditCard: internalCreditCard, preferredCategories: categoriesInt) { (succss, error) in
              self.hud.dismiss()
             if(error == ""){

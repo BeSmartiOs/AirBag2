@@ -8,12 +8,16 @@
 
 import UIKit
 import Reachability
+import JGProgressHUD
 
 class AbstractViewController: UIViewController {
 
+    
+       let hud = JGProgressHUD(style: .light)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +36,9 @@ class AbstractViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+//    class func showHud() {
+//         hud.textLabel.text = ConstantStrings.pleaseWait
+//    }
     
     class func isValidEmail(testStr: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
