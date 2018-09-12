@@ -22,8 +22,6 @@ class CarrierMainViewController: UITabBarController {
         self.CarrierTab.items?[1].image = #imageLiteral(resourceName: "order")
         self.CarrierTab.items?[2].title = ConstantStrings.pendingTab
         self.CarrierTab.items?[2].image = #imageLiteral(resourceName: "time-left")
-
-      
         self.CarrierTab.items?[3].title = ConstantStrings.menu
         self.CarrierTab.items?[3].image = #imageLiteral(resourceName: "menu")
         print(self.view.frame.width)
