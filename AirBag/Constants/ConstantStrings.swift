@@ -86,6 +86,9 @@ struct  ConstantStrings{
     static let alreadySender = "You're already a Sender"
     static let alreadyCarrier = "You're already a Carrier"
     static let alreadyRec = "You're already a Reciever"
-     static let reserveThisBag = "Are you sure you want to reserve these bags?"
+    static let reserveThisBag = "Are you sure you want to reserve these bags?"
+    static let viewCarrierData = "View Carrier Info?"
+    static let viewSenderData = "View Sender Info?"
+     static let viewRecieverData = "View Reciever Info?"
     
 }

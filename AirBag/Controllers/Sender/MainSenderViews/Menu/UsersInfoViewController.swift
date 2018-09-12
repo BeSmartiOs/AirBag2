@@ -1,21 +1,18 @@
 //
-//  RatingViewController.swift
+//  UsersInfoViewController.swift
 //  AirBag
 //
-//  Created by Geek on 9/10/18.
+//  Created by Geek on 9/12/18.
 //  Copyright © 2018 Geek. All rights reserved.
 //
 
 import UIKit
 
-class RatingViewController: UIViewController {
+class UsersInfoViewController: UIViewController {
 
-    @IBOutlet weak var feedBack: UITextView!
-    @IBOutlet weak var cosmosRates: CosmosView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        customeCenterImage()
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -34,8 +31,5 @@ class RatingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func submit(_ sender: Any) {
-        print(cosmosRates.rating.description)
-    }
-    
+
 }

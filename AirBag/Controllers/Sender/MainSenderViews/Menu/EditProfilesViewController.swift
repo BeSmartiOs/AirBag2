@@ -246,7 +246,10 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
      
      */
     @IBAction func editProfileAction(_ sender: Any) {
-        self.creatAlert(tite: ConstantStrings.editProfile)
+       // self.creatAlert(tite: ConstantStrings.editProfile)
+        let popOverVC = storyboard?.instantiateViewController(withIdentifier: "RatingViewController") as! RatingViewController
+    
+        self.navigationController?.pushViewController(popOverVC, animated: true)
     }
     func checkFeilds(){
         

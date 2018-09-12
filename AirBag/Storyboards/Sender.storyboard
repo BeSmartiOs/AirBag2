@@ -989,13 +989,13 @@
         <!--Choose Air Line View Controller-->
         <scene sceneID="xJW-sP-m9j">
             <objects>
-                <viewController storyboardIdentifier="ChooseAirLineViewController" id="3Xp-OE-AQv" customClass="ChooseAirLineViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseAirLineViewController" hidesBottomBarWhenPushed="YES" id="3Xp-OE-AQv" customClass="ChooseAirLineViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Iy-3M-cnJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tEu-Wo-0vw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8nA-1n-9af">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>

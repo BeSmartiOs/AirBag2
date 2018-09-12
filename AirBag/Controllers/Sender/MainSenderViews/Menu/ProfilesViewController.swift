@@ -20,12 +20,24 @@ class ProfilesViewController: UIViewController {
     @IBOutlet weak var faveDestination: UILabel!
     @IBOutlet weak var credit: UILabel!
     @IBOutlet weak var preferedCats: UILabel!
+    @IBOutlet weak var editProfile: UIBarButtonItem!
+    
+    /* 1 -->> coming from sender to view carrier Info*/
+    var typeFrom : Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCenterImage()
+       
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        if(typeFrom == 1){
+            
+          self.editProfile.title = ""
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

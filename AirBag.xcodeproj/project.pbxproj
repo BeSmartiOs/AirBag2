@@ -33,6 +33,7 @@
 		930575142132B6C500B6923F /* BagDetialsResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575132132B6C500B6923F /* BagDetialsResp.swift */; };
 		930575162132B72E00B6923F /* BagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575152132B72E00B6923F /* BagDetails.swift */; };
 		930575192132C89800B6923F /* BagItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575182132C89800B6923F /* BagItems.swift */; };
+		930A08C021494E5900B1A1D5 /* UsersInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930A08BF21494E5900B1A1D5 /* UsersInfoViewController.swift */; };
 		931865A1213694E600D86369 /* LoginContentt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A0213694E600D86369 /* LoginContentt.swift */; };
 		931865A3213694F400D86369 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A2213694F400D86369 /* LoginError.swift */; };
 		931865A5213699CB00D86369 /* NotificationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */; };
@@ -192,6 +193,7 @@
 		930575132132B6C500B6923F /* BagDetialsResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetialsResp.swift; sourceTree = "<group>"; };
 		930575152132B72E00B6923F /* BagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetails.swift; sourceTree = "<group>"; };
 		930575182132C89800B6923F /* BagItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagItems.swift; sourceTree = "<group>"; };
+		930A08BF21494E5900B1A1D5 /* UsersInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoViewController.swift; sourceTree = "<group>"; };
 		931865A0213694E600D86369 /* LoginContentt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentt.swift; sourceTree = "<group>"; };
 		931865A2213694F400D86369 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -709,6 +711,7 @@
 				93FE5E4A21465F6700BDEDD2 /* ProfilesViewController.swift */,
 				93FE5E4C214661D700BDEDD2 /* EditProfilesViewController.swift */,
 				93B08FF22146B57200CDF3F3 /* RatingViewController.swift */,
+				930A08BF21494E5900B1A1D5 /* UsersInfoViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1342,6 +1345,7 @@
 				93CE54A6212ABA1F0011BFD7 /* ErrorMsg.swift in Sources */,
 				9305750321329DA500B6923F /* AvailableNormalBags.swift in Sources */,
 				93FCEB232124235700C16F1C /* UserTypes.swift in Sources */,
+				930A08C021494E5900B1A1D5 /* UsersInfoViewController.swift in Sources */,
 				934BF8CF2137E31C00654878 /* CreateBagViewController.swift in Sources */,
 				93B08FEF2146AD5F00CDF3F3 /* StarFillMode.swift in Sources */,
 				93B08FF32146B57200CDF3F3 /* RatingViewController.swift in Sources */,

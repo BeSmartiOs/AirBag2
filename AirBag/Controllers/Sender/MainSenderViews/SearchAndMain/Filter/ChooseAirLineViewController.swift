@@ -99,6 +99,7 @@ class ChooseAirLineViewController: UIViewController,UITableViewDataSource,UITabl
          self.airLines?.classAirLines((self.airlinesRes?[indexPath.row].name)!, (self.airlinesRes?[indexPath.row].id)!)
         }else{
               self.carriers?.classCarriers((self.recieversUsers?[indexPath.row].nickname)!, (self.recieversUsers?[indexPath.row].id)!)
+            self.createAlertSuccess(title: ConstantStrings.viewCarrierData)
         }
         
 
@@ -134,7 +135,25 @@ class ChooseAirLineViewController: UIViewController,UITableViewDataSource,UITabl
         }
         
     }
+    func createAlertSuccess(title : String){
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: ConstantStrings.yes, style: UIAlertActionStyle.default, handler: { (action) in
+           self.goToCarrierInfo()
+        }))
+        alert.addAction(UIAlertAction(title: ConstantStrings.no, style: UIAlertActionStyle.destructive, handler: { (action) in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
+    
+    func goToCarrierInfo(){
+        let popOverVC = UIStoryboard(name : Constants.StroyBoards.commonStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "ProfilesViewController") as! ProfilesViewController
+        popOverVC.typeFrom = 1
+        self.navigationController?.pushViewController(popOverVC, animated: true)
+        
+    }
 }
 
 
