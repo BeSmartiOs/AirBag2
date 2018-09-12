@@ -34,7 +34,7 @@ struct Constants{
      */
     
     struct WebService{
-          /*BAseUrl*/
+        /*BAseUrl*/
         static let baseUrl = "http://206.189.17.20"
         /*Authintications*/
         static let register = "/register"
@@ -64,8 +64,15 @@ struct Constants{
         static let editBag = "/bag/edit/"
         static let userBags = "/userBags"
         static let sealBAg = "/bag/seal/"
+        static let confirmReservation = "/reservation/confirm/"
+        static let canceReservations = "/reservation/cancel/"
+        static let getPendingReservations = "/pendingReservations"
+        static let getPendingReservationDetails = "/pendingReservation/"
         
         /*Sender*/
-         static let reserveBag = "/bag/reserve"
+        static let reserveBag = "/bag/reserve"
+        static let rateCarrier = "/rateCarrier/"
+        static let deleteTransactionItem = "/transactionItem/delete/" //{transactionID}/{itemID}
+        
 }
 }

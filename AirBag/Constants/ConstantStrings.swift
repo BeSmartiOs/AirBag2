@@ -83,10 +83,9 @@ struct  ConstantStrings{
     static let sureSender = "Are you sure you want to change to Sender?"
     static let sureCarrier = "Are you sure you want to change to Carrier?"
     static let sureRec = "Are you sure you want to change to Reciever?"
-    
-    
     static let alreadySender = "You're already a Sender"
     static let alreadyCarrier = "You're already a Carrier"
     static let alreadyRec = "You're already a Reciever"
+     static let reserveThisBag = "Are you sure you want to reserve these bags?"
     
 }

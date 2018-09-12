@@ -14,7 +14,7 @@ class ItemsTableViewCell: UITableViewCell {
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var carrierName: UILabel!
-    
+    @IBOutlet weak var deleteItem: UIButton!
     
     
     override func awakeFromNib() {

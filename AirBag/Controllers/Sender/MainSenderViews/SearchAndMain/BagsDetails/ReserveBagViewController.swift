@@ -61,7 +61,6 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
                 for item in self.loadedCartStatic! {
                     self.itemName.append(item["itemName"] as! String)
                      self.recieverName = item["recieverName"] as? String
-                    
                      self.weight.append(item["weight"] as! Double)
                      self.height.append(item["height"] as! Double)
                      self.width.append(item["width"] as! Double)
@@ -96,7 +95,8 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemsCell", for: indexPath) as! ItemsTableViewCell
         cell.itemName.text = self.itemName[indexPath.row]
         cell.carrierName.text = self.recieverName
-         cell.weight.text = "\(self.weight[indexPath.row])"
+        cell.weight.text = "\(self.weight[indexPath.row])"
+        cell.deleteItem.addTarget(self, action:#selector(buttonSelected), for:.touchUpInside)
        
         return cell
     }
@@ -111,11 +111,8 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBAction func reserveBagAction(_ sender: Any) {
        // self.navigationController?.popToRootViewController(animated: true)
         print(self.recieverId ?? 90)
-        self.creatAlert(tite: "Are you sure you want to reserve these bags?")
-         choosenCategoryNameGlobal = ""
-         choosenCategoryId = 0
-         choosenItemNameGlobal = ""
-         choosenItemIdGlobal = 0
+        self.creatAlert(tite: ConstantStrings.reserveThisBag)
+        
     }
     
     
@@ -141,6 +138,10 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
         let alert = UIAlertController(title: tite, message: "", preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
+            choosenCategoryNameGlobal = ""
+            choosenCategoryId = 0
+            choosenItemNameGlobal = ""
+            choosenItemIdGlobal = 0
             self.reserveBags()
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.destructive, handler: nil ))
@@ -152,7 +153,7 @@ class ReserveBagViewController: UIViewController,UITableViewDataSource,UITableVi
 
 func reserveBags(){
      print("-------------------")
-    print(self.width.count)
+        print(self.width.count)
        print(self.height.count)
        print(self.weight.count)
        print(self.length.count)
@@ -167,6 +168,9 @@ func reserveBags(){
         }
     }
 }
+    @objc func buttonSelected(sender: UIButton){
+        print(sender.tag)
+    }
 
 }
 
