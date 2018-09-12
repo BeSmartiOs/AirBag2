@@ -12,7 +12,7 @@ import JGProgressHUD
 class PendingTransactionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    //let carrier = CarrierMainViewController()
     let hud = JGProgressHUD(style: .light)
     var transactions : TransactionsRes?
     var transactionId = 0
@@ -21,9 +21,13 @@ class PendingTransactionsViewController: UIViewController,UITableViewDelegate, U
         hud.textLabel.text = ConstantStrings.pleaseWait
         customeCenterImage()
         getTransactions()
+      
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //carrier.CarrierTab.items?[2].badgeValue = "0"
+         // carrierBadgeValue = "5"
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

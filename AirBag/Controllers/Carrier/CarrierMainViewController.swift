@@ -8,6 +8,8 @@
 
 import UIKit
 
+var carrierBadgeValue = ""
+
 class CarrierMainViewController: UITabBarController {
  @IBOutlet weak var CarrierTab: UITabBar!
     override func viewDidLoad() {
@@ -20,6 +22,8 @@ class CarrierMainViewController: UITabBarController {
         self.CarrierTab.items?[1].image = #imageLiteral(resourceName: "order")
         self.CarrierTab.items?[2].title = ConstantStrings.pendingTab
         self.CarrierTab.items?[2].image = #imageLiteral(resourceName: "time-left")
+
+      
         self.CarrierTab.items?[3].title = ConstantStrings.menu
         self.CarrierTab.items?[3].image = #imageLiteral(resourceName: "menu")
         print(self.view.frame.width)
@@ -29,6 +33,8 @@ class CarrierMainViewController: UITabBarController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+//          self.CarrierTab.items?[2].badgeColor = UIColor.appGray
+//                self.CarrierTab.items?[2].badgeValue = carrierBadgeValue
         for item in self.CarrierTab.items! {
             let unselectedItem = [NSAttributedStringKey.foregroundColor: UIColor.appGray]
             let selectedItem = [NSAttributedStringKey.foregroundColor: UIColor.white]
