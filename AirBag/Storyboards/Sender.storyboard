@@ -1046,7 +1046,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="countryCity" destination="E1Q-rg-ZHb" id="Gjb-qL-v06"/>
-                                            <outlet property="countrySelected" destination="Nic-Tf-PQM" id="BNp-G0-0wY"/>
+                                            <outlet property="countrySelected" destination="Nic-Tf-PQM" id="ow4-K8-Q25"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

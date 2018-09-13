@@ -22,6 +22,7 @@ class NotificationDetailsResp : NSObject, Mappable{
     var updatedAt : String?
     var userId : Int?
     var userTypeId : Int?
+    var transactionId : Int?
     
     
     class func newInstance(map: Map) -> Mappable?{
@@ -43,6 +44,7 @@ class NotificationDetailsResp : NSObject, Mappable{
         updatedAt <- map["updated_at"]
         userId <- map["user_id"]
         userTypeId <- map["user_type_id"]
+        transactionId <- map["transaction_id"]
         
     }
 

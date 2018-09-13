@@ -34,6 +34,10 @@
 		930575162132B72E00B6923F /* BagDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575152132B72E00B6923F /* BagDetails.swift */; };
 		930575192132C89800B6923F /* BagItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930575182132C89800B6923F /* BagItems.swift */; };
 		930A08C021494E5900B1A1D5 /* UsersInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930A08BF21494E5900B1A1D5 /* UsersInfoViewController.swift */; };
+		931851F4214A6518003FBE2E /* ScanQrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931851F3214A6518003FBE2E /* ScanQrCodeViewController.swift */; };
+		931851F7214AA7A6003FBE2E /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931851F6214AA7A6003FBE2E /* ProfileResponse.swift */; };
+		931851F9214AA7BE003FBE2E /* ProfileBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931851F8214AA7BE003FBE2E /* ProfileBasicInfo.swift */; };
+		931851FB214AA7DB003FBE2E /* ProfilePreferedCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931851FA214AA7DB003FBE2E /* ProfilePreferedCats.swift */; };
 		931865A1213694E600D86369 /* LoginContentt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A0213694E600D86369 /* LoginContentt.swift */; };
 		931865A3213694F400D86369 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A2213694F400D86369 /* LoginError.swift */; };
 		931865A5213699CB00D86369 /* NotificationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */; };
@@ -194,6 +198,10 @@
 		930575152132B72E00B6923F /* BagDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagDetails.swift; sourceTree = "<group>"; };
 		930575182132C89800B6923F /* BagItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagItems.swift; sourceTree = "<group>"; };
 		930A08BF21494E5900B1A1D5 /* UsersInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoViewController.swift; sourceTree = "<group>"; };
+		931851F3214A6518003FBE2E /* ScanQrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQrCodeViewController.swift; sourceTree = "<group>"; };
+		931851F6214AA7A6003FBE2E /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		931851F8214AA7BE003FBE2E /* ProfileBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBasicInfo.swift; sourceTree = "<group>"; };
+		931851FA214AA7DB003FBE2E /* ProfilePreferedCats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreferedCats.swift; sourceTree = "<group>"; };
 		931865A0213694E600D86369 /* LoginContentt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentt.swift; sourceTree = "<group>"; };
 		931865A2213694F400D86369 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		931865A4213699CB00D86369 /* NotificationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailsViewController.swift; sourceTree = "<group>"; };
@@ -472,6 +480,24 @@
 				930575182132C89800B6923F /* BagItems.swift */,
 			);
 			path = BagItems;
+			sourceTree = "<group>";
+		};
+		931851F2214A64BC003FBE2E /* QRCode&Payment */ = {
+			isa = PBXGroup;
+			children = (
+				931851F3214A6518003FBE2E /* ScanQrCodeViewController.swift */,
+			);
+			path = "QRCode&Payment";
+			sourceTree = "<group>";
+		};
+		931851F5214AA703003FBE2E /* ProfileResps */ = {
+			isa = PBXGroup;
+			children = (
+				931851F6214AA7A6003FBE2E /* ProfileResponse.swift */,
+				931851F8214AA7BE003FBE2E /* ProfileBasicInfo.swift */,
+				931851FA214AA7DB003FBE2E /* ProfilePreferedCats.swift */,
+			);
+			path = ProfileResps;
 			sourceTree = "<group>";
 		};
 		9318659F213694C500D86369 /* LoginResp */ = {
@@ -918,6 +944,7 @@
 		93FCEB0F2124149100C16F1C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				931851F2214A64BC003FBE2E /* QRCode&Payment */,
 				93B08FD22146AC1900CDF3F3 /* Cosmos */,
 				934BF8C82137DFF100654878 /* Carrier */,
 				93333CA92136BB2000F896A6 /* Reciever */,
@@ -994,6 +1021,7 @@
 		93FCEB212124233B00C16F1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				931851F5214AA703003FBE2E /* ProfileResps */,
 				9320A83D213BC1FC004B9A54 /* Verifications */,
 				93014A50213688AF009BD62A /* Notifications */,
 				9304DEE32133E2FA004E8A0E /* DataModels */,
@@ -1268,7 +1296,9 @@
 				93333CAB2136BB8B00F896A6 /* RecieverViewController.swift in Sources */,
 				930561C02135378B00E204F6 /* ReserveBag.swift in Sources */,
 				9320A848213BC7F7004B9A54 /* PhoneErrorMsg.swift in Sources */,
+				931851F7214AA7A6003FBE2E /* ProfileResponse.swift in Sources */,
 				93B3CCC221368B9000AEFE00 /* Notificationss.swift in Sources */,
+				931851F4214A6518003FBE2E /* ScanQrCodeViewController.swift in Sources */,
 				938955D72132F8EC001725E9 /* TransactionDetailsViewController.swift in Sources */,
 				93B08FE52146AD2100CDF3F3 /* CosmosText.swift in Sources */,
 				9320A84F213BE25D004B9A54 /* CretaeBag.swift in Sources */,
@@ -1317,6 +1347,7 @@
 				93B08FE12146AD0700CDF3F3 /* CosmosSettings.swift in Sources */,
 				93D7FE652129954200D377EF /* LoginApi.swift in Sources */,
 				931865A1213694E600D86369 /* LoginContentt.swift in Sources */,
+				931851FB214AA7DB003FBE2E /* ProfilePreferedCats.swift in Sources */,
 				93B08FEB2146AD4700CDF3F3 /* CosmosView.swift in Sources */,
 				938955D92132FEA1001725E9 /* TransactionItemsTableViewCell.swift in Sources */,
 				93D7FE60212971E500D377EF /* RegisterApi.swift in Sources */,
@@ -1329,6 +1360,7 @@
 				938955D32132F37C001725E9 /* Transactions.swift in Sources */,
 				930074742145060700860767 /* CarrierTransactionViewController.swift in Sources */,
 				93B08FD72146ACB600CDF3F3 /* CosmosDefaultSettings.swift in Sources */,
+				931851F9214AA7BE003FBE2E /* ProfileBasicInfo.swift in Sources */,
 				93CE54A7212ABA1F0011BFD7 /* Content.swift in Sources */,
 				930575162132B72E00B6923F /* BagDetails.swift in Sources */,
 				93B3CCC521368C8E00AEFE00 /* GetNotifications.swift in Sources */,

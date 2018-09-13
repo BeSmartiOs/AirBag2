@@ -40,11 +40,11 @@ import JGProgressHUD
             // Do any additional setup after loading the view.
         }
         override func viewWillAppear(_ animated: Bool) {
-            if(typeOfWay == 3){
-                self.myNavBarItem.title = DeparCuntryName
-            }else{
-                 self.myNavBarItem.title = DestCuntryName
-            }
+//            if(typeOfWay == 3){
+                self.myNavBarItem.title = "Choose City"
+           // }else{
+           //      self.myNavBarItem.title = DestCuntryName
+           // }
             
             self.getCities(id: self.departureCountryId!)
         }

@@ -42,6 +42,11 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
       @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var favDepartureLabel: UILabel!
+    @IBOutlet weak var faveDestinationLabel: UILabel!
+    
     var cityId = 0
     var destinationId = 0
     var departureId = 0
@@ -54,6 +59,7 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
     let hud  = JGProgressHUD(style: .light)
     var typeOfWayEdit : Int?
      var typeOfClass : Int?  //7
+    var profileResps : ProfileResponse?
     override func viewDidLoad() {
         super.viewDidLoad()
            hud.textLabel.text = ConstantStrings.pleaseWait
@@ -61,25 +67,49 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
         getCategries()
         getCountries()
         customeCenterImage()
+        self.viewDetails(details: profileResps!)
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    /*
+     var editProfileCityId : Int?
+     var editProfileCityName : String?
+     var editProfileCountryCityName : String?
+     
+     
+     
+     var editProfileDepartureId : Int?
+     var editProfileDepartureName : String?
+     var editProfileDepartureCountryName : String?
+     
+     var editProfileDestinationId : Int?
+     var editProfileDestinationame : String?
+     var editProfileDestinationCountryName : String?
+     */
     
     override func viewWillAppear(_ animated: Bool) {
         if(editProfileCityId == nil){
             
         }else{
             cityId = editProfileCityId!
+            self.cityLabel.text = editProfileCountryCityName! + ", " + editProfileCityName!
         }
         
         if(editProfileDestinationId == nil){
             
         }else{
             destinationId = editProfileDestinationId!
+            self.faveDestinationLabel.text = editProfileDestinationCountryName! + ", " + editProfileDestinationame!
         }
         if(editProfileDepartureId == nil){
             
         }else{
             departureId = editProfileDepartureId!
+              self.favDepartureLabel.text =  editProfileDepartureCountryName! + ", " + editProfileDepartureName!
+            
         }
     }
 
@@ -246,18 +276,33 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
      
      */
     @IBAction func editProfileAction(_ sender: Any) {
-       // self.creatAlert(tite: ConstantStrings.editProfile)
-        let popOverVC = storyboard?.instantiateViewController(withIdentifier: "RatingViewController") as! RatingViewController
-    
-        self.navigationController?.pushViewController(popOverVC, animated: true)
+        self.creatAlert(tite: ConstantStrings.editProfile)
+//        let popOverVC = storyboard?.instantiateViewController(withIdentifier: "RatingViewController") as! RatingViewController
+//
+//        self.navigationController?.pushViewController(popOverVC, animated: true)
     }
     func checkFeilds(){
         
-        if(self.firstName.text == "" || self.lastName.text == "" ||  self.email.text == "" || self.address.text == ""  ||   self.cityId == 0 ||  self.destinationId == 0 ||  self.departureId == 0 ){
+        if(self.firstName.text == "" || self.lastName.text == "" ||  self.email.text == "" || self.address.text == ""  ){
             self.creatAlert(tite: ConstantStrings.pleaseFillRequired)
         }else{
             if(AbstractViewController.isValidEmail(testStr: self.email.text!)){
-               //  self.editProfile(first_name: self.firstName.text!, last_name: self.lastName.text!, email: self.email.text!, mobile: self.mobile.text!, address_city: self.cityId, frequent_travel_number: Int(self.freqTravel.text!)!, address: self.address.text!, favourite_departure_id: self.departureId, favourite_destination_id: self.destinationId , credit_card: self.credit.text!, preferred_categories:  self.chooseCats)
+                var cityIdFinal = 0
+                var destinationIdFinal  = 0
+                var departureIdFinal  = 0
+                if(editProfileCityId == nil ||  editProfileDestinationId == nil ||  editProfileDepartureId == nil ){
+                    cityIdFinal = self.cityId
+                    destinationIdFinal  = self.destinationId
+                    departureIdFinal  = self.departureId
+                }else{
+                    cityIdFinal = editProfileCityId!
+                    destinationIdFinal  = editProfileDestinationId!
+                    departureIdFinal  = editProfileDepartureId!
+                    
+                }
+                self.editProfile(first_name: self.firstName.text!, last_name: self.lastName.text!, email: self.email.text!, mobile: self.mobile.text!, address_city: cityIdFinal, frequent_travel_number: Int(self.freqTravel.text!)!, address: self.address.text!, favourite_departure_id: departureIdFinal, favourite_destination_id: destinationIdFinal , credit_card: self.credit.text!, preferred_categories:  self.chooseCats)
+                
+                
             }else{
                  self.creatAlert(tite: ConstantStrings.emailVAid)
             }
@@ -290,6 +335,29 @@ class EditProfilesViewController: UIViewController,UITableViewDelegate,UITableVi
     func editProfile(first_name : String, last_name: String, email: String, mobile: String  ,  address_city : Int , frequent_travel_number: Int,  address: String ,favourite_departure_id: Int, favourite_destination_id: Int, credit_card: String , preferred_categories :[Int]){
         ProfilesApi.EditProfiles(first_name : first_name,last_name : last_name,email : email,mobile: mobile  , address_city : address_city ,frequent_travel_number : frequent_travel_number, address : address ,favourite_departure_id :favourite_departure_id,favourite_destination_id : favourite_destination_id,credit_card  : credit_card , preferred_categories :preferred_categories) { (resp, error) in
             
+        }
+        
+    }
+    func viewDetails( details: ProfileResponse){
+        for detailss in details.basicInfo!{
+            self.firstName.text = detailss.firstName
+            self.lastName.text = detailss.lastName
+            self.email.text = detailss.email
+            self.mobile.text = detailss.mobile
+            
+            self.address.text = detailss.address
+            self.freqTravel.text = detailss.frequentTravelNumber?.description
+           // self.favDeparture.text = ""
+           // self.faveDestination.text = ""
+            self.credit.text = detailss.creditCard
+            
+            self.cityId = detailss.addressCity!
+            self.destinationId = detailss.favouriteDestinationId!
+            self.departureId = detailss.favouriteDepartureId!
+            
+        }
+        for cats in details.preferredCategories!{
+            self.preferedCats.setTitle(cats.category, for: .normal)
         }
         
     }

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class ProfilesApi: NSObject{
-    class func GetProfiles( completionHandler:@escaping(UsersResp?,String)->()){
+    class func GetProfiles( completionHandler:@escaping(ProfileResponse?,String)->()){
         let userDefaults = UserDefaults.standard
         let decoded  = userDefaults.object(forKey: "logResp") as! Data
         let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! LoginContentt
@@ -21,8 +21,8 @@ class ProfilesApi: NSObject{
             if(error==nil)
             {
                 let subCat =
-                     Mapper<UsersResp>().map(JSON:responseObject as! [String : Any]) //Swift 3
-                if(subCat?.id != 0){
+                     Mapper<ProfileResponse>().map(JSON:responseObject as! [String : Any]) //Swift 3
+                if(subCat?.basicInfo?.count != 0){
                     completionHandler(subCat!,"")
                 }else{
                     completionHandler(subCat!,"No data")
@@ -30,7 +30,7 @@ class ProfilesApi: NSObject{
             }
             else
             {
-                 completionHandler(Mapper<UsersResp>().map(JSON:[:])!,"no_internet");
+                 completionHandler(Mapper<ProfileResponse>().map(JSON:[:])!,"no_internet");
             }
         });
     }
@@ -54,23 +54,24 @@ class ProfilesApi: NSObject{
         /* first_name : String, last_name: String, email: String, mobile: String  ,  address_city : Int , frequent_travel_number: Int,  address: String ,favourite_departure_id: Int, favourite_destination_id: Int, credit_card: String , preferred_categories*/
         
         let  parameters =  ["first_name" : first_name,"last_name" : last_name,"email" : email,"mobile" : mobile  , "address_city" : address_city ,"frequent_travel_number" : frequent_travel_number, "address" : address ,"favourite_departure_id" :favourite_departure_id,"favourite_destination_id" : favourite_destination_id,"credit_card"  : credit_card , "preferred_categories" :preferred_categories] as [String : Any] as NSDictionary
-        NetWorkConnection.dataWithHeader(url: url, httpmethod: .post, aceessToken: decodedUser.token!, parameters: parameters, completionHandler: {responseObject, error in
-            
-            if(error==nil)
-            {
-                let subCat =
-                    Mapper<UsersResp>().map(JSON:responseObject as! [String : Any]) //Swift 3
-                if(subCat?.id != 0){
-                    completionHandler(subCat!,"")
-                }else{
-                    completionHandler(subCat!,"No data")
-                }
-            }
-            else
-            {
-                completionHandler(Mapper<UsersResp>().map(JSON:[:])!,"no_internet");
-            }
-        });
+        print(parameters)
+//        NetWorkConnection.dataWithHeader(url: url, httpmethod: .post, aceessToken: decodedUser.token!, parameters: parameters, completionHandler: {responseObject, error in
+//
+//            if(error==nil)
+//            {
+//                let subCat =
+//                    Mapper<UsersResp>().map(JSON:responseObject as! [String : Any]) //Swift 3
+//                if(subCat?.id != 0){
+//                    completionHandler(subCat!,"")
+//                }else{
+//                    completionHandler(subCat!,"No data")
+//                }
+//            }
+//            else
+//            {
+//                completionHandler(Mapper<UsersResp>().map(JSON:[:])!,"no_internet");
+//            }
+//        });
     }
     
     

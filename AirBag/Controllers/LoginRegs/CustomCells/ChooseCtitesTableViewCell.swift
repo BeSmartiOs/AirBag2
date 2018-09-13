@@ -11,7 +11,8 @@ import UIKit
 class ChooseCtitesTableViewCell: UITableViewCell {
 
    
-
+   
+    
     @IBOutlet weak var countryCity: UILabel!
     
     @IBOutlet weak var countrySelected: UIImageView!

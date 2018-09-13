@@ -59,8 +59,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZc-aQ-2qN">
-                                                <rect key="frame" x="170" y="174" width="189" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZc-aQ-2qN">
+                                                <rect key="frame" x="170" y="174.5" width="189" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -267,16 +267,15 @@
                         <barButtonItem key="rightBarButtonItem" title="Edit Profile" id="scj-fF-oru">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addBag:" destination="bSW-4r-e8B" id="mhF-JG-WNO"/>
-                                <segue destination="InA-fU-TDg" kind="show" id="hZC-rF-rme"/>
+                                <action selector="editProfileAction:" destination="bSW-4r-e8B" id="pxP-lX-ecR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="850"/>
                     <connections>
-                        <outlet property="address" destination="EpM-Lw-h6a" id="cZW-XN-UPZ"/>
+                        <outlet property="addressText" destination="EpM-Lw-h6a" id="Bvr-7V-IDp"/>
                         <outlet property="city" destination="wnF-Ex-3gW" id="4qM-9A-xHS"/>
-                        <outlet property="credit" destination="jMp-Zm-VEe" id="TuS-Lv-cma"/>
+                        <outlet property="creditText" destination="jMp-Zm-VEe" id="T6x-Ah-Oyb"/>
                         <outlet property="editProfile" destination="scj-fF-oru" id="0ps-VI-IRr"/>
                         <outlet property="email" destination="BZc-aQ-2qN" id="dEC-pp-a6k"/>
                         <outlet property="favDeparture" destination="RmC-Wd-9xy" id="fhy-ka-jHs"/>
@@ -286,6 +285,7 @@
                         <outlet property="lastName" destination="dYZ-se-iNa" id="4yQ-7T-nae"/>
                         <outlet property="mobile" destination="NwD-1d-0up" id="XPs-TE-rQ9"/>
                         <outlet property="preferedCats" destination="8bd-KS-vkc" id="abL-zU-sTb"/>
+                        <segue destination="InA-fU-TDg" kind="show" identifier="editUserProfile" id="pug-R1-D3h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6G-7x-5wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,10 +573,13 @@
                     <connections>
                         <outlet property="address" destination="Mfm-GI-NGR" id="HNe-bE-3Hp"/>
                         <outlet property="city" destination="KIU-fe-gOL" id="ETF-Dv-wS9"/>
+                        <outlet property="cityLabel" destination="ckr-Qi-lsn" id="cyY-nr-esK"/>
                         <outlet property="credit" destination="yr8-RN-zW5" id="RuZ-P6-ssP"/>
                         <outlet property="email" destination="fug-vZ-kiS" id="J4F-on-ZzX"/>
                         <outlet property="favDeparture" destination="cfC-73-8fc" id="8jf-Ob-SRk"/>
+                        <outlet property="favDepartureLabel" destination="4Mv-HP-KIq" id="Htt-t5-cjm"/>
                         <outlet property="faveDestination" destination="WcR-Kg-XQj" id="nRC-fB-X5i"/>
+                        <outlet property="faveDestinationLabel" destination="G2D-cJ-q12" id="HyA-oj-n4u"/>
                         <outlet property="firstName" destination="ctN-3C-q2h" id="PNs-A8-fGk"/>
                         <outlet property="freqTravel" destination="0Nz-u9-4f1" id="5zD-ne-z2d"/>
                         <outlet property="lastName" destination="P5F-M9-MVe" id="TGY-Wp-o9O"/>
@@ -588,7 +591,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTe-hW-43h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3540" y="2850.6746626686659"/>
+            <point key="canvasLocation" x="3804" y="2593"/>
+        </scene>
+        <!--Scan Qr Code View Controller-->
+        <scene sceneID="SIG-ax-d7a">
+            <objects>
+                <viewController storyboardIdentifier="ScanQrCodeViewController" id="9t9-j5-OPK" customClass="ScanQrCodeViewController" customModule="AirBag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qib-Xh-ZsR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="R0T-8F-7fc">
+                                <rect key="frame" x="27" y="205.5" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="JuC-fS-gJN"/>
+                                    <constraint firstAttribute="height" constant="320" id="mNQ-gB-NhF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R0T-8F-7fc" firstAttribute="centerX" secondItem="UWy-y6-Vns" secondAttribute="centerX" id="9g8-HJ-S3j"/>
+                            <constraint firstItem="R0T-8F-7fc" firstAttribute="centerY" secondItem="UWy-y6-Vns" secondAttribute="centerY" id="nLp-g7-kgR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UWy-y6-Vns"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yHm-cw-neh"/>
+                    <connections>
+                        <outlet property="square" destination="R0T-8F-7fc" id="R4f-pA-dSm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gvb-rG-JpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6840.8000000000002" y="2697.3013493253375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tTH-EX-kjA">
@@ -973,9 +1008,28 @@
             </objects>
             <point key="canvasLocation" x="4744.8000000000002" y="1568.3658170914543"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A3a-yc-Fpv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Beb-oq-D6l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2KE-pK-kvP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9t9-j5-OPK" kind="relationship" relationship="rootViewController" id="VAz-hK-z3A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1U-rP-5Rv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5901.6000000000004" y="2697.3013493253375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="375" height="937"/>
         <image name="login-icon" width="290" height="223"/>
+        <image name="square" width="276" height="276"/>
     </resources>
 </document>

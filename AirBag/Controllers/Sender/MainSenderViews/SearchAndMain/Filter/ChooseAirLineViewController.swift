@@ -83,8 +83,10 @@ class ChooseAirLineViewController: UIViewController,UITableViewDataSource,UITabl
        
         if(type == 1){
             cell.countryCity.text = self.airlinesRes?[indexPath.row].name
+            cell.countrySelected.image = #imageLiteral(resourceName: "plane")
         }else{
             cell.countryCity.text = self.recieversUsers?[indexPath.row].nickname
+               cell.countrySelected.image = #imageLiteral(resourceName: "user")
         }
         return cell
     }

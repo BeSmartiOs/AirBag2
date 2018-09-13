@@ -191,7 +191,9 @@ class LoginsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     appDelegate.window?.rootViewController = self.tabController
                     appDelegate.window?.makeKeyAndVisible()
                 }else if(self.loginResp?.content?.active == 0){ //just registered
-                    
+                    let myStoryboard = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil) as UIStoryboard
+                    self.viewController = myStoryboard.instantiateViewController(withIdentifier: "VerifyNumberViewController") as? VerifyNumberViewController
+                    self.navigationController?.pushViewController(self.viewController!, animated: true)
                 }else if(self.loginResp?.content?.active == 1){ // only mobile activation is done
                     let myStoryboard = UIStoryboard(name : Constants.StroyBoards.mainStoryBoard, bundle: nil) as UIStoryboard
                     self.viewController = myStoryboard.instantiateViewController(withIdentifier: "ActivateEmailViewController") as? ActivateEmailViewController

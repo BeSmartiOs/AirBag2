@@ -87,7 +87,7 @@ class NotificationDetailsViewController: UIViewController {
           
                 if((self.notification?.userTypeId)! == 1){ ///--> carrier
                     if((self.notification?.userTypeId)! == decodedUser.currentTypeId!){
-                       self.actionPerformed.isHidden = true
+                          self.actionPerformed.setTitle("View Bag to perform action!", for: .normal)
                             }else{
                           self.actionPerformed.isHidden = false
                         self.actionPerformed.setTitle("Be a Carrier to view more Info", for: .normal)
@@ -95,6 +95,8 @@ class NotificationDetailsViewController: UIViewController {
                             //go to carrier bagId
                         }else {
                             //go to carrier transId
+                            self.goToTransactionDetails(transacyionId: (self.notification?.transactionId)!)
+                            
                         }
                             }
                     
@@ -149,6 +151,14 @@ class NotificationDetailsViewController: UIViewController {
         self.bodyText.isEditable = false
           self.bodyText.layer.cornerRadius = 15.0
     }
+    
+    func goToTransactionDetails(transacyionId : Int){
+        let popOverVC = UIStoryboard(name : Constants.StroyBoards.senderStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "TransactionDetailsViewController") as! TransactionDetailsViewController
+       popOverVC.transactionId = transacyionId
+        self.navigationController?.pushViewController(popOverVC, animated: true)
+    }
+    
+    
 }
 
 //                if((self.notification?.userTypeId)! == 1){ ///--> carrier
